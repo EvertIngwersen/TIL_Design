@@ -1,0 +1,10 @@
+Data/Other[[:space:]]Data/countries-land-1m.geo.json filter=lfs diff=lfs merge=lfs -text
+Modeling/interactive_airport_map.html filter=lfs diff=lfs merge=lfs -text
+Modeling/interactive_map.html filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
+*.osm.pbf filter=lfs diff=lfs merge=lfs -text
+*.graphml filter=lfs diff=lfs merge=lfs -text
+Data/Other[[:space:]]Data/norway-260303.osm.pbf filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> 3304c38c5017c0f44714a83474bb367f43a5946f
+Data/Other[[:space:]]Data/norway-rail.osm filter=lfs diff=lfs merge=lfs -text

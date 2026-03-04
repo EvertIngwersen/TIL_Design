@@ -1,0 +1,871 @@
+original_name,matched_name,icao_code,match_score_%
+Airport,,,0.0
+BRUSSELS airport,Brussels Airport,EBBR,100.0
+CHARLEROI/BRUSSELS SOUTH airport,,,0.0
+LIEGE airport,Liège Airport,EBLG,80.0
+OOSTENDE/BRUGGE airport,,,0.0
+BURGAS airport,Burgas Airport,LBBG,100.0
+PLOVDIV airport,,,0.0
+SOFIA airport,Sofia Airport,LBSF,100.0
+VARNA airport,Varna Airport,LBWN,100.0
+CESKE BUDEJOVICE airport,,,0.0
+KARLOVY VARY airport,Karlovy Vary Airport,LKKV,100.0
+OSTRAVA/MOSNOV airport,,,0.0
+PARDUBICE airport,Pardubice Airport,LKPD,100.0
+PRAHA/RUZYNE airport,,,0.0
+BRNO/TURANY airport,Brno-Tuřany Airport,LKTB,81.8
+AERO airport,Waterford Airport,EIWF,61.5
+AARHUS airport,Aarhus Airport,EKAH,100.0
+BILLUND airport,Billund Airport,EKBI,100.0
+KOBENHAVN/KASTRUP airport,Copenhagen Kastrup Airport,EKCH,80.0
+ESBJERG airport,Esbjerg Airport,EKEB,100.0
+KARUP airport,Tartu Airport,EETU,60.0
+ARHUS/KIRSTINESMINDE airport,,,0.0
+ODENSE airport,Joensuu Airport,EFJO,61.5
+KOBENHAVN/ROSKILDE airport,Copenhagen Roskilde Airport,EKRK,81.1
+BORNHOLM/RONNE airport,Bornholm Airport,EKRN,72.7
+SONDERBORG airport,Sønderborg Airport,EKSB,90.0
+VOJENS/SKRYDSTRUP airport,,,0.0
+THISTED airport,Thisted Airport,EKTS,100.0
+VAGAR airport,Vágar Airport,EKVG,80.0
+STAUNING airport,Turin Airport,LIMF,61.5
+VAERSLOSE airport,,,0.0
+AALBORG airport,Aalborg Airport,EKYT,100.0
+Unknown airport - DENMARK,,,0.0
+LEIPZIG-ALTENBURG airport,Leipzig–Altenburg Airport,EDAC,94.1
+HERINGSDORF airport,Heringsdorf Airport,EDAH,100.0
+MAGDEBURG/COCHSTEDT airport,,,0.0
+BARTH airport,Bayreuth Airport,EDQD,76.9
+MAGDEBURG/CITY airport,Cambridge City Airport,EGSC,57.1
+RUEGEN airport,Bremen Airport,EDDW,66.7
+BERLIN-BRANDENBURG airport,Berlin Brandenburg Airport,EDDB,94.4
+DRESDEN airport,Dresden Airport,EDDC,100.0
+ERFURT-WEIMAR airport,Erfurt-Weimar Airport,EDDE,100.0
+FRANKFURT/MAIN airport,Frankfurt Main Airport,EDDF,100.0
+MUENSTER/OSNABRUECK airport,Münster Osnabrück Airport,EDDG,83.3
+HAMBURG airport,Sumburgh Airport,EGPB,66.7
+BERLIN/TEMPELHOF airport,,,0.0
+KOELN/BONN airport,Cologne Bonn Airport,EDDK,63.6
+DUESSELDORF airport,Düsseldorf Airport,EDDL,85.7
+MUENCHEN airport,Munich Airport,EDDM,71.4
+NUERNBERG airport,Nuremberg Airport,EDDN,77.8
+LEIPZIG/HALLE airport,Leipzig/Halle Airport,EDDP,100.0
+SAARBRUECKEN airport,Saarbrücken Airport,EDDR,87.0
+STUTTGART airport,Stuttgart Airport,EDDS,100.0
+BERLIN-TEGEL airport,Berlevåg Airport,ENBV,60.0
+HANNOVER airport,Hannover Airport,EDDV,100.0
+BREMEN airport,Bremen Airport,EDDW,100.0
+FRANKFURT-EGELSBACH airport,Frankfurt-Egelsbach Airport,EDFE,100.0
+FRANKFURT-HAHN airport,Frankfurt-Hahn Airport,EDFH,100.0
+MANNHEIM CITY airport,Mannheim-City Airport,EDFM,92.3
+WORMS airport,,,0.0
+SIEGERLAND airport,Siegerland Airport,EDGS,100.0
+HAMBURG-FINKENWERDER airport,Hamburg-Finkenwerder Airport,EDHI,100.0
+KIEL-HOLTENAU airport,Kiel-Holtenau Airport,EDHK,100.0
+LUEBECK-BLANKENSEE airport,Lübeck Blankensee Airport,EDHL,85.7
+MEMMINGEN airport,Memmingen Allgau Airport,EDJA,72.0
+BONN-HANGELAR airport,,,0.0
+ESSEN/MUELHEIM airport,,,0.0
+MOENCHENGLADBACH airport,Mönchengladbach Airport,EDLN,90.3
+PADERBORN/LIPPSTADT airport,Paderborn Lippstadt Airport,EDLP,100.0
+NIEDERRHEIN airport,Weeze (Niederrhein) Airport,EDLV,73.3
+DORTMUND airport,Dortmund Airport,EDLW,100.0
+AUGSBURG airport,Augsburg Airport,EDMA,100.0
+LANDSHUT airport,Landshut Airfield,EDML,64.0
+OBERPFAFFENHOFEN airport,Oberpfaffenhofen Airport,EDMO,100.0
+STRAUBING airport,Strasbourg Airport,LFST,63.2
+FRIEDRICHSHAFEN airport,Bodensee Airport Friedrichshafen,EDNY,75.0
+STOELLN/RHINOW airport,Stornoway Airport,EGPO,60.9
+BAYREUTH airport,Bayreuth Airport,EDQD,100.0
+HOF-PLAUEN airport,Hof-Plauen Airport,EDQM,100.0
+KOBLENZ-WINNINGEN airport,,,0.0
+TRIER-FOEHREN airport,,,0.0
+ZWEIBRUECKEN airport,,,0.0
+KARLSRUHE/BADEN-BADEN airport,Karlsruhe Baden-Baden Airport,EDSB,100.0
+BADEN-OOS airport,,,0.0
+DONAUESCHINGEN-VILLINGEN airport,Donaueschingen-Villingen Airfield,EDTD,84.2
+FREIBURG I.BR. airport,,,0.0
+SINSHEIM airport,,,0.0
+OFFENBURG airport,Edinburgh Airport,EGPH,66.7
+KONSTANZ airport,,,0.0
+BRAUNSCHWEIG-WOLFSBURG airport,Braunschweig-Wolfsburg Airport,EDVE,100.0
+KASSEL-CALDEN airport,Kassel Airport,EDVK,63.2
+HANNOVER UIR airport,Hannover Airport,EDDV,80.0
+BREMERHAVEN airport,Bremen Airport,EDDW,70.6
+LEMWERDER airport,,,0.0
+EMDEN airport,Bremen Airport,EDDW,72.7
+WANGEROOGE airport,Warton Aerodrome,EGNO,61.5
+JUIST airport,,,0.0
+LANGEOOG airport,,,0.0
+BORKUM airport,,,0.0
+NORDEN-NORDDEICH airport,,,0.0
+NORDERNEY airport,Alderney Airport,EGJA,70.6
+HEIDE-BUESUM airport,,,0.0
+FLENSBURG-SCHAEFERHAUS airport,,,0.0
+HELGOLAND-DUENE airport,,,0.0
+ST. PETER-ORDING airport,,,0.0
+HARLE airport,Hawarden Airport,EGNR,61.5
+SYLT airport,,,0.0
+WYK AUF FOEHR airport,,,0.0
+Other airport - GERMANY,,,0.0
+Unknown airport - GERMANY,,,0.0
+HEIDELBERG HEL airport,,,0.0
+LAAGE airport,Liège Airport,EBLG,60.0
+INGOLSTADT/MANCHING airport,Ingolstadt Manching Airport,ETSI,100.0
+GUETERSLOH airport,Gloucestershire Airport,EGBJ,64.0
+LENNART MERI TALLINN airport,Lennart Meri Tallinn Airport,EETN,100.0
+CORK airport,,,0.0
+GALWAY airport,Dala Airport,ESSD,60.0
+DUBLIN airport,Dublin Airport,EIDW,100.0
+IRELAND WEST airport,Ireland West Airport Knock,EIKN,77.4
+KERRY airport,Kerry Airport,EIKY,100.0
+SHANNON airport,Shannon Airport,EINN,100.0
+THIRA airport,Tiraspol Airport,LUTR,61.5
+NAXOS airport,Samos Airport,LGSM,60.0
+ALEXANDROUPOLIS/DIMOKRITOS airport,Alexandroupoli Democritus Airport,LGAL,86.3
+ATHINAI airport,,,0.0
+ATHINAI/ELEFTHERIOS VENIZELOS airport,Athens Eleftherios Venizelos International Airport,LGAV,73.2
+ALMIROS/NEA ANCHIALOS airport,Nea Anchialos National Airport,LGBL,60.5
+CHIOS/OMIROS airport,,,0.0
+IKARIA/IKAROS airport,,,0.0
+IOANNINA/KING PYRROS airport,Ioannina King Pyrrhus National Airport,LGIO,76.0
+IRAKLION/NIKOS KAZANTZAKIS airport,Heraklion International Nikos Kazantzakis Airport,LGIR,74.6
+KASTORIA/ARISTOTELIS airport,,,0.0
+KITHIRA/ALEXANDROS ARISTOTELOUS ONASSIS airport,,,0.0
+KEFALLINIA/ANNA POLLATOU airport,,,0.0
+KASTELORIZO airport,,,0.0
+KALAMATA airport,Kalamata Airport,LGKL,100.0
+KOS/IPPOKRATIS airport,,,0.0
+KARPATHOS airport,Karpathos Airport,LGKP,100.0
+KERKIRA/IOANNIS KAPODISTRIAS airport,,,0.0
+KASSOS airport,Kassel Airport,EDVK,66.7
+KAVALA/MEGAS ALEXANDROS airport,,,0.0
+KALYMNOS airport,Samos Airport,LGSM,61.5
+KOZANI/FILIPPOS airport,Kozani National Airport Filippos,LGKZ,75.0
+LEROS airport,Røros Airport,ENRO,60.0
+LIMNOS/IFAISTOS airport,,,0.0
+LARISSA airport,Elista Airport,URWI,61.5
+MEGARA airport,Menorca Airport,LEMH,46.2
+MIKONOS airport,,,0.0
+MILOS airport,Mius Airport,RU-0043,66.7
+MITILINI/ODYSSEAS ELYTIS airport,,,0.0
+NAXOS airport,Samos Airport,LGSM,60.0
+PAROS airport,Samos Airport,LGSM,60.0
+ASTYPALAIA airport,Talagi Airport,ULAA,62.5
+PREVEZA/AKTION airport,,,0.0
+RODOS/MARITSA airport,,,0.0
+RODOS/DIAGORAS airport,,,0.0
+ARAXOS airport,Karpathos Airport,LGKP,66.7
+CHANIA/IOANNIS DASKALOGIANNIS airport,,,0.0
+SKIATHOS/ALEXANDROS PAPADIAMANDIS airport,,,0.0
+SAMOS/ARISTARCHOS OF SAMOS airport,,,0.0
+SYROS/DIMITRIOS VIKELAS airport,,,0.0
+SANTORINI airport,Santa Maria Airport,LPAZ,60.0
+SITIA/VITSENTZOS KORNAROS airport,,,0.0
+SKIROS airport,Sion Airport,LSGS,60.0
+THESSALONIKI/MAKEDONIA airport,Thessaloniki Macedonia International Airport,LGTS,72.4
+VOLOS airport,Vologda Airport,ULWW,66.7
+ZAKINTHOS/DIONISIOS SOLOMOS airport,Zakynthos International Airport Dionysios Solomos,LGZA,72.5
+Unknown airport - GREECE,,,0.0
+FUERTEVENTURA airport,,,0.0
+LA GOMERA airport,Almería Airport,LEAM,62.5
+HIERRO airport,Viterbo Airport,LIRV,61.5
+LA PALMA airport,Parma Airport,LIMP,61.5
+GRAN CANARIA airport,Santa Maria Airport,LPAZ,60.9
+LANZAROTE airport,,,0.0
+TENERIFE SUR/REINA SOFIA airport,,,0.0
+TENERIFE NORTE airport,,,0.0
+CEUTA airport,,,0.0
+MELILLA airport,Lille Airport,LFQQ,66.7
+ALBACETE airport,,,0.0
+ALICANTE airport,,,0.0
+ALMERIA airport,Almería Airport,LEAM,85.7
+AMPURIABRAVA (GIRONA) airport,,,0.0
+ASTURIAS airport,Asturias Airport,LEAS,100.0
+ASTORGA (LEON) airport,,,0.0
+CORDOBA airport,Córdoba Airport,LEBA,85.7
+BILBAO airport,,,0.0
+BURGOS airport,Burgos Airport,LEBG,100.0
+BARCELONA/EL PRAT airport,Josep Tarradellas Barcelona-El Prat Airport,LEBL,61.5
+BADAJOZ airport,Badajoz Airport,LEBZ,100.0
+CASTELLON (CASTELLON) airport,,,0.0
+A CORUNA airport,A Coruña Airport,LECO,87.5
+EL CASTANO (CIUDAD REAL) airport,,,0.0
+MADRID/CUATRO VIENTOS airport,Madrid-Cuatro Vientos Airport,LECU,95.2
+MADRID-COLMENAR VIEJO airport,Madrid-Cuatro Vientos Airport,LECU,66.7
+ROTA airport,Horta Airport,LPHR,66.7
+ALTAREJOS-GUADALCANAL (SEVILLA) airport,,,0.0
+GIRONA airport,Kiruna Airport,ESNQ,66.7
+GRANADA/FEDERICO GARCIA LORCA GRANADA-JAEN airport,,,0.0
+HUESCA/PIRINEOS airport,,,0.0
+IBIZA airport,Ibiza Airport,LEIB,100.0
+JEREZ airport,Jerez Airport,LEJR,100.0
+LA JULIANA (SEVILLA) airport,,,0.0
+MURCIA/SAN JAVIER airport,San Javier Airport,LELC,74.1
+SABADELL airport,Svalbard Airport,ENSB,62.5
+LEON airport,Weston Airport,EIWT,60.0
+LOGRONO/AGONCILLO airport,Logroño-Agoncillo Airport,LELO,88.2
+MILUCE (NAVARRA) airport,,,0.0
+ADOLFO SUAREZ MADRID-BARAJAS airport,Adolfo Suárez Madrid–Barajas Airport,LEMD,92.9
+MALAGA/COSTA DEL SOL airport,Málaga-Costa del Sol Airport,LEMG,90.0
+MENORCA airport,Menorca Airport,LEMH,100.0
+MURCIA/AEROPUERTO DE LA REGION DE MURCIA AIRPORT,,,0.0
+LA MORGAL (ASTURIAS) airport,,,0.0
+MUCHAMIEL (ALICANTE) airport,,,0.0
+OCANA (TOLEDO) airport,,,0.0
+PALMA DE MALLORCA airport,Palma de Mallorca Airport,LEPA,100.0
+CASAS DE LOS PINOS (CUENCA) airport,,,0.0
+PAMPLONA airport,Pamplona Airport,LEPP,100.0
+REUS airport,Reus Airport,LERS,100.0
+SALAMANCA airport,Salamanca Airport,LESA,100.0
+MALLORCA/SON BONET airport,,,0.0
+PALMA/SON SAN JUAN airport,,,0.0
+SAN SEBASTIAN airport,San Sebastián Airport,LESO,92.3
+SANTIAGO airport,Santa Maria Airport,LPAZ,63.2
+MADRID/TORREJON airport,,,0.0
+VALENCIA airport,Valencia Airport,LEVC,100.0
+VALLADOLID airport,Valladolid Airport,LEVD,100.0
+VILLARALBO (ZAMORA) airport,,,0.0
+CUATRO VIENTOS airport,Madrid-Cuatro Vientos Airport,LECU,80.0
+VITORIA airport,Vitoria Airport,LEVT,100.0
+VIGO airport,Vigo Airport,LEVX,100.0
+SEVE BALLESTEROS-SANTANDER airport,Seve Ballesteros-Santander Airport,LEXJ,100.0
+ZARAGOZA airport,,,0.0
+SEVILLA airport,,,0.0
+Other airport - SPAIN,,,0.0
+DZAOUDZI airport,,,0.0
+LA REUNION-ROLAND GARROS airport,,,0.0
+SAINT PIERRE PIERREFONDS airport,,,0.0
+CALAIS-DUNKERQUE airport,,,0.0
+LE TOUQUET-COTE D'OPALE airport,Le Touquet-Côte d'Opale Airport,LFAT,95.7
+VALENCIENNES-DENAIN airport,Valenciennes-Denain Airfield,LFAV,80.9
+AGEN-LA GARENNE airport,Agen La Garenne airport,LFBA,93.3
+BORDEAUX-MERIGNAC airport,Bordeaux–Mérignac Airport,LFBD,88.2
+BERGERAC-ROUMANIERE airport,,,0.0
+LA ROCHELLE-ILE DE RE airport,La Rochelle Île de Ré Airport,LFBH,85.7
+POITIERS-BIARD airport,Poitiers-Biard Airport,LFBI,100.0
+MONTLUCON-GUERET airport,Montluçon-Guéret Airport,LFBK,87.5
+LIMOGES-BELLEGARDE airport,,,0.0
+NIORT-MARAIS POITEVIN airport,Niort - Marais Poitevin Airport,LFBN,95.5
+TOULOUSE/BLAGNAC airport,Toulouse-Blagnac Airport,LFBO,93.8
+PAU-PYRENEES airport,Pau Pyrénées Airport,LFBP,75.0
+TARBES LOURDES PYRENEES airport,Tarbes-Lourdes-Pyrénées Airport,LFBT,82.6
+ANGOULEME-BRIE-CHAMPNIERS airport,Angoulême Brie-Champniers airport,LFBU,92.0
+BRIVE/LA ROCHE airport,Brive Souillac airport,LFSL,64.3
+PERIGEUX-BASSILLAC airport,Périgueux-Bassillac Airport,LFBX,91.9
+BIARRITZ-PAYS BASQUE airport,Biarritz Pays Basque airport,LFBZ,95.0
+CAHORS-LALBENQUE airport,Cahors Lalbenque airport,LFCC,93.8
+ARCACHON-LA TESTE DE BUCH airport,Aérodrome d'Arcachon-La Teste-de-Buch,LFCH,74.2
+ALBI-LE SEQUESTRE airport,Albi Le Sequestre airport,LFCI,94.1
+CASTRES MAZAMET airport,Castres Mazamet Airport,LFCK,100.0
+RODEZ-AVEYRON airport,Rodez–Aveyron Airport,LFCR,92.3
+ROCHEFORT-CHARENTE-MARITIME airport,,,0.0
+OUESSANT airport,,,0.0
+ILE D YEU airport,,,0.0
+COLMAR HOUSSEN airport,Colmar Houssen airport,LFGA,100.0
+DOLE-TAVAUX airport,Dole Tavaux Airport,LFGJ,90.9
+MOULINS/AVERMES airport,,,0.0
+AUBENAS-ARDECHE MERIDIONALE airport,Aberdeen International Airport,EGPD,61.2
+LE PUY-LOUDES airport,Les Eplatures Airport,LSGC,53.8
+METZ NANCY-LORRAINE airport,Metz-Nancy-Lorraine Airport,LFJL,94.7
+ANGERS MARCE airport,Angers Marcé airport,LFJR,91.7
+BASTIA-PORETTA airport,Bastia-Poretta International airport,LFKB,66.7
+CALVI-SAINTE-CATHERINE airport,Calvi Sainte Catherine Airport,LFKC,90.9
+FIGARI-SUD-CORSE airport,Figari Sud-Corse Airport,LFKF,93.8
+AJACCIO-NAPOLEON-BONAPARTE airport,Ajaccio Napoléon Bonaparte airport,LFKJ,88.5
+AUXERRE-BRANCHES airport,Auxerre Branches airport,LFLA,93.8
+CHAMBERY-AIX-LES-BAINS airport,Chambéry Aix les Bains airport,LFLB,81.8
+CLERMONT-FERRAND-AUVERGNE airport,Clermont-Ferrand Auvergne airport,LFLC,96.0
+BOURGES airport,Bourges airport,LFLD,100.0
+GRENOBLE-LE VERSOUD airport,,,0.0
+CHALON-CHAMPFORGEUIL airport,Valence-Chabeuil Airport,LFLU,61.1
+COURCHEVEL airport,,,0.0
+LYON SAINT-EXUPERY airport,Lyon Saint-Exupéry Airport,LFLL,94.4
+MACON CHARNAY airport,Mâcon-Charnay Airfield,LFLM,62.9
+SAINT-YAN airport,Saint-Yan Airport,LFLN,100.0
+ROANNE airport,Ronneby Airport,ESDF,76.9
+ANNECY-MEYTHET airport,Annecy Meythet airport,LFLP,92.9
+GRENOBLE-ISERE airport,Grenoble Alpes Isère Airport,LFLS,70.6
+VALENCE-CHABEUIL airport,Valence-Chabeuil Airport,LFLU,100.0
+VICHY-CHARMEIL airport,Vichy-Charmeil Airport,LFLV,100.0
+AURILLAC airport,Aurillac airport,LFLW,100.0
+CHATEAUROUX-DEOLS airport,Châteauroux Déols airport,LFLX,82.4
+LYON-BRON airport,Lyon Bron Airport,LFLY,88.9
+CANNES-MANDELIEU airport,Cannes Mandelieu Airport,LFMD,93.8
+SAINT-ETIENNE-LOIRE airport,Saint-Étienne-Bouthéon Airport,LFMH,68.3
+CARCASSONNE-SALVAZA airport,Carcassonne Salvaza Airport,LFMK,94.7
+MARSEILLE-PROVENCE airport,Marseille Provence Airport,LFML,94.4
+NICE-COTE D AZUR airport,Nice-Côte d'Azur Airport,LFMN,87.5
+PERPIGNAN RIVESALTES airport,Perpignan-Rivesaltes (Llabanère) Airport,LFMP,73.1
+LE CASTELLET airport,Le Castellet Airport,LFMQ,100.0
+MONTPELLIER MEDITERRANEE airport,Montpellier-Méditerranée Airport,LFMT,87.5
+BEZIERS-VIAS airport,Béziers Vias airport,LFMU,83.3
+AVIGNON-CAUMONT airport,Avignon Caumont airport,LFMV,93.3
+GAP-TALLARD airport,,,0.0
+BEAUVAIS-TILLE airport,Beauvais-Tillé airport,LFOB,92.9
+SAUMUR SAINT FLORENT airport,,,0.0
+LE HAVRE-OCTEVILLE airport,Le Havre-Octeville Airport,LFOH,100.0
+CHALONS-VATRY airport,Chalons Vatry airport,LFOK,92.3
+ROUEN-VALLEE DE SEINE airport,Rouen Vallée de Seine Airport,LFOP,90.5
+TOURS VAL DE LOIRE airport,Tours Val de Loire Airport,LFOT,100.0
+CHOLET-LE PONTREAU airport,,,0.0
+LAVAL-ENTRAMMES airport,Laval-Entrammes Airport,LFOV,100.0
+ORLEANS SAINT DENIS DE L HOTEL airport,,,0.0
+PARIS-CHARLES DE GAULLE airport,Charles de Gaulle International Airport,LFPG,63.0
+PARIS-ORLY airport,Paris-Orly Airport,LFPO,100.0
+REIMS-PRUNAY airport,,,0.0
+TROYES-BARBEREY airport,Troyes-Barberey Airport,LFQB,100.0
+NEVERS-FOURCHAMBAULT airport,Nevers-Fourchambault Airport,LFQG,100.0
+MAUBEUGE-ELESMES airport,,,0.0
+LILLE-LESQUIN airport,,,0.0
+MERVILLE-CALONNE airport,Merville-Calonne Airport,LFQT,100.0
+CHARLEVILLE-MEZIERES airport,,,0.0
+ANGERS/AVRILLE airport,Angers Marcé airport,LFJR,69.2
+BREST-BRETAGNE airport,Brest Bretagne airport,LFRB,92.9
+CHERBOURG-MAUPERTUS airport,Cherbourg Manche airport,LFRC,68.6
+DINARD PLEURTUIT SAINT MALO airport,Dinard Pleurtuit Saint-Malo airport,LFRD,96.3
+LA BAULE-ESCOUBLAC airport,La Baule-Escoublac Airport,LFRE,100.0
+DEAUVILLE-NORMANDIE airport,Deauville Normandie airport,LFRG,94.7
+LORIENT-LANN-BIHOUE airport,,,0.0
+LA ROCHE SUR YON LES AJONCS airport,La Roche-sur-Yon Les Ajoncs Airport,LFRI,92.6
+CAEN-CARPIQUET airport,Caen Carpiquet airport,LFRK,92.9
+LE MANS-ARNAGE airport,Le Mans-Arnage Airport,LFRM,100.0
+RENNES SAINT JACQUES airport,Rennes-Saint-Jacques Airport,LFRN,90.0
+LANNION airport,Lannion Airport,LFRO,100.0
+QUIMPER-PLUGUFFAN airport,,,0.0
+NANTES ATLANTIQUE airport,Nantes Atlantique Airport,LFRS,100.0
+SAINT BRIEUC ARMOR airport,Saint-Brieuc-Armor Airport,LFRT,88.9
+MORLAIX PLOUJEAN airport,Morlaix-Ploujean Airport,LFRU,93.8
+VANNES-MEUCON airport,Vannes-Meucon Airport,LFRV,100.0
+SAINT-NAZAIRE-MONTOIR airport,Saint-Nazaire-Montoir Airport,LFRZ,100.0
+BALE-MULHOUSE airport,,,0.0
+DIJON-LONGVIC airport,Dijon Longvic airport,LFSD,92.3
+EPINAL-MIRECOURT airport,Épinal Mirecourt Airport,LFSG,87.5
+NANCY-ESSEY airport,Nancy-Essey Airport,LFSN,100.0
+REIMS/CHAMPAGNE airport,,,0.0
+STRASBOURG-ENTZHEIM airport,Strasbourg Airport,LFST,69.0
+CANNES/PALM BEACH airport,,,0.0
+HYERES-LE PALYVESTRE airport,,,0.0
+NIMES-GARONS airport,,,0.0
+LA MOLE airport,,,0.0
+SAINT PIERRE airport,San Javier Airport,LELC,63.6
+GROSTENQUIN airport,,,0.0
+PARIS airport system,,,0.0
+STRASBOURG airport System,Strasbourg Airport,LFST,71.4
+CAYENNE-FELIX-EBOUE airport,,,0.0
+AIME CESAIRE/MARTINIQUE airport,,,0.0
+"SAINT MARTIN, GRAND CASE, GUADELOUPE airport",,,0.0
+SAINT BARTHELEMY/FRENCH ANTILLES airport,,,0.0
+MARIE GALANTE airport,Mariehamn Airport,EFMA,63.6
+POINTE-A-PITRE/LE RAIZET/GUADELOUPE airport,,,0.0
+LES SAINTES/TERRE DE HAUT/FRENCH ANTILLES airport,,,0.0
+DUBROVNIK/CILIPI airport,,,0.0
+PULA airport,Pula Airport,LDPL,100.0
+RIJEKA/KRK airport,Rijeka Airport,LDRI,75.0
+SPLIT/KASTELA airport,,,0.0
+ZAGREB/FRANJO TUDJMAN airport,Zagreb Franjo Tuđman International Airport,LDZA,69.1
+ZADAR/ZEMUNIK airport,,,0.0
+CROTONE airport,,,0.0
+BARI/PALESE airport,,,0.0
+FOGGIA/GINO LISA airport,Foggia Gino Lisa Airport,LIBF,100.0
+TARANTO/GROTTAGLIE airport,Taranto-Grottaglie Marcello Arlotta Airport,LIBG,64.2
+PESCARA airport,Pechora Airport,UUYP,71.4
+BRINDISI/CASALE airport,Brindisi Airport,LIBR,69.6
+LAMEZIA TERME airport,,,0.0
+COMISO airport,Comiso Airport,LICB,100.0
+CATANIA/FONTANAROSSA airport,Catania-Fontanarossa Airport,LICC,95.0
+LAMPEDUSA airport,Lampedusa Airport,LICD,100.0
+PANTELLERIA airport,Pantelleria Airport,LICG,100.0
+PALERMO/PUNTA RAISI airport,,,0.0
+REGGIO CALABRIA airport,Reggio Calabria Airport,LICR,100.0
+TRAPANI/BIRGI airport,,,0.0
+ALGHERO/FERTILIA airport,Alghero-Fertilia Airport,LIEA,93.8
+CAGLIARI/ELMAS airport,Cagliari Elmas Airport,LIEE,100.0
+OLBIA/COSTA SMERALDA airport,Olbia Costa Smeralda Airport,LIEO,100.0
+TORTOLI/ARBATAX airport,,,0.0
+MILANO/MALPENSA airport,Milano Linate Airport,LIML,64.3
+BERGAMO/ORIO AL SERIO airport,,,0.0
+TORINO/CASELLE airport,Le Castellet Airport,LFMQ,61.5
+ALBENGA airport,Valencia Airport,LEVC,66.7
+GENOVA/SESTRI airport,,,0.0
+MILANO/LINATE airport,Milano Linate Airport,LIML,100.0
+PARMA airport,Parma Airport,LIMP,100.0
+AOSTA airport,Alta Airport,ENAT,66.7
+CUNEO/LEVALDIGI airport,,,0.0
+BOLZANO airport,Bolzano Airport,LIPB,100.0
+BOLOGNA/BORGO PANIGALE airport,,,0.0
+TREVISO/S.ANGELO airport,Treviso Airport,LIPH,60.9
+FORLI airport,Pori Airport,EFPO,66.7
+VERONA/BOSCOMANTICO airport,,,0.0
+BRESCIA/MONTICHIARI airport,,,0.0
+TRIESTE/RONCHI DEI LEGIONARI airport,,,0.0
+RIMINI/MIRAMARE airport,,,0.0
+VERONA/VILLAFRANCA airport,Verona Villafranca Valerio Catullo Airport,LIPX,69.2
+ANCONA/FALCONARA airport,,,0.0
+VENEZIA/TESSERA airport,,,0.0
+ROMA/CIAMPINO airport,,,0.0
+ROMA/FIUMICINO airport,,,0.0
+MARINA DI CAMPO airport,Marina di Campo Airport,LIRJ,100.0
+NAPOLI/CAPODICHINO airport,,,0.0
+PISA/S. GIUSTO airport,,,0.0
+FIRENZE/PERETOLA airport,"Florence Airport, Peretola",LIRQ,80.0
+GROSSETO airport,,,0.0
+PERUGIA/S. FRANCESCO airport,,,0.0
+TRIESTE airport,Trieste Airport,LIPQ,100.0
+Unknown airport - ITALY,,,0.0
+LARNAKA/INTL airport,,,0.0
+PAFOS/INTL airport,,,0.0
+RIGA airport,Rijeka Airport,LDRI,60.0
+KAUNAS INTL airport,Kaunas International Airport,EYKA,71.0
+PALANGA/INTERNATIONAL airport,Palanga International Airport,EYPA,100.0
+SIAULIAI/INTERNATIONAL airport,Šiauliai International Airport,EYSA,95.5
+VILNIUS/INTERNATIONAL airport,Vilnius International Airport,EYVI,100.0
+LUXEMBOURG airport,Sumburgh Airport,EGPB,66.7
+BUDAPEST/LISZT FERENC INTERNATIONAL airport,Budapest Liszt Ferenc International Airport,LHBP,100.0
+DEBRECEN airport,Bremen Airport,EDDW,71.4
+LUQA airport,Lugano Airport,LSZA,60.0
+AMSTERDAM/SCHIPHOL airport,Amsterdam Airport Schiphol,EHAM,97.3
+MAASTRICHT/AACHEN airport,Maastricht Aachen Airport,EHBK,100.0
+EINDHOVEN airport,Eindhoven Airport,EHEH,100.0
+GRONINGEN/EELDE airport,Groningen Airport Eelde,EHGG,96.8
+ROTTERDAM airport,Rotterdam The Hague Airport,EHRD,64.3
+GRAZ airport,Graz Airport,LOWG,100.0
+INNSBRUCK airport,Innsbruck Airport,LOWI,100.0
+KLAGENFURT airport,Klagenfurt Airport,LOWK,100.0
+LINZ airport,Lublin Airport,EPLB,60.0
+SALZBURG airport,Salzburg Airport,LOWS,100.0
+WIEN-SCHWECHAT airport,,,0.0
+BYDGOSZCZ/SZWEDEROWO airport,,,0.0
+GDANSK IM LECHA WALESY airport,Gdańsk Lech Wałęsa Airport,EPGD,70.0
+KRAKOW/BALICE airport,,,0.0
+KATOWICE/PYRZOWICE airport,,,0.0
+LUBLIN airport,Lublin Airport,EPLB,100.0
+LODZ/LUBLINEK airport,Lublin Airport,EPLB,63.2
+WARSZAWA/MODLIN airport,Warsaw Modlin Airport,EPMO,92.9
+POZNAN/LAWICA airport,Poznań-Ławica Airport,EPPO,76.9
+RZESZOW/JASIONKA airport,Rzeszów-Jasionka Airport,EPRZ,87.5
+SZCZECIN/GOLENIOW airport,Solidarity Szczecin–Goleniów Airport,EPSC,66.7
+OLSZTYN-MAZURY airport,Olsztyn-Mazury Airport,EPSY,100.0
+WARSZAWA/CHOPINA airport,Warsaw Chopin Airport,EPWA,89.7
+WROCLAW/STRACHOWICE airport,,,0.0
+SANTA MARIA airport,Santa Maria Airport,LPAZ,100.0
+BRAGANCA airport,Bragança Airport,LPBG,87.5
+BEJA airport,,,0.0
+CORVO airport,,,0.0
+CASCAIS airport,Cascais Airport,LPCS,100.0
+FLORES airport,Flores Airport,LPFL,100.0
+FARO airport,,,0.0
+FUNCHAL/MADEIRA I. airport,,,0.0
+GRACIOSA airport,Graciosa Airport,LPGR,100.0
+HORTA airport,Horta Airport,LPHR,100.0
+LAJES airport,Lajes Airport,LPLA,100.0
+MADEIRA airport,,,0.0
+PONTA DELGADA airport,,,0.0
+PICO airport,Pico Airport,LPPI,100.0
+PORTIMAO airport,Portimão Airport,LPPM,87.5
+SANTA MARIA OAC/FIC airport,Santa Maria Airport,LPAZ,73.3
+PORTO airport,Portorož Airport,LJPZ,76.9
+PORTO SANTO airport,Porto Santo Airport,LPPS,100.0
+LISBOA airport,Elista Airport,URWI,66.7
+SAO JORGE airport,São Jorge Airport,LPSJ,88.9
+VILA REAL airport,Vila Real Airport,LPVR,100.0
+VISEU airport,Visby Airport,ESSV,60.0
+ARAD airport,Varna Airport,LBWN,66.7
+BACAU/GEORGE ENESCU airport,Bacău George Enescu International  Airport,LRBC,69.2
+BAIA MARE airport,Naryan Mar Airport,ULAM,63.2
+BUCURESTI/BANEASA-AUREL VLAICU airport,Bucharest Băneasa Aurel Vlaicu International Airport,LRBS,70.3
+CONSTANTA/MIHAIL KOGALNICEANU airport,,,0.0
+CLUJ NAPOCA/AVRAM IANCU airport,,,0.0
+CARANSEBES airport,Caransebeş Airport,LRCS,90.0
+CRAIOVA airport,Graciosa Airport,LPGR,66.7
+IASI airport,,,0.0
+ORADEA airport,Morava Airport,LYKV,66.7
+BUCURESTI/HENRI COANDA airport,Bucharest Henri Coandă International Airport,LROP,69.0
+SIBIU airport,Sitia Airport,LGST,60.0
+SATU MARE airport,Santa Maria Airport,LPAZ,70.0
+SUCEAVA/STEFAN CEL MARE airport,Suceava Ștefan cel Mare International Airport,LRSV,73.3
+TULCEA/DELTA DUNARII airport,Tulcea Danube Delta Airport,LRTC,61.5
+TARGU MURES/TRANSILVANIA airport,Târgu Mureş Transilvania International Airport,LRTM,71.0
+TIMISOARA/TRAIAN VUIA airport,Timișoara Traian Vuia International Airport,LRTR,71.4
+LJUBLJANA/BRNIK airport,Ljubljana Jože Pučnik Airport,LJLJ,72.2
+BRATISLAVA/M.R.STEFANIK airport,,,0.0
+KOSICE airport,Kunovice Airport,LKKU,71.4
+Unknown airport - SLOVAKIA,,,0.0
+ENONTEKIO airport,Enontekio Airport,EFET,100.0
+HALLI airport,Halli Airport,EFHA,100.0
+HERNESAARI airport,Kuressaare Airport,EEKE,50.0
+HELSINKI-MALMI airport,Helsinki Vantaa Airport,EFHK,62.1
+HELSINKI-VANTAA airport,Helsinki Vantaa Airport,EFHK,93.3
+HANKO airport,Shannon Airport,EINN,66.7
+HYVINKAA airport,,,0.0
+IMMOLA airport,Mora Airport,ESKM,60.0
+IVALO airport,Ivalo Airport,EFIV,100.0
+JOENSUU airport,Joensuu Airport,EFJO,100.0
+JYVASKYLA airport,Jyväskylä Airport,EFJY,77.8
+KAUHAVA airport,Kauhava Airfield,EFKA,60.9
+KEMI-TORNIO airport,Kemi-Tornio Airport,EFKE,100.0
+KAJAANI airport,Kajaani Airport,EFKI,100.0
+KOKKOLA-PIETARSAARI airport,Kokkola-Pietarsaari Airport,EFKK,100.0
+KUUSAMO airport,Kuusamo Airport,EFKS,100.0
+KITTILA airport,Sitia Airport,LGST,66.7
+KUOPIO airport,Kuopio Airport,EFKU,100.0
+LAHTI-VESIVEHMAA airport,,,0.0
+LIEKSA-NURMES airport,Leknes Airport,ENLK,63.2
+LAPPEENRANTA airport,Lappeenranta Airport,EFLP,100.0
+MARIEHAMN airport,Mariehamn Airport,EFMA,100.0
+MIKKELI airport,Mikkeli Airport,EFMI,100.0
+OULU airport,Oulu Airport,EFOU,100.0
+PORI airport,Pori Airport,EFPO,100.0
+PYHASALMI airport,,,0.0
+ROVANIEMI airport,Rovaniemi Airport,EFRO,100.0
+SAVONLINNA airport,Savonlinna Airport,EFSA,100.0
+SEINAJOKI airport,Seinäjoki Airport,EFSI,88.9
+SODANKYLA airport,Sodankyla Airport,EFSO,100.0
+TAMPERE-PIRKKALA airport,Tampere-Pirkkala Airport,EFTP,100.0
+TURKU airport,Turku Airport,EFTU,100.0
+UTTI airport,,,0.0
+VAASA airport,Vaasa Airport,EFVA,100.0
+VARKAUS airport,Varkaus Airport,EFVR,100.0
+YLIVIESKA airport,Ylivieska Airfield,EFYL,66.7
+Unknown airport - FINLAND,,,0.0
+ANGELHOLM airport,,,0.0
+RONNEBY airport,Ronneby Airport,ESDF,100.0
+GOTEBORG/LANDVETTER airport,Göteborg Landvetter Airport,ESGG,94.7
+JONKOPING airport,Jönköping Airport,ESGJ,77.8
+GOTEBORG/SAVE airport,Göteborg Landvetter Airport,ESGG,68.8
+STOCKHOLM/SKAVSTA airport,Stockholm Skavsta Airport,ESKN,100.0
+KALMAR airport,Kalmar Airport,ESMQ,100.0
+MALMO airport,Samos Airport,LGSM,60.0
+HALMSTAD airport,Halmstad Airport,ESMT,100.0
+VAXJO/KRONOBERG airport,Växjö Kronoberg Airport,ESMX,86.7
+SUNDSVALL-TIMRA airport,Sundsvall-Härnösand Airport,ESNN,70.6
+ORNSKOLDSVIK airport,Örnsköldsvik Airport,ESNO,83.3
+KIRUNA airport,Kiruna Airport,ESNQ,100.0
+SKELLEFTEA airport,Skellefteå Airport,ESNS,90.0
+UMEA airport,Umeå Airport,ESNU,75.0
+ARE OSTERSUND airport,Åre Östersund Airport,ESNZ,84.6
+OREBRO airport,Örebro Airport,ESOE,83.3
+KARLSTAD airport,Karlstad Airport,ESOK,100.0
+STOCKHOLM/VASTERAS airport,Stockholm Västerås Airport,ESOW,88.9
+LULEA/KALLAX airport,,,0.0
+OESTERSUND airport,Åre Östersund Airport,ESNZ,78.3
+STOCKHOLM/ARLANDA airport,Stockholm-Arlanda Airport,ESSA,94.1
+STOCKHOLM/BROMMA airport,Stockholm-Bromma Airport,ESSB,93.8
+LINKOPING/SAAB airport,Linköping City Airport,ESSL,64.3
+NORRKOPING/KUNGSANGEN airport,,,0.0
+KARLSTAD airport,Karlstad Airport,ESOK,100.0
+VISBY airport,Visby Airport,ESSV,100.0
+ANGELHOLM airport,,,0.0
+AKUREYRI airport,,,0.0
+EGILSSTADIR airport,Egilsstaðir Airport,BIEG,90.9
+ISAFJORDUR airport,Ísafjörður Airport,BIIS,70.0
+KEFLAVIK airport,,,0.0
+REYKJAVIK airport,,,0.0
+VESTMANNAEYJAR airport,Vestmannaeyjar Airport,BIVM,100.0
+ALESUND/VIGRA airport,Ålesund Airport,ENAL,60.0
+ANDOYA/ANDENES airport,"Andøya Airport, Andenes",ENAN,86.7
+NY-ALESUND/HAMNERABBEN airport,,,0.0
+ALTA airport,Alta Airport,ENAT,100.0
+BARENTSBURG airport,Augsburg Airport,EDMA,63.2
+"NORWAY ACC, BODO airport",,,0.0
+BERGEN/GRONNEVIKSOREN airport,,,0.0
+BJORNOYA airport,Bornholm Airport,EKRN,62.5
+FORDE/BRINGELAND airport,,,0.0
+BOMOEN airport,Bremen Airport,EDDW,66.7
+BRONNOYSUND/BRONNOY airport,"Brønnøysund Airport, Brønnøy",ENBN,75.0
+BODO airport,Bodø Airport,ENBO,75.0
+BERGEN/FLESLAND airport,"Bergen Airport, Flesland",ENBR,93.8
+BATSFJORD airport,Båtsfjord Airport,ENBS,88.9
+BERLEVAG airport,Berlevåg Airport,ENBV,87.5
+KRISTIANSAND/KJEVIK airport,Kristiansand Airport,ENCN,77.4
+GEILO/DAGALI airport,,,0.0
+DOKKA/THOMLEVOLD airport,,,0.0
+BARDUFOSS airport,Bardufoss Airport,ENDU,100.0
+EGGEMOEN airport,,,0.0
+EKOFISK airport,,,0.0
+HARSTAD/NARVIK/EVENES airport,Harstad/Narvik Airport,ENEV,80.0
+FROYA/FLATVAL airport,,,0.0
+STATFJORD B airport,Waterford Airport,EIWF,60.0
+FORDE/SENTRALSJUKEHUSET airport,,,0.0
+FAGERNES/LEIRIN airport,,,0.0
+FEDJE airport,,,0.0
+FLORO airport,Florø Airport,ENFL,80.0
+FORUS airport,Flores Airport,LPFL,72.7
+FRIGG airport,,,0.0
+FYRESDAL airport,,,0.0
+GULLKNAPP airport,,,0.0
+OSLO/GARDERMOEN airport,Oslo-Gardermoen International Airport,ENGM,63.6
+HAMAR/STAFSBERG airport,,,0.0
+HAUGESUND/KARMOY airport,"Haugesund Airport, Karmøy",ENHD,88.2
+HAMMERFEST airport,Hammerfest Airport,ENHF,100.0
+HASVIK airport,Húsavík Airport,BIHU,61.5
+HORNMOEN airport,,,0.0
+HOPEN airport,Hof-Plauen Airport,EDQM,66.7
+HOKKSUND airport,,,0.0
+HATTFJELLDAL/VOLLEN airport,,,0.0
+HONNINGSVAG/VALAN airport,"Honningsvåg Airport, Valan",ENHV,88.9
+ISFJORD airport,Båtsfjord Airport,ENBS,75.0
+JAN MAYEN airport,,,0.0
+JARLSBERG airport,Esbjerg Airport,EKEB,62.5
+KAUTOKEINO airport,Kuopio Airport,EFKU,62.5
+KRISTIANSUND/KVERNBERGET airport,"Kristiansund Airport, Kvernberget",ENKB,96.0
+KJELLER airport,,,0.0
+GOL/KLANTEN airport,,,0.0
+KIRKENES/HOYBUKTMOEN airport,"Kirkenes Airport, Høybuktmoen",ENKR,90.5
+FARSUND/LISTA airport,,,0.0
+LEKNES airport,Leknes Airport,ENLK,100.0
+LUNDE airport,Dundee Airport,EGPN,72.7
+MEHAMN airport,Mehamn Airport,ENMH,100.0
+MOLDE/ARO airport,"Molde Airport, Årø",ENML,70.0
+MOSJOEN/KJAERSTAD airport,"Mosjøen Airport, Kjærstad",ENMS,80.0
+LAKSELV/BANAK airport,"Lakselv Airport, Banak",ENNA,92.9
+NARVIK/FRAMNES airport,,,0.0
+NAMSOS airport,Samos Airport,LGSM,72.7
+NOTODDEN/TUVEN airport,Notodden Airport,ENNO,72.7
+OSEBERG A airport,Esbjerg Airport,EKEB,62.5
+ORLAND airport,Ørland Airport,ENOL,83.3
+OPPDAL/FAGERHAUG airport,,,0.0
+ORSTA-VOLDA/HOVDEN airport,"Ørsta-Volda Airport, Hovden",ENOV,89.5
+AASEGARDEN airport,Hawarden Airport,EGNR,66.7
+TANA BRU (TANA BRIDGE) airport,,,0.0
+"HAMMERFEST, FUGLENES airport",Hammerfest Airport,ENHF,66.7
+HATTFJELLDAL airport,,,0.0
+REGIONSYKEHUSET TC airport,,,0.0
+MO I RANA/ROSSVOLL airport,"Mo i Rana Airport, Røssvoll",ENRA,89.5
+ROGNAN airport,Hrodna Airport,UMMG,66.7
+RINGEBU/FRYA airport,,,0.0
+RAKKESTAD airport,,,0.0
+RORVIK/RYUM airport,"Rørvik Airport, Ryum",ENRM,83.3
+ROROS airport,Røros Airport,ENRO,80.0
+ROST airport,Røros Airport,ENRO,66.7
+REINSVOLL airport,Bristol Airport,EGGD,62.5
+MOSS/RYGGE airport,"Moss Airport, Rygge",ENRY,90.9
+SVEA airport,Säve Airport,ESGP,75.0
+SVALBARD/LONGYEAR airport,Svalbard Airport,ENSB,64.0
+SANDANE/ANDA airport,Santa Maria Airport,LPAZ,60.9
+SOGNDAL/HAUKASEN airport,,,0.0
+SVOLVAER/HELLE airport,"Svolvær Airport, Helle",ENSH,82.8
+STOKMARKNES/SKAGEN airport,"Stokmarknes Airport, Skagen",ENSK,94.7
+SLEIPNER A airport,,,0.0
+SKIEN/GEITERYGGEN airport,,,0.0
+STORD/SORSTOKKEN airport,"Stord Airport, Sørstokken",ENSO,88.2
+SORKJOSEN airport,Sørkjosen Airport,ENSR,88.9
+VARDO/SVARTNES airport,"Vardø Airport, Svartnes",ENSS,86.7
+SANDNESSJOEN/STOKKA airport,"Sandnessjøen Airport, Stokka",ENST,90.0
+TROMSO/LANGNES airport,,,0.0
+SANDEFJORD/TORP airport,"Sandefjord Airport, Torp",ENTO,93.8
+TRYSIL/SAETERASEN airport,,,0.0
+TYNSET airport,,,0.0
+KONGSVINGER airport,,,0.0
+KRISTIN airport,Kristianstad Airport,ESMK,73.7
+OS/VAKSINEN airport,Skien Airport,ENSN,62.5
+RAKKESTAD/RYGGE airport,,,0.0
+OST ADER/GULLKNALL airport,,,0.0
+TRONDHEIM/VAERNES airport,"Trondheim Airport, Værnes",ENVA,85.7
+VADSO airport,Vadsø Airport,ENVD,80.0
+VALLE/ARAKSOYENE airport,,,0.0
+VALHALL A airport,,,0.0
+VAEROY airport,Viterbo Airport,LIRV,61.5
+GUDRUN airport,,,0.0
+ELDFISK airport,Elista Airport,URWI,61.5
+VALLHALL PH airport,,,0.0
+YME airport,,,0.0
+EKOFISK A airport,,,0.0
+ALBUSKJELL F airport,,,0.0
+SOGN OG FJORDANE airport,,,0.0
+MANDAL airport,Sindal Airport,EKSN,66.7
+ROGALAND/ORRE airport,,,0.0
+HORDALAND airport,Ørland Airport,ENOL,66.7
+STAVANGER/SOLA airport,"Stavanger Airport, Sola",ENZV,93.3
+Unknown airport - NORWAY,,,0.0
+RARON airport,Varna Airport,LBWN,60.0
+ZERMATT airport,,,0.0
+BEX airport,,,0.0
+LES EPLATURES airport,Les Eplatures Airport,LSGC,100.0
+ECUVILLENS airport,,,0.0
+GENEVA airport,,,0.0
+SAANEN airport,Swansea Airport,EGFH,61.5
+LAUSANNE-LA BLECHERETTE airport,,,0.0
+NEUCHATEL airport,,,0.0
+REICHENBACH airport,Mönchengladbach Airport,EDLN,61.5
+SION airport,Sion Airport,LSGS,100.0
+GRUYERES airport,Guernsey Airport,EGJB,62.5
+YVERDON-LES-BAINS airport,,,0.0
+GSTAAD-INN GRUND airport,,,0.0
+COLLOMBEY-MURAZ airport,,,0.0
+GAMPEL airport,Gomel Airport,UMGG,72.7
+DUBENDORF airport,Düsseldorf Airport,EDDL,63.2
+MOLLIS airport,Mius Airport,RU-0043,60.0
+BUOCHS airport,Burgos Airport,LEBG,66.7
+LANGENTHAL airport,Klagenfurt Airport,LOWK,60.0
+AMBRI airport,,,0.0
+TRIENGEN airport,Trieste Airport,LIPQ,66.7
+WANGEN-LACHEN airport,,,0.0
+ZWEISIMMEN airport,,,0.0
+LUGANO airport,Lugano Airport,LSZA,100.0
+BERN-BELP airport,Benbecula Airport,EGPL,66.7
+BAD RAGAZ airport,Badajoz Airport,LEBZ,62.5
+BIRRFELD airport,Bielefeld Airport,EDLI,70.6
+GRENCHEN airport,Grenchen Airfield,LSZG,64.0
+ZURICH airport,Zürich Airport,LSZH,83.3
+SPECK-FEHRALTORF airport,,,0.0
+LOCARNO airport,Lugano Airport,LSZA,61.5
+BALE-MULHOUSE airport,,,0.0
+BIEL-KAPPELEN airport,,,0.0
+ST. GALLEN-ALTENRHEIN airport,Sankt Gallen Altenrhein Airport,LSZR,86.4
+SAMEDAN airport,Samedan Airport,LSZS,100.0
+BUTTWIL airport,,,0.0
+SITTERDORF airport,Düsseldorf Airport,EDDL,60.0
+SOUTH MARSTON airport,Southampton Airport,EGHI,75.0
+ST KILDA airport,,,0.0
+BELFAST/ALDERGROVE airport,,,0.0
+BELFAST/CITY airport,George Best Belfast City Airport,EGAC,66.7
+LONDONDERRY/EGLINTON airport,London Luton Airport,EGGW,68.8
+BIRMINGHAM airport,Birmingham Airport,EGBB,100.0
+COVENTRY airport,Coventry Airport,EGBE,100.0
+GLOUCESTERSHIRE airport,Gloucestershire Airport,EGBJ,100.0
+MANCHESTER airport,Manchester Airport,EGCC,100.0
+MANCHESTER WOODFORD airport,Manchester Airport,EGCC,69.0
+DONCASTER SHEFFIELD airport,,,0.0
+NEWQUAY airport,,,0.0
+LYNEHAM airport,Mehamn Airport,ENMH,61.5
+CAMPBELTOWN airport,Campbeltown Airport,EGEC,100.0
+NORTH RONALDSAY airport,,,0.0
+STRONSAY airport,Stornoway Airport,EGPO,70.6
+LERWICK/TINGWALL airport,,,0.0
+HAVERFORDWEST airport,Haverfordwest Airport,EGFE,100.0
+CARDIFF airport,Rif Airport,BIRF,60.0
+SWANSEA airport,Swansea Airport,EGFH,100.0
+BRISTOL airport,Bristol Airport,EGGD,100.0
+LIVERPOOL airport,Liverpool John Lennon Airport,EGGP,60.0
+LONDON LUTON airport,London Luton Airport,EGGW,100.0
+PLYMOUTH airport,,,0.0
+SCILLY ISLES/ST MARYS airport,,,0.0
+BOURNEMOUTH airport,Bournemouth Airport,EGHH,100.0
+SOUTHAMPTON airport,Southampton Airport,EGHI,100.0
+BEMBRIDGE airport,Humberside Airport,EGNJ,63.2
+PENZANCE airport,Penza Airport,UWPP,76.9
+NEWQUAY airport,,,0.0
+CHICHESTER/GOODWOOD airport,,,0.0
+ALDERNEY airport,Alderney Airport,EGJA,100.0
+GUERNSEY airport,Guernsey Airport,EGJB,100.0
+JERSEY airport,Jersey Airport,EGJJ,100.0
+SHOREHAM airport,Horta Airport,LPHR,61.5
+BIGGIN HILL airport,London Biggin Hill Airport,EGKB,75.9
+LONDON GATWICK airport,London Gatwick Airport,EGKK,100.0
+REDHILL airport,,,0.0
+LONDON/CITY airport,London City Airport,EGLC,100.0
+FARNBOROUGH airport,Farnborough Airport,EGLF,100.0
+BLACKBUSHE airport,Blackbushe Airport,EGLK,100.0
+LONDON HEATHROW airport,London Heathrow Airport,EGLL,100.0
+SOUTHEND airport,London Southend Airport,EGMC,69.6
+LYDD airport,,,0.0
+MANSTON airport,Weston Airport,EIWT,61.5
+CARLISLE airport,Lille Airport,LFQQ,61.5
+RETFORD/GAMSTON airport,,,0.0
+BLACKPOOL airport,Blackpool Airport,EGNH,100.0
+HUMBERSIDE airport,Humberside Airport,EGNJ,100.0
+LEEDS BRADFORD airport,Leeds Bradford Airport,EGNM,100.0
+WARTON airport,Weston Airport,EIWT,66.7
+HAWARDEN airport,Hawarden Airport,EGNR,100.0
+ISLE OF MAN airport,Isle of Man Airport,EGNS,100.0
+NEWCASTLE airport,Le Castellet Airport,LFMQ,66.7
+DURHAM TEES VALLEY airport,,,0.0
+EAST MIDLANDS airport,East Midlands Airport,EGNX,100.0
+KIRKWALL airport,Kirkwall Airport,EGPA,100.0
+SUMBURGH airport,Sumburgh Airport,EGPB,100.0
+WICK airport,,,0.0
+ABERDEEN/DYCE airport,,,0.0
+INVERNESS airport,Inverness Airport,EGPE,100.0
+GLASGOW airport,Glasgow Airport,EGPF,100.0
+EDINBURGH airport,Edinburgh Airport,EGPH,100.0
+ISLAY airport,Islay Airport,EGPI,100.0
+PRESTWICK airport,Glasgow Prestwick Airport,EGPK,69.2
+BENBECULA airport,Benbecula Airport,EGPL,100.0
+SCATSTA airport,,,0.0
+DUNDEE airport,Dundee Airport,EGPN,100.0
+STORNOWAY airport,Stornoway Airport,EGPO,100.0
+BARRA airport,Barra Airport,EGPR,100.0
+TIREE airport,Tiree Airport,EGPU,100.0
+UNST airport,,,0.0
+CAMBRIDGE airport,Cambridge City Airport,EGSC,78.3
+NORWICH airport,Norwich Airport,EGSH,100.0
+LONDON STANSTED airport,London Stansted Airport,EGSS,100.0
+SHEFFIELD CITY airport,,,0.0
+CRANFIELD airport,Cranfield Airport,EGTC,100.0
+EXETER airport,,,0.0
+BRISTOL FILTON airport,Bristol Airport,EGGD,66.7
+OLD WARDEN airport,Hawarden Airport,EGNR,66.7
+OXFORD/KIDLINGTON airport,,,0.0
+MILDENHALL airport,RAF Mildenhall,EGUN,83.3
+BRIZE NORTON airport,RAF Brize Norton,EGVN,85.7
+MIDDLE WALLOP airport,,,0.0
+NORTHOLT airport,RAF Northolt,EGWU,80.0
+ALCONBURY airport,,,0.0
+WADDINGTON airport,RAF Waddington,EGXW,83.3
+SARAJEVO airport,,,0.0
+TUZLA airport,Pula Airport,LDPL,66.7
+PODGORICA airport,Pori Airport,EFPO,61.5
+TIVAT airport,Tivat Airport,LYTV,100.0
+OHRID airport,Pori Airport,EFPO,66.7
+SKOPJE airport,,,0.0
+BEOGRAD/NIKOLA TESLA airport,Belgrade Nikola Tesla Airport,LYBE,92.7
+NIS airport,,,0.0
+ANKARA/ESENBOGA airport,,,0.0
+ADANA airport,Samedan Airport,LSZS,66.7
+ANTALYA airport,Saint-Yan Airport,LFLN,25.0
+GAZIANTEP airport,,,0.0
+KASTAMONU airport,Kuusamo Airport,EFKS,62.5
+KONYA airport,,,0.0
+AMASYA/MERZIFON airport,,,0.0
+SIVAS/NURI DEMIRAG airport,,,0.0
+ZONGULDAK/CAYCUMA airport,,,0.0
+MALATYA airport,Alta Airport,ENAT,54.5
+KAYSERI airport,Kassel Airport,EDVK,61.5
+TOKAT airport,Tivat Airport,LYTV,60.0
+DENIZLI/CARDAK airport,,,0.0
+KAPADOKYA airport,,,0.0
+ISTANBUL/ATATURK airport,İstanbul Atatürk Airport,LTBA,87.5
+AYDIN/CILDIR airport,,,0.0
+BALIKESIR/MERKEZ airport,,,0.0
+CANAKKALE airport,,,0.0
+IZMIR/ADNAN MENDERES airport,,,0.0
+USAK airport,,,0.0
+KOCAELI/CENGIZ TOPEL airport,,,0.0
+BURSA/YENISEHIR airport,,,0.0
+MUGLA/DALAMAN airport,,,0.0
+TEKIRDAG/CORLU airport,Tekirdağ Çorlu Airport,LTBU,85.7
+ESKISEHIR/HASAN POLATKAN airport,,,0.0
+ZAFER airport,Zadar Airport,LDZD,60.0
+ELAZIG airport,,,0.0
+ORDU-GIRESUN airport,,,0.0
+DIYARBAKIR airport,,,0.0
+ERZINCAN airport,,,0.0
+ERZURUM airport,,,0.0
+KARS/HARAKANI airport,Kajaani Airport,EFKI,60.0
+TRABZON airport,,,0.0
+VAN/FERIT MELEN airport,,,0.0
+BATMAN airport,Samedan Airport,LSZS,61.5
+MUS airport,Mius Airport,RU-0043,85.7
+SIIRT airport,Sitia Airport,LGST,60.0
+SINOP airport,Sion Airport,LSGS,66.7
+KAHRAMANMARAS airport,Naryan Mar Airport,ULAM,60.9
+AGRI/AHMED-I HANI airport,,,0.0
+ADIYAMAN airport,,,0.0
+MARDIN airport,Mariehamn Airport,EFMA,66.7
+SANLIURFA/GAP airport,,,0.0
+IGDIR airport,,,0.0
+BINGOL airport,Bristol Airport,EGGD,61.5
+SIRNAK/SERAFETTIN ELCI airport,,,0.0
+HAKKARI/YUKSEKOVA SELAHADDIN EYYUBI airport,,,0.0
+HATAY airport,Alta Airport,ENAT,66.7
+CUKUROVA airport,,,0.0
+ISPARTA/S.DEMIREL airport,,,0.0
+BALIKESIR/KOCA SEYIT airport,,,0.0
+MUGLA/MILAS-BODRUM airport,,,0.0
+GAZIPASA-ALANYA airport,,,0.0
+SAMSUN/CARSAMBA airport,,,0.0
+ISTANBUL/SABIHA GOKCEN airport,,,0.0
+GOKCEADA airport,,,0.0
+ISTANBUL/ISTANBUL HAVALIMANI airport,,,0.0
+RIZE-ARTVIN,,,0.0
