@@ -47,7 +47,7 @@ outgoing_flights = {
     8: {"station": 10, "departure": 600},
     9: {"station": 10, "departure": 1000},
     10: {"station": 10, "departure": 1200},
-    11: {"station": 3, "departure": 250},
+    11: {"station": 3, "departure": 255},
     12: {"station": 5, "departure": 1250}
 }
 
