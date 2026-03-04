@@ -133,6 +133,7 @@ print("Model successfully created with bidirectional transfers.")
 # OBJECTIVE FUNCTIONS
 # ==========================================================
 
+
 # Z1: Maximize total synchronizations (outgoing + incoming)
 Z1 = gp.quicksum(P[i, k] for i in I_T for k in K_out) + \
      gp.quicksum(Q[i, m] for i in I_T for m in K_in)
