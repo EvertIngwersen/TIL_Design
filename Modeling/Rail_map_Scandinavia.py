@@ -21,8 +21,24 @@ import plotly.express as px
 from pathlib import Path
 from shapely.geometry import LineString
 
+# -----------------------------
+# Input parameters
+# -----------------------------
+
 # dwell time per stop (seconds)
 STOP_TIME = 3 * 60
+
+# Manual edges to be added to graph
+# Consistis of "name", "coordinates (start and end)", "track speed"
+manual_edges = [
+    ("Øresund bridge", 55.5990688, 12.7514874, 55.5655404, 12.9042758, 200),           # Border connection
+    ("Skottesjon - Ed", 58.9188632, 11.7195089, 58.9128502, 11.9275408, 120),          # Border connection
+    ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160), # Border connection
+    ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),       # Border connection
+    ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),           # Border connection
+    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80)               # Border connection
+]
+
 print("Dwell time per stop is set at:", STOP_TIME, "seconds")
 print("Dwell time is set uniform for every stop")
 print("Loading data...")    
@@ -171,18 +187,9 @@ def add_manual_connection(G, lat1, lon1, lat2, lon2, speed_kmh, name="Connection
         geometry=geom
     )
 
-    print(f"{name} added.")
-
-manual_edges = [
-    ("Øresund bridge", 55.5990688, 12.7514874, 55.5655404, 12.9042758, 200),           # Border connection
-    ("Skottesjon - Ed", 58.9188632, 11.7195089, 58.9128502, 11.9275408, 120),          # Border connection
-    ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160), # Border connection
-    ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),       # Border connection
-    ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),           # Border connection
-    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80)               # Border connection
-]
 
 for name, lat1, lon1, lat2, lon2, speed in manual_edges:
+    print(f"{name} added.")
     add_manual_connection(G, lat1, lon1, lat2, lon2, speed, name)
 
 # After adding all manual edges
