@@ -460,19 +460,73 @@ def get_city_node(prompt):
 print("Available cities:", ", ".join(list(cities.keys())))
 print("")
 print("Available airports: arlanda airport, kastrup airport, gardermoen airport")
-city_name_1, origin = get_city_node("Enter origin city: ")
-city_name_2, destination = get_city_node("Enter destination city: ")
+# -------------------------------------------
+# Ask user input
+# -------------------------------------------
+
+print("Available cities:", ", ".join(list(cities.keys())))
+print("")
+print("Available airports: arlanda airport, kastrup airport, gardermoen airport")
+
+city_name_origin, origin = get_city_node("Enter origin city: ")
+
+# ---- VIA STOPS ----
+via_nodes = []
+via_names = []
+
+while True:
+    via_input = input("Via (press ENTER to finish): ").strip()
+    
+    if via_input == "":
+        break
+
+    normalized_input = normalize_city_name(via_input.lower())
+
+    if normalized_input in normalized_lookup:
+        city_name = normalized_lookup[normalized_input]
+        lon, lat = cities[city_name]
+        node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
+
+        via_nodes.append(node)
+        via_names.append(city_name)
+
+        print(f"Added via stop: {city_name.title()}")
+    else:
+        print("City not found. Try again.")
+
+city_name_dest, destination = get_city_node("Enter destination city: ")
 
 print("")
-print("Calulating shortest route...")
+print("Calculating shortest route...")
 
-route = nx.shortest_path(G, origin, destination, weight="travel_time")
+# -------------------------------------------
+# Compute route with intermediate stops
+# -------------------------------------------
+
+route_nodes = [origin] + via_nodes + [destination]
+
+route = []
+
+for i in range(len(route_nodes) - 1):
+
+    segment = nx.shortest_path(
+        G,
+        route_nodes[i],
+        route_nodes[i+1],
+        weight="travel_time"
+    )
+
+    # avoid duplicating nodes
+    if i > 0:
+        segment = segment[1:]
+
+    route.extend(segment)
 
 # -----------------------------
-# Calculate cumulative distance & travel time for hover
+# Calculate cumulative distance & travel time
 # -----------------------------
-total_distance = 0  # meters
-total_time = 0      # seconds
+total_distance = 0      # meters
+total_time = 0          # seconds
 
 route_lons = []
 route_lats = []
@@ -512,8 +566,12 @@ total_time_hours = total_time / 3600
 print("Shortes route calculated!")
 print("")
 print("\n----- ROUTE SUMMARY -----")
-print(f"Origin: {city_name_1.title()}")
-print(f"Destination: {city_name_2.title()}")
+print(f"Origin: {city_name_origin.title()}")
+
+if via_names:
+    print("Via:", " → ".join([v.title() for v in via_names]))
+
+print(f"Destination: {city_name_dest.title()}")
 print(f"Distance: {total_distance_km:.2f} km")
 print(f"Travel time: {total_time_hours:.2f} hours")
 print("--------------------------\n")
@@ -523,9 +581,15 @@ print("Creating map...")
 # -----------------------------
 # Total route info for hover
 # -----------------------------
+if via_names:
+    via_text = " → ".join([v.title() for v in via_names])
+else:
+    via_text = "None"
+
 route_hover_text = (
-    f"Origin: {city_name_1.title()}\n"
-    f"Destination: {city_name_2.title()}\n"
+    f"Origin: {city_name_origin.title()}\n"
+    f"Via: {via_text}\n"
+    f"Destination: {city_name_dest.title()}\n"
     f"Distance: {total_distance_km:.2f} km\n"
     f"Travel time: {total_time_hours:.2f} hours"
 )
