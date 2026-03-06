@@ -428,11 +428,22 @@ cities["gardermoen airport"] = (11.0967803, 60.1929196)
 
 def normalize_city_name(name):
     """
-    Convert letters like å, ä, ö to a, a, o for easier typing.
+    Convert Scandinavian letters like å, ä, ö, ø to simpler ASCII equivalents.
     """
     name = name.lower()
+
+    # manual replacements for characters that don't decompose
+    replacements = {
+        "ø": "o",
+        "æ": "ae"
+    }
+
+    for k, v in replacements.items():
+        name = name.replace(k, v)
+
     name_norm = unicodedata.normalize('NFD', name)
     name_ascii = ''.join(c for c in name_norm if unicodedata.category(c) != 'Mn')
+
     return name_ascii
 
 
