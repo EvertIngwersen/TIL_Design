@@ -19,6 +19,9 @@ import plotly.express as px
 from pathlib import Path
 from shapely.geometry import LineString
 
+# dwell time per stop (seconds)
+STOP_TIME = 3 * 60
+print("Dwell time per stop is set at:", STOP_TIME, "seconds")
 print("Loading data...")    
 pio.renderers.default = "browser"
 
@@ -413,8 +416,6 @@ with open(no_city_file, "r", encoding="utf-8") as f:
         data = json.loads(line)
         cities[data["name"].lower()] = data["location"]
 
-
-
 # -----------------------------
 # Add custom locations (airports, points of interest)
 # -----------------------------
@@ -572,20 +573,26 @@ for u, v in zip(route[:-1], route[1:]):
         hover_texts.append(None)
 
 # Convert totals
+# origin + each via stop (not destination)
+num_stops = 1 + len(via_nodes)
+
+total_time += num_stops * STOP_TIME
+
+# Convert totals
 total_distance_km = total_distance / 1000
 total_time_hours = total_time / 3600
 
+# Print route summary
 print("Shortes route calculated!")
 print("")
 print("\n----- ROUTE SUMMARY -----")
 print(f"Origin: {city_name_origin.title()}")
-
 if via_names:
     print("Via:", " → ".join([v.title() for v in via_names]))
-
 print(f"Destination: {city_name_dest.title()}")
 print(f"Distance: {total_distance_km:.2f} km")
 print(f"Travel time: {total_time_hours:.2f} hours")
+print(f"Includes dwell time: {num_stops*3} minutes")
 print("--------------------------\n")
 print("")
 print("Creating map...")
