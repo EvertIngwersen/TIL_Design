@@ -497,5 +497,3 @@ fig.show()
 print("Map created (will open in browser)")
 
 
-
-
