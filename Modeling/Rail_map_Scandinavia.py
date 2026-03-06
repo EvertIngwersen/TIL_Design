@@ -3,6 +3,7 @@
 Scandinavia rail network 
 - plots edges colored by maxspeed
 - finds fastest route between any DK, SE and NO city
+- intermediate stops possible
 - border connections manually added
 """
 
