@@ -6,6 +6,7 @@ Scandinavia rail network
 - Scandinavian letter input is not needed - automaticly converts in input
 - intermediate stops possible
 - border connections manually added
+- 
 """
 
 import json
