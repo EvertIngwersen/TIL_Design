@@ -53,7 +53,6 @@ dk_path = PROJECT_ROOT / "Data" / "Rail Data" / "Denmark_rail.graphml"
 se_path = PROJECT_ROOT / "Data" / "Rail Data" / "Sweden_rail.graphml"
 no_path = PROJECT_ROOT / "Data" / "Rail Data" / "Norway_rail.graphml"
 
-
 G_dk = ox.load_graphml(dk_path)
 G_se = ox.load_graphml(se_path)
 G_no = ox.load_graphml(no_path)
@@ -284,11 +283,6 @@ def get_city_node(prompt):
             return city_name, node
         else:
             print("City not found. Try again.")
-
-
-# -------------------------------------------
-# Ask user input
-# -------------------------------------------
 
 print("Available cities:", ", ".join(list(cities.keys())))
 print("")
