@@ -10,13 +10,12 @@ Scandinavia rail network
 """
 
 import json
-import numpy as np
-import osmnx as ox
 import unicodedata
+import osmnx as ox
+import numpy as np
 import networkx as nx
 import plotly.graph_objects as go
 import plotly.io as pio
-import plotly.express as px  
 
 from pathlib import Path
 from shapely.geometry import LineString
