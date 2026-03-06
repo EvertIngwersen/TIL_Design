@@ -22,6 +22,7 @@ from shapely.geometry import LineString
 # dwell time per stop (seconds)
 STOP_TIME = 3 * 60
 print("Dwell time per stop is set at:", STOP_TIME, "seconds")
+print("Dwell time is set uniform for every stop")
 print("Loading data...")    
 pio.renderers.default = "browser"
 
