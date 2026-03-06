@@ -115,283 +115,369 @@ edges["travel_time"] = edges["travel_time"].fillna(
 G = ox.graph_from_gdfs(nodes, edges)
 
 # ---------------------------------------------------
+# FUNCTION: Add manual rail connection
+# ---------------------------------------------------
+
+def add_manual_connection(G, lat1, lon1, lat2, lon2, speed_kmh, name="Connection"):
+    """
+    Adds a bidirectional rail edge between two coordinates.
+
+    Parameters
+    ----------
+    G : networkx graph
+    lat1, lon1 : float
+        Start coordinate
+    lat2, lon2 : float
+        End coordinate
+    speed_kmh : float
+        Track speed in km/h
+    name : str
+        Name printed in console
+    """
+
+    # Find nearest graph nodes
+    node_a = ox.distance.nearest_nodes(G, X=lon1, Y=lat1)
+    node_b = ox.distance.nearest_nodes(G, X=lon2, Y=lat2)
+
+    # Compute edge length (meters)
+    edge_length = ox.distance.great_circle(
+        lat1, lon1,
+        lat2, lon2
+    )
+
+    # Compute travel time (seconds)
+    travel_time = edge_length / (speed_kmh * (1000 / 3600))
+
+    # Geometry
+    geom = LineString([
+        (lon1, lat1),
+        (lon2, lat2)
+    ])
+
+    # Add bidirectional edges
+    G.add_edge(
+        node_a, node_b,
+        length=edge_length,
+        maxspeed=speed_kmh,
+        travel_time=travel_time,
+        geometry=geom
+    )
+
+    G.add_edge(
+        node_b, node_a,
+        length=edge_length,
+        maxspeed=speed_kmh,
+        travel_time=travel_time,
+        geometry=geom
+    )
+
+    print(f"{name} added.")
+
+manual_edges = [
+    ("Øresund bridge", 55.5990688, 12.7514874, 55.5655404, 12.9042758, 200),           # Border connection
+    ("Skottesjon - Ed", 58.9188632, 11.7195089, 58.9128502, 11.9275408, 120),          # Border connection
+    ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160), # Border connection
+    ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),       # Border connection
+    ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),           # Border connection
+    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80)               # Border connection
+]
+
+for name, lat1, lon1, lat2, lon2, speed in manual_edges:
+    add_manual_connection(G, lat1, lon1, lat2, lon2, speed, name)
+
+# After adding all manual edges
+nodes, edges = ox.graph_to_gdfs(G)
+edges = edges.to_crs(epsg=4326)
+
+# Re-clean maxspeed if needed
+if "maxspeed" in edges.columns:
+    edges["maxspeed"] = (
+        edges["maxspeed"]
+        .astype(str)
+        .str.extract(r"(\d+)")
+        .astype(float)
+    )
+else:
+    edges["maxspeed"] = np.nan
+
+# ---------------------------------------------------
 #  ADD ØRESUND BRIDGE CONNECTION (200 km/h)
 # ---------------------------------------------------
 
-# Coordinates:
-# Coord of end of rail piece - Denmark side
-cph_lat, cph_lon = 55.5990688, 12.7514874
+# # Coordinates:
+# # Coord of end of rail piece - Denmark side
+# cph_lat, cph_lon = 55.5990688, 12.7514874
 
-# Coord of end of rail piece - Sweden / Malmo side
-malmo_lat, malmo_lon = 55.5655404, 12.9042758
-
-node_cph = ox.distance.nearest_nodes(G, X=cph_lon, Y=cph_lat)
-node_malmo = ox.distance.nearest_nodes(G, X=malmo_lon, Y=malmo_lat)
-
-# Compute bridge length (meters)
-bridge_length = ox.distance.great_circle(
-    cph_lat, cph_lon,
-    malmo_lat, malmo_lon
-)
-
-bridge_speed = 200  # km/h
-bridge_travel_time = bridge_length / (bridge_speed * (1000/3600))
-
-# Add bidirectional edge
-bridge_geom = LineString([
-    (cph_lon, cph_lat),
-    (malmo_lon, malmo_lat)
-])
-
-G.add_edge(node_cph, node_malmo,
-           length=bridge_length,
-           maxspeed=bridge_speed,
-           travel_time=bridge_travel_time,
-           geometry=bridge_geom)
-
-G.add_edge(node_malmo, node_cph,
-           length=bridge_length,
-           maxspeed=bridge_speed,
-           travel_time=bridge_travel_time,
-           geometry=bridge_geom)
+# # Coord of end of rail piece - Sweden / Malmo side
+# malmo_lat, malmo_lon = 55.5655404, 12.9042758
+
+# node_cph = ox.distance.nearest_nodes(G, X=cph_lon, Y=cph_lat)
+# node_malmo = ox.distance.nearest_nodes(G, X=malmo_lon, Y=malmo_lat)
+
+# # Compute bridge length (meters)
+# bridge_length = ox.distance.great_circle(
+#     cph_lat, cph_lon,
+#     malmo_lat, malmo_lon
+# )
+
+# bridge_speed = 200  # km/h
+# bridge_travel_time = bridge_length / (bridge_speed * (1000/3600))
+
+# # Add bidirectional edge
+# bridge_geom = LineString([
+#     (cph_lon, cph_lat),
+#     (malmo_lon, malmo_lat)
+# ])
+
+# G.add_edge(node_cph, node_malmo,
+#            length=bridge_length,
+#            maxspeed=bridge_speed,
+#            travel_time=bridge_travel_time,
+#            geometry=bridge_geom)
+
+# G.add_edge(node_malmo, node_cph,
+#            length=bridge_length,
+#            maxspeed=bridge_speed,
+#            travel_time=bridge_travel_time,
+#            geometry=bridge_geom)
 
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-print("Øresund bridge connection added.")
-
-# ---------------------------------------------------
-#  ADD SKOTTESJON - ED BORDER CROSSING [NO-SE]
-# ---------------------------------------------------
-
-# Coordinates 
-# Coordinates end rail piece Norway-Side (SKOTTESJON)
-Skottesjon_lat, Skottesjon_lon = 58.9188632, 11.7195089 
-
-# Coordinates end rail piece Sweden-Side (ED)
-Ed_lat, Ed_lon = 58.9128502, 11.9275408
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
+
+# print("Øresund bridge connection added.")
+
+# # ---------------------------------------------------
+# #  ADD SKOTTESJON - ED BORDER CROSSING [NO-SE]
+# # ---------------------------------------------------
+
+# # Coordinates 
+# # Coordinates end rail piece Norway-Side (SKOTTESJON)
+# Skottesjon_lat, Skottesjon_lon = 58.9188632, 11.7195089 
+
+# # Coordinates end rail piece Sweden-Side (ED)
+# Ed_lat, Ed_lon = 58.9128502, 11.9275408
 
-node_skottersjon = ox.distance.nearest_nodes(G, X=Skottesjon_lon, Y=Skottesjon_lat)
-node_ed = ox.distance.nearest_nodes(G, X=Ed_lon, Y=Ed_lat)
+# node_skottersjon = ox.distance.nearest_nodes(G, X=Skottesjon_lon, Y=Skottesjon_lat)
+# node_ed = ox.distance.nearest_nodes(G, X=Ed_lon, Y=Ed_lat)
 
-# Compute edge length (meters)
-ED_SKOTTERSJON_edge_length = ox.distance.great_circle(
-    Skottesjon_lat, Skottesjon_lon,
-    Ed_lat, Ed_lon
-)
-
-ED_SKOTTERSJON_edge_speed = 120  # km/h
-ED_SKOTTERSJON_edge_time = ED_SKOTTERSJON_edge_length / (ED_SKOTTERSJON_edge_speed * (1000/3600))
+# # Compute edge length (meters)
+# ED_SKOTTERSJON_edge_length = ox.distance.great_circle(
+#     Skottesjon_lat, Skottesjon_lon,
+#     Ed_lat, Ed_lon
+# )
+
+# ED_SKOTTERSJON_edge_speed = 120  # km/h
+# ED_SKOTTERSJON_edge_time = ED_SKOTTERSJON_edge_length / (ED_SKOTTERSJON_edge_speed * (1000/3600))
 
-# Add bidirectional edge
-ED_SKOTTERSJON_edge_geom = LineString([
-    (Skottesjon_lon, Skottesjon_lat),
-    (Ed_lon, Ed_lat)
-])
-
-G.add_edge(node_skottersjon, node_ed,
-           length=ED_SKOTTERSJON_edge_length,
-           maxspeed=ED_SKOTTERSJON_edge_speed,
-           travel_time=ED_SKOTTERSJON_edge_time,
-           geometry=ED_SKOTTERSJON_edge_geom)
-
-G.add_edge(node_ed, node_skottersjon,
-           length=ED_SKOTTERSJON_edge_length,
-           maxspeed=ED_SKOTTERSJON_edge_speed,
-           travel_time=ED_SKOTTERSJON_edge_time,
-           geometry=ED_SKOTTERSJON_edge_geom)
+# # Add bidirectional edge
+# ED_SKOTTERSJON_edge_geom = LineString([
+#     (Skottesjon_lon, Skottesjon_lat),
+#     (Ed_lon, Ed_lat)
+# ])
+
+# G.add_edge(node_skottersjon, node_ed,
+#            length=ED_SKOTTERSJON_edge_length,
+#            maxspeed=ED_SKOTTERSJON_edge_speed,
+#            travel_time=ED_SKOTTERSJON_edge_time,
+#            geometry=ED_SKOTTERSJON_edge_geom)
+
+# G.add_edge(node_ed, node_skottersjon,
+#            length=ED_SKOTTERSJON_edge_length,
+#            maxspeed=ED_SKOTTERSJON_edge_speed,
+#            travel_time=ED_SKOTTERSJON_edge_time,
+#            geometry=ED_SKOTTERSJON_edge_geom)
 
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
 
 
-print("Skottesjön - Ed border connection added.")
+# print("Skottesjön - Ed border connection added.")
 
-# ---------------------------------------------------
-#  ADD GLASBRUK - CHARLOTTENBERG BORDER CROSSING [NO-SE]
-# ---------------------------------------------------
+# # ---------------------------------------------------
+# #  ADD GLASBRUK - CHARLOTTENBERG BORDER CROSSING [NO-SE]
+# # ---------------------------------------------------
 
-# Coordinates 
-# Coordinates end rail piece Norway-Side (SKOTTESJON)
-Glasbruk_lat, Glasbruk_lon = 59.9135771, 12.2852937
+# # Coordinates 
+# # Coordinates end rail piece Norway-Side (SKOTTESJON)
+# Glasbruk_lat, Glasbruk_lon = 59.9135771, 12.2852937
 
-# Coordinates end rail piece Sweden-Side (ED)
-Charlot_lat, Charlot_lon = 59.887603, 12.2936895
+# # Coordinates end rail piece Sweden-Side (ED)
+# Charlot_lat, Charlot_lon = 59.887603, 12.2936895
 
-node_glasbruk = ox.distance.nearest_nodes(G, X=Glasbruk_lon, Y=Glasbruk_lat)
-node_charlot = ox.distance.nearest_nodes(G, X=Charlot_lon, Y=Charlot_lat)
+# node_glasbruk = ox.distance.nearest_nodes(G, X=Glasbruk_lon, Y=Glasbruk_lat)
+# node_charlot = ox.distance.nearest_nodes(G, X=Charlot_lon, Y=Charlot_lat)
 
-# Compute edge length (meters)
-GLASBURK_CHARLOT_edge_length = ox.distance.great_circle(
-    Charlot_lat, Charlot_lon,
-    Glasbruk_lat, Glasbruk_lon
-)
+# # Compute edge length (meters)
+# GLASBURK_CHARLOT_edge_length = ox.distance.great_circle(
+#     Charlot_lat, Charlot_lon,
+#     Glasbruk_lat, Glasbruk_lon
+# )
 
-GLASBURK_CHARLOT_edge_speed = 160  # km/h
-GLASBURK_CHARLOT_edge_time = GLASBURK_CHARLOT_edge_length / (GLASBURK_CHARLOT_edge_speed * (1000/3600))
+# GLASBURK_CHARLOT_edge_speed = 160  # km/h
+# GLASBURK_CHARLOT_edge_time = GLASBURK_CHARLOT_edge_length / (GLASBURK_CHARLOT_edge_speed * (1000/3600))
 
-# Add bidirectional edge
-GLASBURK_CHARLOT_edge_geom = LineString([
-    (Charlot_lon, Charlot_lat),
-    (Glasbruk_lon, Glasbruk_lat)
-])
-
-G.add_edge(node_glasbruk, node_charlot,
-           length=GLASBURK_CHARLOT_edge_length,
-           maxspeed=GLASBURK_CHARLOT_edge_speed,
-           travel_time=GLASBURK_CHARLOT_edge_time,
-           geometry=GLASBURK_CHARLOT_edge_geom)
-
-G.add_edge(node_charlot, node_glasbruk, 
-           length=GLASBURK_CHARLOT_edge_length,
-           maxspeed=GLASBURK_CHARLOT_edge_speed,
-           travel_time=GLASBURK_CHARLOT_edge_time,
-           geometry=GLASBURK_CHARLOT_edge_geom)
+# # Add bidirectional edge
+# GLASBURK_CHARLOT_edge_geom = LineString([
+#     (Charlot_lon, Charlot_lat),
+#     (Glasbruk_lon, Glasbruk_lat)
+# ])
+
+# G.add_edge(node_glasbruk, node_charlot,
+#            length=GLASBURK_CHARLOT_edge_length,
+#            maxspeed=GLASBURK_CHARLOT_edge_speed,
+#            travel_time=GLASBURK_CHARLOT_edge_time,
+#            geometry=GLASBURK_CHARLOT_edge_geom)
+
+# G.add_edge(node_charlot, node_glasbruk, 
+#            length=GLASBURK_CHARLOT_edge_length,
+#            maxspeed=GLASBURK_CHARLOT_edge_speed,
+#            travel_time=GLASBURK_CHARLOT_edge_time,
+#            geometry=GLASBURK_CHARLOT_edge_geom)
 
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
 
 
-print("Glasbruk - Charolletenberg border connection added.")
+# print("Glasbruk - Charolletenberg border connection added.")
 
-# ---------------------------------------------------
-#  ADD TEVALDEN - STORLIEN BORDER CROSSING [NO-SE]
-# ---------------------------------------------------
+# # ---------------------------------------------------
+# #  ADD TEVALDEN - STORLIEN BORDER CROSSING [NO-SE]
+# # ---------------------------------------------------
 
-# Coordinates 
-# Coordinates end rail piece Norway-Side (TEVALDEN)
-Tevalden_lat, Tevalden_lon = 63.3264157, 12.0628143
+# # Coordinates 
+# # Coordinates end rail piece Norway-Side (TEVALDEN)
+# Tevalden_lat, Tevalden_lon = 63.3264157, 12.0628143
 
-# Coordinates end rail piece Sweden-Side (STORLIEN)
-Storlien_lat, Storlien_lon = 63.3172724, 12.0947319
+# # Coordinates end rail piece Sweden-Side (STORLIEN)
+# Storlien_lat, Storlien_lon = 63.3172724, 12.0947319
 
-node_tevalden = ox.distance.nearest_nodes(G, X=Tevalden_lon, Y=Tevalden_lat)
-node_storlien = ox.distance.nearest_nodes(G, X=Storlien_lon, Y=Storlien_lat)
+# node_tevalden = ox.distance.nearest_nodes(G, X=Tevalden_lon, Y=Tevalden_lat)
+# node_storlien = ox.distance.nearest_nodes(G, X=Storlien_lon, Y=Storlien_lat)
 
-# Compute edge length (meters)
-TEVALDEN_STORLIEN_edge_length = ox.distance.great_circle(
-    Storlien_lat, Storlien_lon,
-    Tevalden_lat, Tevalden_lon)
+# # Compute edge length (meters)
+# TEVALDEN_STORLIEN_edge_length = ox.distance.great_circle(
+#     Storlien_lat, Storlien_lon,
+#     Tevalden_lat, Tevalden_lon)
 
-TEVALDEN_STORLIEN_edge_speed = 80  # km/h
-TEVALDEN_STORLIEN_edge_time = TEVALDEN_STORLIEN_edge_length / (TEVALDEN_STORLIEN_edge_speed * (1000/3600))
-
-# Add bidirectional edge
-TEVALDEN_STORLIEN_edge_geom = LineString([
-    (Storlien_lon, Storlien_lat),
-    (Tevalden_lon, Tevalden_lat)
-])
-
+# TEVALDEN_STORLIEN_edge_speed = 80  # km/h
+# TEVALDEN_STORLIEN_edge_time = TEVALDEN_STORLIEN_edge_length / (TEVALDEN_STORLIEN_edge_speed * (1000/3600))
+
+# # Add bidirectional edge
+# TEVALDEN_STORLIEN_edge_geom = LineString([
+#     (Storlien_lon, Storlien_lat),
+#     (Tevalden_lon, Tevalden_lat)
+# ])
+
 
-G.add_edge(node_tevalden, node_storlien,
-           length=TEVALDEN_STORLIEN_edge_length,
-           maxspeed=TEVALDEN_STORLIEN_edge_speed,
-           travel_time=TEVALDEN_STORLIEN_edge_time,
-           geometry=TEVALDEN_STORLIEN_edge_geom)
-
-G.add_edge(node_storlien, node_tevalden,
-           length=TEVALDEN_STORLIEN_edge_length,
-           maxspeed=TEVALDEN_STORLIEN_edge_speed,
-           travel_time=TEVALDEN_STORLIEN_edge_time,
-           geometry=TEVALDEN_STORLIEN_edge_geom)
-
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-
-print("Tevalden - Storlien border connection added.")
-
-# ---------------------------------------------------
-#  ADD HELL - STJORDAL CONNECTION [NO]
-# ---------------------------------------------------
-
-# Coordinates 
-# Coordinates end rail piece (HELL)
-Hell_lat, Hell_lon = 63.4462156, 10.9000683  
-
-# Coordinates end rail piece (STJORDAL)
-Stjordal_lat, Stjordal_lon = 63.4460545, 10.9063916
-
-node_hell = ox.distance.nearest_nodes(G, X=Hell_lon, Y=Hell_lat)
-node_stjordal = ox.distance.nearest_nodes(G, X=Stjordal_lon, Y=Stjordal_lat)
-
-# Compute edge length (meters)
-HELL_STJORDAL_edge_length = ox.distance.great_circle(
-    Hell_lat, Hell_lon,
-    Stjordal_lat, Stjordal_lon
-)
-
-HELL_STJORDAL_edge_speed = 60  # km/h  
-HELL_STJORDAL_edge_time = HELL_STJORDAL_edge_length / (HELL_STJORDAL_edge_speed * (1000/3600))
-
-# Add bidirectional edge
-HELL_STJORDAL_edge_geom = LineString([
-    (Hell_lon, Hell_lat),
-    (Stjordal_lon, Stjordal_lat)
-])
-
-G.add_edge(node_hell, node_stjordal,
-           length=HELL_STJORDAL_edge_length,
-           maxspeed=HELL_STJORDAL_edge_speed,
-           travel_time=HELL_STJORDAL_edge_time,
-           geometry=HELL_STJORDAL_edge_geom)
-
-G.add_edge(node_stjordal, node_hell,
-           length=HELL_STJORDAL_edge_length,
-           maxspeed=HELL_STJORDAL_edge_speed,
-           travel_time=HELL_STJORDAL_edge_time,
-           geometry=HELL_STJORDAL_edge_geom)
-
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-print("Hell - Stjordal connection added.")
-
-# ---------------------------------------------------
-#  ADD KOLSAN - NES CONNECTION [NO]
-# ---------------------------------------------------
-
-# Coordinates
-# Coordinates end rail piece (KOLSAN)
-Kolsan_lat, Kolsan_lon = 63.6527907, 11.0889117
-
-# Coordinates end rail piece (NES)
-Nes_lat, Nes_lon = 63.6538856, 11.0923136
-
-node_kolsan = ox.distance.nearest_nodes(G, X=Kolsan_lon, Y=Kolsan_lat)
-node_nes = ox.distance.nearest_nodes(G, X=Nes_lon, Y=Nes_lat)
-
-# Compute edge length (meters)
-KOLSAN_NES_edge_length = ox.distance.great_circle(
-    Kolsan_lat, Kolsan_lon,
-    Nes_lat, Nes_lon
-)
-
-KOLSAN_NES_edge_speed = 80  # km/h
-KOLSAN_NES_edge_time = KOLSAN_NES_edge_length / (KOLSAN_NES_edge_speed * (1000/3600))
-
-# Add bidirectional edge
-KOLSAN_NES_edge_geom = LineString([
-    (Kolsan_lon, Kolsan_lat),
-    (Nes_lon, Nes_lat)
-])
-
-G.add_edge(node_kolsan, node_nes,
-           length=KOLSAN_NES_edge_length,
-           maxspeed=KOLSAN_NES_edge_speed,
-           travel_time=KOLSAN_NES_edge_time,
-           geometry=KOLSAN_NES_edge_geom)
-
-G.add_edge(node_nes, node_kolsan,
-           length=KOLSAN_NES_edge_length,
-           maxspeed=KOLSAN_NES_edge_speed,
-           travel_time=KOLSAN_NES_edge_time,
-           geometry=KOLSAN_NES_edge_geom)
-
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-print("Kolsan - Nes connection added.")
+# G.add_edge(node_tevalden, node_storlien,
+#            length=TEVALDEN_STORLIEN_edge_length,
+#            maxspeed=TEVALDEN_STORLIEN_edge_speed,
+#            travel_time=TEVALDEN_STORLIEN_edge_time,
+#            geometry=TEVALDEN_STORLIEN_edge_geom)
+
+# G.add_edge(node_storlien, node_tevalden,
+#            length=TEVALDEN_STORLIEN_edge_length,
+#            maxspeed=TEVALDEN_STORLIEN_edge_speed,
+#            travel_time=TEVALDEN_STORLIEN_edge_time,
+#            geometry=TEVALDEN_STORLIEN_edge_geom)
+
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
+
+
+# print("Tevalden - Storlien border connection added.")
+
+# # ---------------------------------------------------
+# #  ADD HELL - STJORDAL CONNECTION [NO]
+# # ---------------------------------------------------
+
+# # Coordinates 
+# # Coordinates end rail piece (HELL)
+# Hell_lat, Hell_lon = 63.4462156, 10.9000683  
+
+# # Coordinates end rail piece (STJORDAL)
+# Stjordal_lat, Stjordal_lon = 63.4460545, 10.9063916
+
+# node_hell = ox.distance.nearest_nodes(G, X=Hell_lon, Y=Hell_lat)
+# node_stjordal = ox.distance.nearest_nodes(G, X=Stjordal_lon, Y=Stjordal_lat)
+
+# # Compute edge length (meters)
+# HELL_STJORDAL_edge_length = ox.distance.great_circle(
+#     Hell_lat, Hell_lon,
+#     Stjordal_lat, Stjordal_lon
+# )
+
+# HELL_STJORDAL_edge_speed = 60  # km/h  
+# HELL_STJORDAL_edge_time = HELL_STJORDAL_edge_length / (HELL_STJORDAL_edge_speed * (1000/3600))
+
+# # Add bidirectional edge
+# HELL_STJORDAL_edge_geom = LineString([
+#     (Hell_lon, Hell_lat),
+#     (Stjordal_lon, Stjordal_lat)
+# ])
+
+# G.add_edge(node_hell, node_stjordal,
+#            length=HELL_STJORDAL_edge_length,
+#            maxspeed=HELL_STJORDAL_edge_speed,
+#            travel_time=HELL_STJORDAL_edge_time,
+#            geometry=HELL_STJORDAL_edge_geom)
+
+# G.add_edge(node_stjordal, node_hell,
+#            length=HELL_STJORDAL_edge_length,
+#            maxspeed=HELL_STJORDAL_edge_speed,
+#            travel_time=HELL_STJORDAL_edge_time,
+#            geometry=HELL_STJORDAL_edge_geom)
+
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
+
+# print("Hell - Stjordal connection added.")
+
+# # ---------------------------------------------------
+# #  ADD KOLSAN - NES CONNECTION [NO]
+# # ---------------------------------------------------
+
+# # Coordinates
+# # Coordinates end rail piece (KOLSAN)
+# Kolsan_lat, Kolsan_lon = 63.6527907, 11.0889117
+
+# # Coordinates end rail piece (NES)
+# Nes_lat, Nes_lon = 63.6538856, 11.0923136
+
+# node_kolsan = ox.distance.nearest_nodes(G, X=Kolsan_lon, Y=Kolsan_lat)
+# node_nes = ox.distance.nearest_nodes(G, X=Nes_lon, Y=Nes_lat)
+
+# # Compute edge length (meters)
+# KOLSAN_NES_edge_length = ox.distance.great_circle(
+#     Kolsan_lat, Kolsan_lon,
+#     Nes_lat, Nes_lon
+# )
+
+# KOLSAN_NES_edge_speed = 80  # km/h
+# KOLSAN_NES_edge_time = KOLSAN_NES_edge_length / (KOLSAN_NES_edge_speed * (1000/3600))
+
+# # Add bidirectional edge
+# KOLSAN_NES_edge_geom = LineString([
+#     (Kolsan_lon, Kolsan_lat),
+#     (Nes_lon, Nes_lat)
+# ])
+
+# G.add_edge(node_kolsan, node_nes,
+#            length=KOLSAN_NES_edge_length,
+#            maxspeed=KOLSAN_NES_edge_speed,
+#            travel_time=KOLSAN_NES_edge_time,
+#            geometry=KOLSAN_NES_edge_geom)
+
+# G.add_edge(node_nes, node_kolsan,
+#            length=KOLSAN_NES_edge_length,
+#            maxspeed=KOLSAN_NES_edge_speed,
+#            travel_time=KOLSAN_NES_edge_time,
+#            geometry=KOLSAN_NES_edge_geom)
+
+# nodes, edges = ox.graph_to_gdfs(G)
+# edges = edges.to_crs(epsg=4326)
+
+# print("Kolsan - Nes connection added.")
 
 # -----------------------------
 # Load city databases
@@ -473,9 +559,6 @@ def get_city_node(prompt):
             print("City not found. Try again.")
 
 
-print("Available cities:", ", ".join(list(cities.keys())))
-print("")
-print("Available airports: arlanda airport, kastrup airport, gardermoen airport")
 # -------------------------------------------
 # Ask user input
 # -------------------------------------------
