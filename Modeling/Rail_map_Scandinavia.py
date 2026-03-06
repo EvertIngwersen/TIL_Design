@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Scandinavia rail network (connected via Øresund Bridge)
+Scandinavia rail network 
 - plots edges colored by maxspeed
-- finds fastest route between any DK or SE city
+- finds fastest route between any DK, SE and NO city
+- border connections manually added
 """
 
 import json
