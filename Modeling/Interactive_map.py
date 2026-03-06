@@ -4,8 +4,6 @@ Created on Sun Feb 15 15:04:59 2026
 
 @author: evert
 """
-
-
 import pandas as pd
 import os
 import plotly.graph_objects as go
