@@ -604,3 +604,8 @@ fig.update_layout(
 )
 
 fig.show()
+print("Map created (will open in browser)")
+
+
+
+
