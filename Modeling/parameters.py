@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-parameters_bidirectional.py
-
 Parameters for HSR-Airport integration model with BIDIRECTIONAL transfers.
 Includes both outgoing and incoming flights.
 """
