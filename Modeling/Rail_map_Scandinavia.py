@@ -35,7 +35,8 @@ manual_edges = [
     ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160), # Border connection
     ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),       # Border connection
     ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),           # Border connection
-    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80)               # Border connection
+    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80),               # Border connection
+    ("Riksgranan - Vassejavri", 68.4266175, 18.1207193, 68.4302478, 18.2516029, 80)
 ]
 
 print("Dwell time per stop is set at:", STOP_TIME, "seconds")
