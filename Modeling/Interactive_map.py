@@ -106,7 +106,6 @@ top5_routes = od_agg.sort_values("Flights", ascending=False).head(5)
 print(top5_routes[["Origin", "Destination", "Flights"]])
 
 
-
 #============== CREATING MAP ==================================================
 print("")
 print("Creating map...")
@@ -185,6 +184,6 @@ for _, row in top5_routes.iterrows():
             "<extra></extra>"
     ))
 
-Finally, show the map
+#Finally, show the map
 fig.show()
 
