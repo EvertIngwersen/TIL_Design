@@ -184,6 +184,6 @@ for _, row in top5_routes.iterrows():
             "<extra></extra>"
     ))
 
-# Finally, show and save the map
+# Finally, show the map
 fig.show()
-fig.write_html("interactive_airport_map.html")
+
