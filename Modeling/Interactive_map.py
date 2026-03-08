@@ -154,36 +154,37 @@ fig.add_trace(go.Scattermap(
         "<extra></extra>"
 ))
 
-# --- Add top 5 busiest bidirectional routes ---
-# print("Adding top 5 bidirectional routes to map...")
+#--- Add top 5 busiest bidirectional routes ---
 
-# for _, row in top5_routes.iterrows():
-#     origin = row["Origin"]
-#     destination = row["Destination"]
-#     flights = row["Flights"]
-    
-#     origin_data = airport_df[airport_df["ICAO"] == origin]
-#     dest_data = airport_df[airport_df["ICAO"] == destination]
-    
-#     if origin_data.empty or dest_data.empty:
-#         continue
-    
-#     lon = [origin_data["Longitude"].values[0],
-#            dest_data["Longitude"].values[0]]
-#     lat = [origin_data["Latitude"].values[0],
-#            dest_data["Latitude"].values[0]]
-    
-#     fig.add_trace(go.Scattermap(
-#         lon=lon,
-#         lat=lat,
-#         mode="lines",
-#         line=dict(width=flights / top5_routes["Flights"].max() * 8, color="blue"),
-#         hovertemplate=
-#             f"<b>{origin} ↔ {destination}</b><br>" +
-#             f"Total Flights (both directions): {flights:,.0f}<br>" +
-#             "<extra></extra>"
-#     ))
+print("Adding top 5 bidirectional routes to map...")
 
-# Finally, show the map
+for _, row in top5_routes.iterrows():
+    origin = row["Origin"]
+    destination = row["Destination"]
+    flights = row["Flights"]
+    
+    origin_data = airport_df[airport_df["ICAO"] == origin]
+    dest_data = airport_df[airport_df["ICAO"] == destination]
+    
+    if origin_data.empty or dest_data.empty:
+        continue
+    
+    lon = [origin_data["Longitude"].values[0],
+            dest_data["Longitude"].values[0]]
+    lat = [origin_data["Latitude"].values[0],
+            dest_data["Latitude"].values[0]]
+    
+    fig.add_trace(go.Scattermap(
+        lon=lon,
+        lat=lat,
+        mode="lines",
+        line=dict(width=flights / top5_routes["Flights"].max() * 8, color="blue"),
+        hovertemplate=
+            f"<b>{origin} ↔ {destination}</b><br>" +
+            f"Total Flights (both directions): {flights:,.0f}<br>" +
+            "<extra></extra>"
+    ))
+
+Finally, show the map
 fig.show()
 
