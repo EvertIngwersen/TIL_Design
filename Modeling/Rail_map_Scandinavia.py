@@ -238,7 +238,7 @@ with open(no_city_file, "r", encoding="utf-8") as f:
 cities["arlanda airport"] = (17.9331197, 59.6523122)  # (lon, lat)
 cities["kastrup airport"] = (12.6494168, 55.6296397)
 cities["gardermoen airport"] = (11.0967803, 60.1929196)
-cities["Narvik"] = (17.4432093, 68.4417246)
+cities["narvik"] = (17.4432093, 68.4417246)
 
 # ----------------------------------------
 # Ask user input
