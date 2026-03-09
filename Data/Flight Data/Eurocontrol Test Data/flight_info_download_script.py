@@ -7,7 +7,7 @@ Created on Mon Mar  9 13:55:11 2026
 
 import os
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 def generate_urls(data_type: str, start_date: str, end_date: str) -> list:
@@ -77,6 +77,10 @@ if __name__ == "__main__":
         "flight_list": ("202401", "202403")  # start YYYYMM, end YYYYMM
     }
 
+    # Determine the relative path to the Large Data folder
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_save_folder = os.path.normpath(os.path.join(script_dir, r"..\..\..\..\Large Data"))
+
     for data_type, (start_date, end_date) in datasets.items():
         urls = generate_urls(data_type, start_date, end_date)
-        download_files(urls, f"./data/{data_type}")
+        download_files(urls, os.path.join(base_save_folder, data_type))
