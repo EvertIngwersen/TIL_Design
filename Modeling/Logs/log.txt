@@ -647,3 +647,68 @@ DEPARTURE FLIGHT SCHEDULE
   Flight 29:
      Departure time : 963
      Airport station : 2
+     Connected trains : 1
+  Flight 30:
+     Departure time : 1021
+     Airport station : 2
+     Connected trains : 5
+  Flight 31:
+     Departure time : 1075
+     Airport station : 2
+     Connected trains : none
+  Flight 32:
+     Departure time : 1138
+     Airport station : 2
+     Connected trains : none
+  Flight 33:
+     Departure time : 1199
+     Airport station : 2
+     Connected trains : 7
+  Flight 34:
+     Departure time : 1264
+     Airport station : 2
+     Connected trains : none
+  Flight 35:
+     Departure time : 1324
+     Airport station : 2
+     Connected trains : none
+  Flight 36:
+     Departure time : 455
+     Airport station : 3
+     Connected trains : none
+  Flight 37:
+     Departure time : 532
+     Airport station : 3
+     Connected trains : none
+  Flight 38:
+     Departure time : 612
+     Airport station : 3
+     Connected trains : none
+  Flight 39:
+     Departure time : 697
+     Airport station : 3
+     Connected trains : none
+  Flight 40:
+     Departure time : 787
+     Airport station : 3
+     Connected trains : 3
+  Flight 41:
+     Departure time : 863
+     Airport station : 3
+     Connected trains : 12
+  Flight 42:
+     Departure time : 951
+     Airport station : 3
+     Connected trains : none
+  Flight 43:
+     Departure time : 1028
+     Airport station : 3
+     Connected trains : 9
+  Flight 44:
+     Departure time : 1113
+     Airport station : 3
+     Connected trains : 6
+  Flight 45:
+     Departure time : 1198
+     Airport station : 3
+     Connected trains : none
