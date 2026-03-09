@@ -23,20 +23,44 @@ transfer_stations = [s for s, info in stations.items() if info.get("airport")]
 
 # PLACEHOLDER VALUES
 
-outgoing_flights = {
-    1: {"station": 1, "departure": 560},
-    2: {"station": 1, "departure": 630},
-    3: {"station": 1, "departure": 710},
-    4: {"station": 1, "departure": 740},
-    5: {"station": 2, "departure": 710},
-    6: {"station": 2, "departure": 720},
-    7: {"station": 2, "departure": 590},
-    8: {"station": 2, "departure": 600},
-    9: {"station": 3, "departure": 1000},
-    10: {"station": 3, "departure": 1200},
-    11: {"station": 3, "departure": 255},
-    12: {"station": 3, "departure": 1250}
-}
+def generate_outgoing_flights(airports, num_flights_per_airport, start_time, end_time):
+    """
+    Generates a dictionary of outgoing flights.
+
+    Parameters:
+        airports (list): List of airport IDs.
+        num_flights_per_airport (int): Number of flights per airport.
+        start_time (int): Departure time of the first flight in minutes from midnight.
+        end_time (int): Departure time of the last flight in minutes from midnight.
+
+    Returns:
+        dict: Dictionary of flights with flight_id as key and station + departure info as value.
+    """
+    outgoing_flights = {}
+    flight_id = 1
+
+    for airport in airports:
+        if num_flights_per_airport == 1:
+            departures = [start_time]
+        else:
+            # Calculate evenly spaced departures
+            interval = (end_time - start_time) / (num_flights_per_airport - 1)
+            departures = [int(start_time + i * interval) for i in range(num_flights_per_airport)]
+
+        for dep in departures:
+            outgoing_flights[flight_id] = {"station": airport, "departure": dep}
+            flight_id += 1
+
+    return outgoing_flights
+
+
+# Example usage:
+airports = [1, 2, 3]
+num_flights_per_airport = 20
+start_time = 420  # 7:00 AM
+end_time = 1380   # 23:00 PM
+
+outgoing_flights = generate_outgoing_flights(airports, num_flights_per_airport, start_time, end_time)
 
 # Incoming flights (passengers arrive by flight, depart by train)
 incoming_flights = {
