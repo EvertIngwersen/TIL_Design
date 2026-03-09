@@ -116,9 +116,9 @@ def generate_incoming_flights_per_airport_random(airport_settings, max_variation
 
 # Example usage:
 airport_settings_incoming = {
-    1: {'num_flights': 5, 'start_time': 420, 'end_time': 1380},  # 7:00 - 23:00
-    2: {'num_flights': 8, 'start_time': 480, 'end_time': 1320},  # 8:00 - 22:00
-    3: {'num_flights': 6, 'start_time': 450, 'end_time': 1200},  # 7:30 - 20:00
+    1: {'num_flights': 10, 'start_time': 420, 'end_time': 1380},  # 7:00 - 23:00
+    2: {'num_flights': 10, 'start_time': 480, 'end_time': 1320},  # 8:00 - 22:00
+    3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},  # 7:30 - 20:00
 }
 
 incoming_flights = generate_incoming_flights_per_airport_random(airport_settings_incoming, max_variation=5)
@@ -182,16 +182,15 @@ for train_id, info in trains.items():
 # Merge the new trains into the original dictionary
 trains.update(new_trains)
 
-# Make loop trains
-trains = {
-    1: {"route": [1, 2, 3], "origin": 1, "dest": 3},
-    2: {"route": [3, 2, 1], "origin": 3, "dest": 1},
-    3: {"route": [2, 3, 1], "origin": 2, "dest": 1},
-    4: {"route": [1, 3, 2], "origin": 1, "dest": 2},
-    5: {"route": [3, 1, 2], "origin": 3, "dest": 2},
-    6: {"route": [2, 1, 3], "origin": 2, "dest": 3},
-
-}
+# Make multi-station trains
+# trains = {
+#     1: {"route": [1, 2, 3], "origin": 1, "dest": 3},
+#     2: {"route": [3, 2, 1], "origin": 3, "dest": 1},
+#     3: {"route": [2, 3, 1], "origin": 2, "dest": 1},
+#     4: {"route": [1, 3, 2], "origin": 1, "dest": 2},
+#     5: {"route": [3, 1, 2], "origin": 3, "dest": 2},
+#     6: {"route": [2, 1, 3], "origin": 2, "dest": 3}
+# }
 
 
 I = list(trains.keys())
