@@ -18,8 +18,13 @@ from pathlib import Path
 from collections import defaultdict
 from gurobipy import GRB
 
-# Log file path
-log_path = Path(__file__).parent / "log.txt"
+# Create Logs folder relative to script
+log_dir = Path(__file__).parent / "Logs"
+log_dir.mkdir(exist_ok=True)  # create folder if it doesn't exist
+
+# Log file paths
+log_txt_path = log_dir / "log.txt"        # for all print() statements
+gurobi_log_path = log_dir / "gurobi.log"  # for Gurobi solver log
 
 # Redirect stdout (print statements) to log file
 class Logger:
@@ -35,7 +40,22 @@ class Logger:
         self.terminal.flush()
         self.log.flush()
 
-sys.stdout = Logger(log_path)
+sys.stdout = Logger(log_txt_path)
+
+# Redirect stdout (print statements) to log file
+class Logger:
+    def __init__(self, file_path):
+        self.terminal = sys.stdout
+        self.log = open(file_path, "w", encoding="utf-8")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+sys.stdout = Logger(log_txt_path)
 
 from parameters_scandinavia import (
     I, beta, gamma, y, dwell_max, dwell_min,
@@ -67,7 +87,7 @@ image_source = f"data:image/jpg;base64,{encoded_image}"
 # MODEL CREATION
 # ==========================================================
 model = gp.Model("Air_HSR_Synchronization_Bidirectional")
-model.Params.LogFile = str(Path(__file__).parent / "gurobi.log")
+model.Params.LogFile = str(gurobi_log_path)
 
 # ==========================================================
 # DECISION VARIABLES

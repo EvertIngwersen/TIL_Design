@@ -1,0 +1,711 @@
+Set parameter LogFile to value "c:\users\evert\documents\tu-delft\til master\til5050-20 til design project\til_design_repo\til_design\modeling\Logs\gurobi.log"
+Model successfully created with bidirectional transfers.
+Objective functions defined.
+
+======================================================================
+MODEL M1: Maximizing Synchronizations (Outgoing + Incoming)
+======================================================================
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2160 rows, 1920 columns and 4476 nonzeros (Max)
+Model fingerprint: 0x83cc9bc0
+Model has 720 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+Found heuristic solution: objective -0.0000000
+Presolve removed 2080 rows and 1877 columns
+Presolve time: 0.03s
+Presolved: 80 rows, 43 columns, 238 nonzeros
+Found heuristic solution: objective 24.0000000
+Variable types: 4 continuous, 39 integer (39 binary)
+
+Root relaxation: objective 5.057842e+01, 45 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   50.57842    0   33   24.00000   50.57842   111%     -    0s
+H    0     0                      25.0000000   50.57842   102%     -    0s
+H    0     0                      26.0000000   50.57842  94.5%     -    0s
+H    0     0                      28.0000000   50.57842  80.6%     -    0s
+     0     0     cutoff    0        28.00000   28.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 132
+  Gomory: 2
+  Cover: 8
+  MIR: 2
+  RLT: 1
+  BQP: 2
+
+Explored 1 nodes (63 simplex iterations) in 0.07 seconds (0.03 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 5: 28 26 25 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.800000000000e+01, best bound 2.800000000000e+01, gap 0.0000%
+Optimal P* = 28 (Outgoing: 16, Incoming: 12)
+
+======================================================================
+MODEL M2: Maximizing Coverage (Outgoing + Incoming)
+======================================================================
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2161 rows, 1920 columns and 5196 nonzeros (Max)
+Model fingerprint: 0x905a76bb
+Model has 60 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+MIP start from previous solve produced solution with objective -0 (0.01s)
+Loaded MIP start from previous solve with objective -0
+
+Presolve removed 1631 rows and 1612 columns
+Presolve time: 0.01s
+Presolved: 530 rows, 308 columns, 1635 nonzeros
+Variable types: 24 continuous, 284 integer (284 binary)
+Found heuristic solution: objective 10.0000000
+
+Root relaxation: objective 2.800000e+01, 242 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   28.00000    0   53   10.00000   28.00000   180%     -    0s
+     0     0   28.00000    0   42   10.00000   28.00000   180%     -    0s
+     0     0   28.00000    0   89   10.00000   28.00000   180%     -    0s
+H    0     0                      12.0000000   28.00000   133%     -    0s
+     0     0   27.18755    0   77   12.00000   27.18755   127%     -    0s
+     0     0   27.18755    0   40   12.00000   27.18755   127%     -    0s
+H    0     0                      13.0000000   27.18755   109%     -    0s
+     0     0   26.00000    0   40   13.00000   26.00000   100%     -    0s
+     0     0   26.00000    0   40   13.00000   26.00000   100%     -    0s
+H    0     2                      15.0000000   26.00000  73.3%     -    0s
+     0     2   26.00000    0   40   15.00000   26.00000  73.3%     -    0s
+H    8    16                      18.0000000   26.00000  44.4%   105    0s
+H   34    47                      20.0000000   26.00000  30.0%  80.4    0s
+
+Cutting planes:
+  Learned: 530
+  Gomory: 2
+  Cover: 67
+  Implied bound: 24
+  Clique: 2
+  MIR: 20
+  RLT: 2
+  Relax-and-lift: 21
+
+Explored 383 nodes (10765 simplex iterations) in 0.24 seconds (0.25 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 7: 20 18 15 ... -0
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+01, best bound 2.000000000000e+01, gap 0.0000%
+Optimal C* = 20 (Outgoing: 12, Incoming: 8)
+
+======================================================================
+MODEL M3: Minimizing Penalties (Outgoing + Incoming)
+======================================================================
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2162 rows, 1920 columns and 5256 nonzeros (Min)
+Model fingerprint: 0x221557c1
+Model has 720 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+MIP start from previous solve produced solution with objective 284.8 (0.00s)
+MIP start from previous solve produced solution with objective 284.8 (0.01s)
+Loaded MIP start from previous solve with objective 284.8
+
+Presolve removed 1193 rows and 1388 columns
+Presolve time: 0.01s
+Presolved: 969 rows, 532 columns, 3278 nonzeros
+Variable types: 248 continuous, 284 integer (284 binary)
+
+Root relaxation: objective 0.000000e+00, 440 iterations, 0.00 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0   50  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   56  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   49  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   57  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   38  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   42  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   48  284.80000    0.00000   100%     -    0s
+     0     0    0.00000    0   39  284.80000    0.00000   100%     -    0s
+H    0     0                     257.6000000    0.00000   100%     -    0s
+     0     0    0.00000    0   39  257.60000    0.00000   100%     -    0s
+     0     0    0.00000    0   33  257.60000    0.00000   100%     -    0s
+H    0     0                     247.6000000    0.00000   100%     -    0s
+     0     2    0.00000    0   33  247.60000    0.00000   100%     -    0s
+H  523   124                     218.0000000  100.80000  53.8%  29.9    0s
+H  987   115                     217.9999998  140.80000  35.4%  20.5    0s
+
+Cutting planes:
+  Learned: 722
+  Gomory: 20
+  Cover: 194
+  Implied bound: 1
+  Clique: 13
+  MIR: 97
+  Flow cover: 1
+  Inf proof: 8
+  RLT: 18
+  Relax-and-lift: 34
+  BQP: 3
+
+Explored 2106 nodes (30081 simplex iterations) in 0.67 seconds (0.74 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 4: 218 218 247.6 284.8 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.179999998366e+02, best bound 2.179999998256e+02, gap 0.0000%
+Optimal Penalty = 218.00
+
+======================================================================
+FINAL RESULTS
+======================================================================
+
+Z1 = 28, Z2 = 20, Z3 = 218.00
+
+======================================================================
+OUTGOING FLIGHT SYNCHRONIZATIONS (Train → Flight)
+======================================================================
+  Train 1 → Flight 29 at Station 2: train_arr=920.0, flight_dep=965, transfer=45.0min, penalty=0.00
+  Train 2 → Flight 8 at Station 1: train_arr=752.0, flight_dep=773, transfer=21.0min, penalty=28.80
+  Train 2 → Flight 9 at Station 1: train_arr=752.0, flight_dep=822, transfer=70.0min, penalty=10.00
+  Train 3 → Flight 43 at Station 3: train_arr=969.0, flight_dep=1037, transfer=68.0min, penalty=9.20
+  Train 4 → Flight 15 at Station 1: train_arr=1105.0, flight_dep=1128, transfer=23.0min, penalty=26.40
+  Train 4 → Flight 16 at Station 1: train_arr=1105.0, flight_dep=1175, transfer=70.0min, penalty=10.00
+  Train 5 → Flight 30 at Station 2: train_arr=978.0, flight_dep=1023, transfer=45.0min, penalty=0.00
+  Train 6 → Flight 41 at Station 3: train_arr=821.0, flight_dep=866, transfer=45.0min, penalty=0.00
+  Train 7 → Flight 33 at Station 2: train_arr=1153.0, flight_dep=1195, transfer=42.0min, penalty=3.60
+  Train 8 → Flight 8 at Station 1: train_arr=752.0, flight_dep=773, transfer=21.0min, penalty=28.80
+  Train 8 → Flight 9 at Station 1: train_arr=752.0, flight_dep=822, transfer=70.0min, penalty=10.00
+  Train 9 → Flight 40 at Station 3: train_arr=722.0, flight_dep=787, transfer=65.0min, penalty=8.00
+  Train 10 → Flight 8 at Station 1: train_arr=752.0, flight_dep=773, transfer=21.0min, penalty=28.80
+  Train 10 → Flight 9 at Station 1: train_arr=752.0, flight_dep=822, transfer=70.0min, penalty=10.00
+  Train 11 → Flight 27 at Station 2: train_arr=797.0, flight_dep=842, transfer=45.0min, penalty=0.00
+  Train 12 → Flight 44 at Station 3: train_arr=1044.0, flight_dep=1114, transfer=70.0min, penalty=10.00
+Total outgoing synchronizations: 16
+
+======================================================================
+INCOMING FLIGHT SYNCHRONIZATIONS (Flight → Train)
+======================================================================
+  Flight 2 → Train 1 at Station 1: flight_arr=663, train_dep=686.0, transfer=23.0min, penalty=8.80
+  Flight 6 → Train 2 at Station 2: flight_arr=476, train_dep=518.0, transfer=42.0min, penalty=1.20
+  Flight 2 → Train 3 at Station 1: flight_arr=663, train_dep=708.0, transfer=45.0min, penalty=0.00
+  Flight 13 → Train 4 at Station 3: flight_arr=822, train_dep=849.0, transfer=27.0min, penalty=7.20
+  Flight 12 → Train 5 at Station 3: flight_arr=642, train_dep=680.0, transfer=38.0min, penalty=2.80
+  Flight 6 → Train 6 at Station 2: flight_arr=476, train_dep=521.0, transfer=45.0min, penalty=0.00
+  Flight 3 → Train 7 at Station 1: flight_arr=899, train_dep=919.0, transfer=20.0min, penalty=10.00
+  Flight 6 → Train 8 at Station 2: flight_arr=476, train_dep=518.0, transfer=42.0min, penalty=1.20
+  Flight 1 → Train 9 at Station 1: flight_arr=416, train_dep=461.0, transfer=45.0min, penalty=0.00
+  Flight 11 → Train 10 at Station 3: flight_arr=453, train_dep=496.0, transfer=43.0min, penalty=0.80
+  Flight 11 → Train 11 at Station 3: flight_arr=453, train_dep=498.0, transfer=45.0min, penalty=0.00
+  Flight 7 → Train 12 at Station 2: flight_arr=694, train_dep=741.0, transfer=47.0min, penalty=2.40
+Total incoming synchronizations: 12
+
+======================================================================
+OUTGOING FLIGHT COVERAGE
+======================================================================
+  Flight 1 (dep 416): NOT COVERED (trains: none)
+  Flight 2 (dep 473): NOT COVERED (trains: none)
+  Flight 3 (dep 519): NOT COVERED (trains: none)
+  Flight 4 (dep 574): NOT COVERED (trains: none)
+  Flight 5 (dep 626): NOT COVERED (trains: none)
+  Flight 6 (dep 676): NOT COVERED (trains: none)
+  Flight 7 (dep 721): NOT COVERED (trains: none)
+  Flight 8 (dep 773): COVERED (trains: 2, 8, 10)
+  Flight 9 (dep 822): COVERED (trains: 2, 8, 10)
+  Flight 10 (dep 872): NOT COVERED (trains: none)
+  Flight 11 (dep 924): NOT COVERED (trains: none)
+  Flight 12 (dep 972): NOT COVERED (trains: none)
+  Flight 13 (dep 1025): NOT COVERED (trains: none)
+  Flight 14 (dep 1077): NOT COVERED (trains: none)
+  Flight 15 (dep 1128): COVERED (trains: 4)
+  Flight 16 (dep 1175): COVERED (trains: 4)
+  Flight 17 (dep 1224): NOT COVERED (trains: none)
+  Flight 18 (dep 1280): NOT COVERED (trains: none)
+  Flight 19 (dep 1332): NOT COVERED (trains: none)
+  Flight 20 (dep 1383): NOT COVERED (trains: none)
+  Flight 21 (dep 479): NOT COVERED (trains: none)
+  Flight 22 (dep 535): NOT COVERED (trains: none)
+  Flight 23 (dep 604): NOT COVERED (trains: none)
+  Flight 24 (dep 665): NOT COVERED (trains: none)
+  Flight 25 (dep 716): NOT COVERED (trains: none)
+  Flight 26 (dep 776): NOT COVERED (trains: none)
+  Flight 27 (dep 842): COVERED (trains: 11)
+  Flight 28 (dep 903): NOT COVERED (trains: none)
+  Flight 29 (dep 965): COVERED (trains: 1)
+  Flight 30 (dep 1023): COVERED (trains: 5)
+  Flight 31 (dep 1085): NOT COVERED (trains: none)
+  Flight 32 (dep 1141): NOT COVERED (trains: none)
+  Flight 33 (dep 1195): COVERED (trains: 7)
+  Flight 34 (dep 1258): NOT COVERED (trains: none)
+  Flight 35 (dep 1320): NOT COVERED (trains: none)
+  Flight 36 (dep 449): NOT COVERED (trains: none)
+  Flight 37 (dep 536): NOT COVERED (trains: none)
+  Flight 38 (dep 619): NOT COVERED (trains: none)
+  Flight 39 (dep 699): NOT COVERED (trains: none)
+  Flight 40 (dep 787): COVERED (trains: 9)
+  Flight 41 (dep 866): COVERED (trains: 6)
+  Flight 42 (dep 947): NOT COVERED (trains: none)
+  Flight 43 (dep 1037): COVERED (trains: 3)
+  Flight 44 (dep 1114): COVERED (trains: 12)
+  Flight 45 (dep 1196): NOT COVERED (trains: none)
+
+======================================================================
+INCOMING FLIGHT COVERAGE
+======================================================================
+  Flight 1 (arr 416): COVERED (trains: 9)
+  Flight 2 (arr 663): COVERED (trains: 1, 3)
+  Flight 3 (arr 899): COVERED (trains: 7)
+  Flight 4 (arr 1145): NOT COVERED (trains: none)
+  Flight 5 (arr 1376): NOT COVERED (trains: none)
+  Flight 6 (arr 476): COVERED (trains: 2, 6, 8)
+  Flight 7 (arr 694): COVERED (trains: 12)
+  Flight 8 (arr 904): NOT COVERED (trains: none)
+  Flight 9 (arr 1114): NOT COVERED (trains: none)
+  Flight 10 (arr 1315): NOT COVERED (trains: none)
+  Flight 11 (arr 453): COVERED (trains: 10, 11)
+  Flight 12 (arr 642): COVERED (trains: 5)
+  Flight 13 (arr 822): COVERED (trains: 4)
+  Flight 14 (arr 1016): NOT COVERED (trains: none)
+  Flight 15 (arr 1197): NOT COVERED (trains: none)
+
+======================================================================
+TRAIN TIMETABLE
+======================================================================
+Train 1:
+  Station 1: Arr = -, Dep = 686.0
+  Station 2: Arr = 920.0, Dep = -
+Train 2:
+  Station 2: Arr = -, Dep = 518.0
+  Station 1: Arr = 752.0, Dep = -
+Train 3:
+  Station 1: Arr = -, Dep = 708.0
+  Station 3: Arr = 969.0, Dep = -
+Train 4:
+  Station 3: Arr = -, Dep = 849.0
+  Station 1: Arr = 1105.0, Dep = -
+Train 5:
+  Station 3: Arr = -, Dep = 680.0
+  Station 2: Arr = 978.0, Dep = -
+Train 6:
+  Station 2: Arr = -, Dep = 521.0
+  Station 3: Arr = 821.0, Dep = -
+Train 7:
+  Station 1: Arr = -, Dep = 919.0
+  Station 2: Arr = 1153.0, Dep = -
+Train 8:
+  Station 2: Arr = -, Dep = 518.0
+  Station 1: Arr = 752.0, Dep = -
+Train 9:
+  Station 1: Arr = -, Dep = 461.0
+  Station 3: Arr = 722.0, Dep = -
+Train 10:
+  Station 3: Arr = -, Dep = 496.0
+  Station 1: Arr = 752.0, Dep = -
+Train 11:
+  Station 3: Arr = -, Dep = 498.0
+  Station 2: Arr = 797.0, Dep = -
+Train 12:
+  Station 2: Arr = -, Dep = 741.0
+  Station 3: Arr = 1044.0, Dep = -
+
+======================================================================
+SUMMARY
+======================================================================
+Total synchronizations: 28
+  - Outgoing (Train→Flight): 16
+  - Incoming (Flight→Train): 12
+Total flight coverage: 20
+  - Outgoing flights covered: 12/45
+  - Incoming flights covered: 8/15
+Total penalty: 218.00
+Train Timetable:
+Train 1:
+  Station 1: Arrival = -, Departure = 686.0
+  Station 2: Arrival = 920.0, Departure = -
+Train 2:
+  Station 2: Arrival = -, Departure = 518.0
+  Station 1: Arrival = 752.0, Departure = -
+Train 3:
+  Station 1: Arrival = -, Departure = 708.0
+  Station 3: Arrival = 969.0, Departure = -
+Train 4:
+  Station 3: Arrival = -, Departure = 849.0
+  Station 1: Arrival = 1105.0, Departure = -
+Train 5:
+  Station 3: Arrival = -, Departure = 680.0
+  Station 2: Arrival = 978.0, Departure = -
+Train 6:
+  Station 2: Arrival = -, Departure = 521.0
+  Station 3: Arrival = 821.0, Departure = -
+Train 7:
+  Station 1: Arrival = -, Departure = 919.0
+  Station 2: Arrival = 1153.0, Departure = -
+Train 8:
+  Station 2: Arrival = -, Departure = 518.0
+  Station 1: Arrival = 752.0, Departure = -
+Train 9:
+  Station 1: Arrival = -, Departure = 461.0
+  Station 3: Arrival = 722.0, Departure = -
+Train 10:
+  Station 3: Arrival = -, Departure = 496.0
+  Station 1: Arrival = 752.0, Departure = -
+Train 11:
+  Station 3: Arrival = -, Departure = 498.0
+  Station 2: Arrival = 797.0, Departure = -
+Train 12:
+  Station 2: Arrival = -, Departure = 741.0
+  Station 3: Arrival = 1044.0, Departure = -
+Combined Timetable (Air-Rail):
+
+Train 1:
+  Station 1: Arr = -, Dep = 686.0
+  Station 2: Arr = 920.0, Dep = -
+  → Connects to Flight 29 at Transfer Station: Flight Dep = 965
+
+Train 2:
+  Station 2: Arr = -, Dep = 518.0
+  Station 1: Arr = 752.0, Dep = -
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+
+Train 3:
+  Station 1: Arr = -, Dep = 708.0
+  Station 3: Arr = 969.0, Dep = -
+  → Connects to Flight 43 at Transfer Station: Flight Dep = 1037
+
+Train 4:
+  Station 3: Arr = -, Dep = 849.0
+  Station 1: Arr = 1105.0, Dep = -
+  → Connects to Flight 15 at Transfer Station: Flight Dep = 1128
+  → Connects to Flight 16 at Transfer Station: Flight Dep = 1175
+  → Connects to Flight 15 at Transfer Station: Flight Dep = 1128
+
+Train 5:
+  Station 3: Arr = -, Dep = 680.0
+  Station 2: Arr = 978.0, Dep = -
+  → Connects to Flight 30 at Transfer Station: Flight Dep = 1023
+
+Train 6:
+  Station 2: Arr = -, Dep = 521.0
+  Station 3: Arr = 821.0, Dep = -
+  → Connects to Flight 41 at Transfer Station: Flight Dep = 866
+
+Train 7:
+  Station 1: Arr = -, Dep = 919.0
+  Station 2: Arr = 1153.0, Dep = -
+  → Connects to Flight 33 at Transfer Station: Flight Dep = 1195
+
+Train 8:
+  Station 2: Arr = -, Dep = 518.0
+  Station 1: Arr = 752.0, Dep = -
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+
+Train 9:
+  Station 1: Arr = -, Dep = 461.0
+  Station 3: Arr = 722.0, Dep = -
+  → Connects to Flight 40 at Transfer Station: Flight Dep = 787
+
+Train 10:
+  Station 3: Arr = -, Dep = 496.0
+  Station 1: Arr = 752.0, Dep = -
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+  → Connects to Flight 8 at Transfer Station: Flight Dep = 773
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 822
+
+Train 11:
+  Station 3: Arr = -, Dep = 498.0
+  Station 2: Arr = 797.0, Dep = -
+  → Connects to Flight 27 at Transfer Station: Flight Dep = 842
+
+Train 12:
+  Station 2: Arr = -, Dep = 741.0
+  Station 3: Arr = 1044.0, Dep = -
+  → Connects to Flight 44 at Transfer Station: Flight Dep = 1114
+
+======================================================================
+ARRIVAL FLIGHT SCHEDULE
+======================================================================
+  Flight 1:
+     Arrival time : 416
+     Airport station : 1
+     Connected trains : 9
+  Flight 2:
+     Arrival time : 663
+     Airport station : 1
+     Connected trains : 1, 3
+  Flight 3:
+     Arrival time : 899
+     Airport station : 1
+     Connected trains : 7
+  Flight 4:
+     Arrival time : 1145
+     Airport station : 1
+     Connected trains : none
+  Flight 5:
+     Arrival time : 1376
+     Airport station : 1
+     Connected trains : none
+  Flight 6:
+     Arrival time : 476
+     Airport station : 2
+     Connected trains : 2, 6, 8
+  Flight 7:
+     Arrival time : 694
+     Airport station : 2
+     Connected trains : 12
+  Flight 8:
+     Arrival time : 904
+     Airport station : 2
+     Connected trains : none
+  Flight 9:
+     Arrival time : 1114
+     Airport station : 2
+     Connected trains : none
+  Flight 10:
+     Arrival time : 1315
+     Airport station : 2
+     Connected trains : none
+  Flight 11:
+     Arrival time : 453
+     Airport station : 3
+     Connected trains : 10, 11
+  Flight 12:
+     Arrival time : 642
+     Airport station : 3
+     Connected trains : 5
+  Flight 13:
+     Arrival time : 822
+     Airport station : 3
+     Connected trains : 4
+  Flight 14:
+     Arrival time : 1016
+     Airport station : 3
+     Connected trains : none
+  Flight 15:
+     Arrival time : 1197
+     Airport station : 3
+     Connected trains : none
+
+======================================================================
+DEPARTURE FLIGHT SCHEDULE
+======================================================================
+  Flight 1:
+     Departure time : 416
+     Airport station : 1
+     Connected trains : none
+  Flight 2:
+     Departure time : 473
+     Airport station : 1
+     Connected trains : none
+  Flight 3:
+     Departure time : 519
+     Airport station : 1
+     Connected trains : none
+  Flight 4:
+     Departure time : 574
+     Airport station : 1
+     Connected trains : none
+  Flight 5:
+     Departure time : 626
+     Airport station : 1
+     Connected trains : none
+  Flight 6:
+     Departure time : 676
+     Airport station : 1
+     Connected trains : none
+  Flight 7:
+     Departure time : 721
+     Airport station : 1
+     Connected trains : none
+  Flight 8:
+     Departure time : 773
+     Airport station : 1
+     Connected trains : 2, 8, 10
+  Flight 9:
+     Departure time : 822
+     Airport station : 1
+     Connected trains : 2, 8, 10
+  Flight 10:
+     Departure time : 872
+     Airport station : 1
+     Connected trains : none
+  Flight 11:
+     Departure time : 924
+     Airport station : 1
+     Connected trains : none
+  Flight 12:
+     Departure time : 972
+     Airport station : 1
+     Connected trains : none
+  Flight 13:
+     Departure time : 1025
+     Airport station : 1
+     Connected trains : none
+  Flight 14:
+     Departure time : 1077
+     Airport station : 1
+     Connected trains : none
+  Flight 15:
+     Departure time : 1128
+     Airport station : 1
+     Connected trains : 4
+  Flight 16:
+     Departure time : 1175
+     Airport station : 1
+     Connected trains : 4
+  Flight 17:
+     Departure time : 1224
+     Airport station : 1
+     Connected trains : none
+  Flight 18:
+     Departure time : 1280
+     Airport station : 1
+     Connected trains : none
+  Flight 19:
+     Departure time : 1332
+     Airport station : 1
+     Connected trains : none
+  Flight 20:
+     Departure time : 1383
+     Airport station : 1
+     Connected trains : none
+  Flight 21:
+     Departure time : 479
+     Airport station : 2
+     Connected trains : none
+  Flight 22:
+     Departure time : 535
+     Airport station : 2
+     Connected trains : none
+  Flight 23:
+     Departure time : 604
+     Airport station : 2
+     Connected trains : none
+  Flight 24:
+     Departure time : 665
+     Airport station : 2
+     Connected trains : none
+  Flight 25:
+     Departure time : 716
+     Airport station : 2
+     Connected trains : none
+  Flight 26:
+     Departure time : 776
+     Airport station : 2
+     Connected trains : none
+  Flight 27:
+     Departure time : 842
+     Airport station : 2
+     Connected trains : 11
+  Flight 28:
+     Departure time : 903
+     Airport station : 2
+     Connected trains : none
+  Flight 29:
+     Departure time : 965
+     Airport station : 2
+     Connected trains : 1
+  Flight 30:
+     Departure time : 1023
+     Airport station : 2
+     Connected trains : 5
+  Flight 31:
+     Departure time : 1085
+     Airport station : 2
+     Connected trains : none
+  Flight 32:
+     Departure time : 1141
+     Airport station : 2
+     Connected trains : none
+  Flight 33:
+     Departure time : 1195
+     Airport station : 2
+     Connected trains : 7
+  Flight 34:
+     Departure time : 1258
+     Airport station : 2
+     Connected trains : none
+  Flight 35:
+     Departure time : 1320
+     Airport station : 2
+     Connected trains : none
+  Flight 36:
+     Departure time : 449
+     Airport station : 3
+     Connected trains : none
+  Flight 37:
+     Departure time : 536
+     Airport station : 3
+     Connected trains : none
+  Flight 38:
+     Departure time : 619
+     Airport station : 3
+     Connected trains : none
+  Flight 39:
+     Departure time : 699
+     Airport station : 3
+     Connected trains : none
+  Flight 40:
+     Departure time : 787
+     Airport station : 3
+     Connected trains : 9
+  Flight 41:
+     Departure time : 866
+     Airport station : 3
+     Connected trains : 6
+  Flight 42:
+     Departure time : 947
+     Airport station : 3
+     Connected trains : none
+  Flight 43:
+     Departure time : 1037
+     Airport station : 3
+     Connected trains : 3
+  Flight 44:
+     Departure time : 1114
+     Airport station : 3
+     Connected trains : 12
+  Flight 45:
+     Departure time : 1196
+     Airport station : 3
+     Connected trains : none
