@@ -14,10 +14,29 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import networkx as nx
 import plotly.express as px
-
 from pathlib import Path
 from collections import defaultdict
 from gurobipy import GRB
+
+# Log file path
+log_path = Path(__file__).parent / "log.txt"
+
+# Redirect stdout (print statements) to log file
+class Logger:
+    def __init__(self, file_path):
+        self.terminal = sys.stdout
+        self.log = open(file_path, "w", encoding="utf-8")
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+sys.stdout = Logger(log_path)
+
 from parameters_scandinavia import (
     I, beta, gamma, y, dwell_max, dwell_min,
     dw_lower, dw_upper, aw_lower, aw_upper,
@@ -32,9 +51,6 @@ from parameters_scandinavia import (
 pio.renderers.default = "browser"
 
 
-# Loading train image (used for animation)
-
-
 # Get current script directory
 current_dir = Path(__file__).parent
 
@@ -47,13 +63,11 @@ with open(train_img_path, "rb") as f:
 
 image_source = f"data:image/jpg;base64,{encoded_image}"
 
-
-
 # ==========================================================
 # MODEL CREATION
 # ==========================================================
-
 model = gp.Model("Air_HSR_Synchronization_Bidirectional")
+model.Params.LogFile = str(Path(__file__).parent / "gurobi.log")
 
 # ==========================================================
 # DECISION VARIABLES
