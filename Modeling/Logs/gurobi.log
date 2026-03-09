@@ -490,3 +490,140 @@ Solution count 2: 144 176.4
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 1.440000000000e+02, best bound 1.440000000000e+02, gap 0.0000%
+
+Gurobi 13.0.1 (win64) logging started Mon Mar  9 17:20:46 2026
+
+Set parameter LogFile to value "c:\users\evert\documents\tu-delft\til master\til5050-20 til design project\til_design_repo\til_design\modeling\Logs\gurobi.log"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2160 rows, 1920 columns and 4476 nonzeros (Max)
+Model fingerprint: 0x5843ab65
+Model has 720 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+Found heuristic solution: objective 8.0000000
+Presolve removed 2154 rows and 1914 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 6 columns, 18 nonzeros
+Found heuristic solution: objective 18.0000000
+Variable types: 2 continuous, 4 integer (4 binary)
+
+Root relaxation: objective 1.972464e+01, 2 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   19.72464    0    1   18.00000   19.72464  9.58%     -    0s
+*    0     0               0      19.0000000   19.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.02 seconds (0.00 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 3: 19 18 8 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.900000000000e+01, best bound 1.900000000000e+01, gap 0.0000%
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2161 rows, 1920 columns and 5196 nonzeros (Max)
+Model fingerprint: 0x56b1b6a6
+Model has 60 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+MIP start from previous solve produced solution with objective -0 (0.02s)
+MIP start from previous solve produced solution with objective -0 (0.02s)
+Loaded MIP start from previous solve with objective -0
+
+Presolve removed 2125 rows and 1881 columns
+Presolve time: 0.00s
+Presolved: 36 rows, 39 columns, 123 nonzeros
+Found heuristic solution: objective 19.0000000
+Variable types: 10 continuous, 29 integer (28 binary)
+
+Root relaxation: cutoff, 10 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0        19.00000   19.00000  0.00%     -    0s
+
+Explored 1 nodes (10 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 19 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.900000000000e+01, best bound 1.900000000000e+01, gap 0.0000%
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 2162 rows, 1920 columns and 5256 nonzeros (Min)
+Model fingerprint: 0xf4efb423
+Model has 720 linear objective coefficients
+Variable types: 744 continuous, 1176 integer (1176 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+MIP start from previous solve produced solution with objective 131 (0.00s)
+MIP start from previous solve produced solution with objective 131 (0.00s)
+Loaded MIP start from previous solve with objective 131
+
+Presolve removed 2041 rows and 1804 columns
+Presolve time: 0.00s
+Presolved: 121 rows, 116 columns, 411 nonzeros
+Variable types: 47 continuous, 69 integer (69 binary)
+
+Root relaxation: objective 1.755558e+01, 131 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   17.55558    0   40  131.00000   17.55558  86.6%     -    0s
+H    0     0                     100.0000000   17.55558  82.4%     -    0s
+     0     0   57.15201    0   30  100.00000   57.15201  42.8%     -    0s
+     0     0   79.46504    0   24  100.00000   79.46504  20.5%     -    0s
+     0     0   90.12742    0   16  100.00000   90.12742  9.87%     -    0s
+     0     0   93.61823    0   16  100.00000   93.61823  6.38%     -    0s
+     0     0   94.24587    0   16  100.00000   94.24587  5.75%     -    0s
+     0     0   97.01786    0    8  100.00000   97.01786  2.98%     -    0s
+     0     0     cutoff    0       100.00000  100.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 11
+  Gomory: 3
+  Cover: 5
+  Implied bound: 1
+  Clique: 12
+  MIR: 8
+  Flow cover: 1
+  RLT: 1
+  BQP: 1
+
+Explored 1 nodes (229 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 100 131 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+02, best bound 1.000000000000e+02, gap 0.0000%
