@@ -1,0 +1,2 @@
+# Ignore all flight parquet files
+Data/Flight Data/Eurocontrol Test Data/data/flight_list/*.parquet
