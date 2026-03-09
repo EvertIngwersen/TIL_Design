@@ -100,6 +100,36 @@ I_T = [i for i in I if any(s in transfer_stations for s in S_i[i])]
 I_N = [i for i in I if i not in I_T]
 
 
+# ==========================================================
+# 3. TRAVEL & TIMING PARAMETERS
+# ==========================================================
+travel_times = {
+    # Original forward directions
+    (1,2): 20, (1,3): 25,
+    (2, 1): 20, (2,3): 20,
+    (3,1): 20, (3,2): 20
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
