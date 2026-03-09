@@ -60,31 +60,68 @@ def generate_outgoing_flights_per_airport_random(airport_settings, max_variation
 
     return outgoing_flights
 
-
-# Example usage:
-airport_settings = {
+airport_settings_outgoing = {
     1: {'num_flights': 20, 'start_time': 420, 'end_time': 1380},
     2: {'num_flights': 15, 'start_time': 480, 'end_time': 1320},
     3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},
 }
 
-outgoing_flights = generate_outgoing_flights_per_airport_random(airport_settings, max_variation=5)
+outgoing_flights = generate_outgoing_flights_per_airport_random(airport_settings_outgoing, max_variation=5)
 
 # Incoming flights (passengers arrive by flight, depart by train)
-incoming_flights = {
-    1: {"station": 1, "arrival": 480},
-    2: {"station": 1, "arrival": 520},
-    3: {"station": 1, "arrival": 550},
-    4: {"station": 1, "arrival": 500},
-    5: {"station": 2, "arrival": 530},
-    6: {"station": 2, "arrival": 650},
-    7: {"station": 2, "arrival": 700},
-    8: {"station": 2, "arrival": 600},
-    9: {"station": 3, "arrival": 515},
-    10: {"station": 3, "arrival": 650},
-    11: {"station": 3, "arrival": 700},
-    12: {"station": 3, "arrival": 950},
+def generate_incoming_flights_per_airport_random(airport_settings, max_variation=5):
+    """
+    Generates a dictionary of incoming flights for multiple airports with individual settings,
+    adding a small random variation to each arrival.
+
+    Parameters:
+        airport_settings (dict):
+            Keys are airport IDs.
+            Values are dicts with 'num_flights', 'start_time', 'end_time' in minutes from midnight.
+
+            Example:
+            {
+                1: {'num_flights': 20, 'start_time': 420, 'end_time': 1380},
+                2: {'num_flights': 15, 'start_time': 480, 'end_time': 1320},
+                3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},
+            }
+
+        max_variation (int): Maximum random deviation (in minutes) from the scheduled arrival.
+
+    Returns:
+        dict: Dictionary of flights with flight_id as key and station + arrival info as value.
+    """
+    incoming_flights = {}
+    flight_id = 1
+
+    for airport, settings in airport_settings.items():
+        num_flights = settings['num_flights']
+        start_time = settings['start_time']
+        end_time = settings['end_time']
+
+        if num_flights == 1:
+            arrivals = [start_time]
+        else:
+            interval = (end_time - start_time) / (num_flights - 1)
+            arrivals = [start_time + i * interval for i in range(num_flights)]
+
+        for arr in arrivals:
+            # Add random variation
+            arr_random = int(arr + random.randint(-max_variation, max_variation))
+            incoming_flights[flight_id] = {"station": airport, "arrival": arr_random}
+            flight_id += 1
+
+    return incoming_flights
+
+
+# Example usage:
+airport_settings_incoming = {
+    1: {'num_flights': 20, 'start_time': 420, 'end_time': 1380},  # 7:00 - 23:00
+    2: {'num_flights': 15, 'start_time': 480, 'end_time': 1320},  # 8:00 - 22:00
+    3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},  # 7:30 - 20:00
 }
+
+incoming_flights = generate_incoming_flights_per_airport_random(airport_settings_incoming, max_variation=5)
 
 # Sets
 K_out = list(outgoing_flights.keys())
