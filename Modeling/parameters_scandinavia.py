@@ -173,7 +173,18 @@ M = H + max(max(HS.values()), max(HA.values()))
 M_prime = H
 M_double = H * max(v1*w1, v2*w2)
 
+# Shared station intervals
+xs, xe = {}, {}
+for i in I:
+    for j in I:
+        if i != j:
+            common = sorted(list(set(S_i[i]).intersection(S_i[j])))
+            if len(common) >= 2:
+                xs[i,j] = common[0]
+                xe[i,j] = common[-1]
 
+# Convenience dict for station coordinates
+station_coords = {s: info["coords"] for s, info in stations.items()}
 
 
 
