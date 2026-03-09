@@ -271,6 +271,7 @@ for city in cities.keys():
     normalized_name = normalize_city_name(city)
     normalized_lookup[normalized_name] = city 
 
+
 def get_city_node(prompt):
     while True:
         user_input = input(prompt).strip().lower()
