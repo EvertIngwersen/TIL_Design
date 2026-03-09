@@ -78,7 +78,26 @@ u_k = {k: D_k[k] - b_min for k in K_out}
 l_m = {m: A_m[m] + b_min for m in K_in}
 u_m = {m: A_m[m] + b_max for m in K_in}
 
+# ==========================================================
+# 2. TRAINS
+# ==========================================================
+trains = {
+    1: {"route": [1, 2], "origin": 1, "dest": 2},
+    2: {"route": [2, 1], "origin": 2, "dest": 1},
+    3: {"route": [1, 3], "origin": 1, "dest": 3},
+    4: {"route": [3, 1], "origin": 3, "dest": 1},
+    5: {"route": [3, 2], "origin": 3, "dest": 2},
+    6: {"route": [2, 3], "origin": 2, "dest": 3}
+}
 
+I = list(trains.keys())
+S_i = {i: trains[i]["route"] for i in I}
+ori_i = {i: trains[i]["origin"] for i in I}
+des_i = {i: trains[i]["dest"] for i in I}
+
+# Trains serving airport stations vs non-airport
+I_T = [i for i in I if any(s in transfer_stations for s in S_i[i])]
+I_N = [i for i in I if i not in I_T]
 
 
 
