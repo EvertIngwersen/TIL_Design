@@ -52,7 +52,31 @@ incoming_flights = {
     12: {"station": 3, "arrival": 950},
 }
 
+# Sets
+K_out = list(outgoing_flights.keys())
+K_in = list(incoming_flights.keys())
+K = K_out + K_in  # Combined for compatibility
 
+# Flight station mapping
+flight_station_out = {k: outgoing_flights[k]["station"] for k in K_out}
+flight_station_in = {m: incoming_flights[m]["station"] for m in K_in}
+flight_station = {**flight_station_out, **flight_station_in}
+
+# Times
+D_k = {k: outgoing_flights[k]["departure"] for k in K_out}
+A_m = {m: incoming_flights[m]["arrival"] for m in K_in}
+
+# Transfer window bounds
+b_min = 20
+b_max = 70
+
+# Connection windows for OUTGOING flights (train arrival must be in this window)
+l_k = {k: D_k[k] - b_max for k in K_out}
+u_k = {k: D_k[k] - b_min for k in K_out}
+
+# Connection windows for INCOMING flights (train departure must be in this window)
+l_m = {m: A_m[m] + b_min for m in K_in}
+u_m = {m: A_m[m] + b_max for m in K_in}
 
 
 
