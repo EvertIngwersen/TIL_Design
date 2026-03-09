@@ -18,7 +18,7 @@ import plotly.express as px
 from pathlib import Path
 from collections import defaultdict
 from gurobipy import GRB
-from parameters import (
+from parameters_scandinavia import (
     I, beta, gamma, y, dwell_max, dwell_min,
     dw_lower, dw_upper, aw_lower, aw_upper,
     xs, xe, M, HS, HA, l_k, M_prime, u_k,
