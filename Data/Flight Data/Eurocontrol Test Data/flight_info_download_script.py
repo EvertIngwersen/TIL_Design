@@ -74,7 +74,7 @@ def download_files(urls: list, save_folder: str):
 
 if __name__ == "__main__":
     datasets = {
-        "flight_list": ("`r format(start_date, "%Y%m")`", "`r format(end_date, "%Y%m")`")
+        "flight_list": ("202401", "202403")  # start YYYYMM, end YYYYMM
     }
 
     for data_type, (start_date, end_date) in datasets.items():
