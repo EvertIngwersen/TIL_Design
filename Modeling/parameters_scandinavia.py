@@ -13,7 +13,7 @@ Created on Mon Mar  9 13:25:40 2026
 stations = {
     1: {"coords": (5, 1.5), "airport": True},   #Arlanda Airport
     2: {"coords": (3, -0.5), "airport": True},  #Kastrup Airport
-    3: {"coords": (12,1), "airport": True}   #Gardermoen Airport
+    3: {"coords": (2,1), "airport": True}   #Gardermoen Airport
     }
 
 S = list(stations.keys())
