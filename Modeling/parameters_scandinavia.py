@@ -5,6 +5,8 @@ Created on Mon Mar  9 13:25:40 2026
 @author: evert
 """
 
+import random
+
 # ALL TIME VALUES ARE IN MINUTES
 
 # ==========================================================
@@ -21,17 +23,17 @@ transfer_stations = [s for s, info in stations.items() if info.get("airport")]
 
 # Outgoing flights (passengers arrive by train, depart by flight)
 
-# PLACEHOLDER VALUES
-
-def generate_outgoing_flights(airports, num_flights_per_airport, start_time, end_time):
+def generate_outgoing_flights_per_airport_random(airport_settings, max_variation=5):
     """
-    Generates a dictionary of outgoing flights.
+    Generates a dictionary of outgoing flights for multiple airports with individual settings,
+    adding a small random variation to each departure.
 
     Parameters:
-        airports (list): List of airport IDs.
-        num_flights_per_airport (int): Number of flights per airport.
-        start_time (int): Departure time of the first flight in minutes from midnight.
-        end_time (int): Departure time of the last flight in minutes from midnight.
+        airport_settings (dict):
+            Keys are airport IDs.
+            Values are dicts with 'num_flights', 'start_time', 'end_time' in minutes from midnight.
+
+        max_variation (int): Maximum random deviation (in minutes) from the scheduled departure.
 
     Returns:
         dict: Dictionary of flights with flight_id as key and station + departure info as value.
@@ -39,28 +41,34 @@ def generate_outgoing_flights(airports, num_flights_per_airport, start_time, end
     outgoing_flights = {}
     flight_id = 1
 
-    for airport in airports:
-        if num_flights_per_airport == 1:
+    for airport, settings in airport_settings.items():
+        num_flights = settings['num_flights']
+        start_time = settings['start_time']
+        end_time = settings['end_time']
+
+        if num_flights == 1:
             departures = [start_time]
         else:
-            # Calculate evenly spaced departures
-            interval = (end_time - start_time) / (num_flights_per_airport - 1)
-            departures = [int(start_time + i * interval) for i in range(num_flights_per_airport)]
+            interval = (end_time - start_time) / (num_flights - 1)
+            departures = [start_time + i * interval for i in range(num_flights)]
 
         for dep in departures:
-            outgoing_flights[flight_id] = {"station": airport, "departure": dep}
+            # Add random variation
+            dep_random = int(dep + random.randint(-max_variation, max_variation))
+            outgoing_flights[flight_id] = {"station": airport, "departure": dep_random}
             flight_id += 1
 
     return outgoing_flights
 
 
 # Example usage:
-airports = [1, 2, 3]
-num_flights_per_airport = 20
-start_time = 420  # 7:00 AM
-end_time = 1380   # 23:00 PM
+airport_settings = {
+    1: {'num_flights': 20, 'start_time': 420, 'end_time': 1380},
+    2: {'num_flights': 15, 'start_time': 480, 'end_time': 1320},
+    3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},
+}
 
-outgoing_flights = generate_outgoing_flights(airports, num_flights_per_airport, start_time, end_time)
+outgoing_flights = generate_outgoing_flights_per_airport_random(airport_settings, max_variation=5)
 
 # Incoming flights (passengers arrive by flight, depart by train)
 incoming_flights = {
