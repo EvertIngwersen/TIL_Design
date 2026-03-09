@@ -2,10 +2,10 @@ import requests
 import pandas as pd
 from pathlib import Path
 
-API_KEY = "YOUR_API_KEY"
+API_KEY = "a721752689a14e0b69d2f1f760fa4452"
 BASE_URL = "http://api.aviationstack.com/v1/flights"
 
-DATE = "2026-02-20"
+DATE = "2026-02-12"
 
 # Airports (IATA codes)
 AIRPORTS = {
@@ -16,8 +16,8 @@ AIRPORTS = {
 
 # Base folder relative to this script
 SCRIPT_DIR = Path(__file__).resolve().parent
-SAVE_DIR = SCRIPT_DIR / "../../Data/Flight Data/AviationStack Data"
-SAVE_DIR.mkdir(parents=True, exist_ok=True)
+SAVE_DIR = SCRIPT_DIR / "../../Large Data"
+SAVE_DIR.mkdir(parents=True, exist_ok=True)  # create folder if it doesn't exist
 
 
 def get_flights(params):
