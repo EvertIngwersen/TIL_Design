@@ -241,7 +241,7 @@ aw_upper = {i: 1400 for i in I}
 a_o, d_o = {}, {}
 for i in I:
     route = S_i[i]
-    base_time = 480 + 20 * i
+    base_time = 400 + 20 * i
     cumulative_time = base_time
     
     for idx, s in enumerate(route):
