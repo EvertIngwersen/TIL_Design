@@ -111,7 +111,67 @@ travel_times = {
     (3,1): 251, (3,2): 293
     }
 
+# Running times, acceleration, deceleration, dwell times
+r, beta, gamma, y, x = {}, {}, {}, {}, {}
+dwell_min, dwell_max = {}, {}
 
+for i in I:
+    route = S_i[i]
+    origin = ori_i[i]
+    dest = des_i[i]
+    for idx, s in enumerate(route):
+        # Running times
+        if idx < len(route) - 1:
+            s_next = route[idx + 1]
+            r[i, s] = travel_times.get((s, s_next), 30)
+            y[i, s] = 5  # time supplement
+            beta[i, s] = 2  # acceleration
+        # Deceleration for next station
+        if s != origin:
+            gamma[i, s] = 3
+        # Stop decision
+        x[i, s] = 1
+        # Dwell times (not at origin/dest)
+        if s not in [origin, dest]:
+            dwell_min[i, s] = 2
+            dwell_max[i, s] = 6
+
+# Headways
+HA = {s: 3 for s in S}
+HS = {s: 3 for s in S}
+
+# Departure/arrival windows
+wt = {i: 200 for i in I}
+dw_lower = {i: 0 for i in I}
+dw_upper = {i: 1400 for i in I}
+aw_lower = {i: 0 for i in I}
+aw_upper = {i: 1400 for i in I}
+
+# Original timetable
+a_o, d_o = {}, {}
+for i in I:
+    route = S_i[i]
+    base_time = 480 + 20 * i
+    cumulative_time = base_time
+    
+    for idx, s in enumerate(route):
+        if s != des_i[i]:
+            d_o[i, s] = cumulative_time
+        if s != ori_i[i]:
+            a_o[i, s] = cumulative_time
+        if idx < len(route) - 1:
+            s_next = route[idx + 1]
+            travel_time = r[i, s]
+            cumulative_time += travel_time + 5
+
+# Planning horizon and passenger sensitivity
+v1, v2 = 2.0, 1.0
+w2 = 0.4
+w1 = 1 - w2
+H = 1440  # One full day 24*60 = 1440 minutes
+M = H + max(max(HS.values()), max(HA.values()))
+M_prime = H
+M_double = H * max(v1*w1, v2*w2)
 
 
 
