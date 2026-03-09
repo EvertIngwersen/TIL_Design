@@ -152,6 +152,7 @@ u_m = {m: A_m[m] + b_max for m in K_in}
 # ==========================================================
 # 2. TRAINS
 # ==========================================================
+# Original train dictionary
 trains = {
     1: {"route": [1, 2], "origin": 1, "dest": 2},
     2: {"route": [2, 1], "origin": 2, "dest": 1},
@@ -160,6 +161,26 @@ trains = {
     5: {"route": [3, 2], "origin": 3, "dest": 2},
     6: {"route": [2, 3], "origin": 2, "dest": 3}
 }
+
+# How many extra trains per route
+extra_per_route = 4
+
+# Find the current max train ID to continue numbering
+max_id = max(trains.keys())
+
+new_trains = {}
+
+for train_id, info in trains.items():
+    for i in range(extra_per_route):
+        max_id += 1
+        new_trains[max_id] = {
+            "route": info["route"].copy(),
+            "origin": info["origin"],
+            "dest": info["dest"]
+        }
+
+# Merge the new trains into the original dictionary
+trains.update(new_trains)
 
 I = list(trains.keys())
 S_i = {i: trains[i]["route"] for i in I}
