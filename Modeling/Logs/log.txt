@@ -6932,3 +6932,299 @@ ARRIVAL FLIGHT SCHEDULE
      Arrival time : 1038
      Airport station : 2
      Connected trains : 22, 23, 24
+  Flight 18:
+     Arrival time : 1138
+     Airport station : 2
+     Connected trains : none
+  Flight 19:
+     Arrival time : 1226
+     Airport station : 2
+     Connected trains : none
+  Flight 20:
+     Arrival time : 1322
+     Airport station : 2
+     Connected trains : none
+  Flight 21:
+     Arrival time : 448
+     Airport station : 3
+     Connected trains : 5
+  Flight 22:
+     Arrival time : 538
+     Airport station : 3
+     Connected trains : none
+  Flight 23:
+     Arrival time : 614
+     Airport station : 3
+     Connected trains : none
+  Flight 24:
+     Arrival time : 695
+     Airport station : 3
+     Connected trains : none
+  Flight 25:
+     Arrival time : 781
+     Airport station : 3
+     Connected trains : 17
+  Flight 26:
+     Arrival time : 871
+     Airport station : 3
+     Connected trains : 16, 18, 19
+  Flight 27:
+     Arrival time : 946
+     Airport station : 3
+     Connected trains : 20, 21
+  Flight 28:
+     Arrival time : 1036
+     Airport station : 3
+     Connected trains : none
+  Flight 29:
+     Arrival time : 1113
+     Airport station : 3
+     Connected trains : none
+  Flight 30:
+     Arrival time : 1202
+     Airport station : 3
+     Connected trains : none
+
+======================================================================
+DEPARTURE FLIGHT SCHEDULE
+======================================================================
+  Flight 1:
+     Departure time : 424
+     Airport station : 1
+     Connected trains : none
+  Flight 2:
+     Departure time : 472
+     Airport station : 1
+     Connected trains : 2
+  Flight 3:
+     Departure time : 518
+     Airport station : 1
+     Connected trains : 2
+  Flight 4:
+     Departure time : 576
+     Airport station : 1
+     Connected trains : none
+  Flight 5:
+     Departure time : 625
+     Airport station : 1
+     Connected trains : 4
+  Flight 6:
+     Departure time : 671
+     Airport station : 1
+     Connected trains : 4
+  Flight 7:
+     Departure time : 721
+     Airport station : 1
+     Connected trains : none
+  Flight 8:
+     Departure time : 769
+     Airport station : 1
+     Connected trains : none
+  Flight 9:
+     Departure time : 821
+     Airport station : 1
+     Connected trains : none
+  Flight 10:
+     Departure time : 869
+     Airport station : 1
+     Connected trains : none
+  Flight 11:
+     Departure time : 925
+     Airport station : 1
+     Connected trains : 10
+  Flight 12:
+     Departure time : 973
+     Airport station : 1
+     Connected trains : 11, 12
+  Flight 13:
+     Departure time : 1022
+     Airport station : 1
+     Connected trains : 11, 12
+  Flight 14:
+     Departure time : 1072
+     Airport station : 1
+     Connected trains : none
+  Flight 15:
+     Departure time : 1126
+     Airport station : 1
+     Connected trains : 17
+  Flight 16:
+     Departure time : 1176
+     Airport station : 1
+     Connected trains : 16, 17, 18
+  Flight 17:
+     Departure time : 1226
+     Airport station : 1
+     Connected trains : 16, 18
+  Flight 18:
+     Departure time : 1278
+     Airport station : 1
+     Connected trains : none
+  Flight 19:
+     Departure time : 1330
+     Airport station : 1
+     Connected trains : none
+  Flight 20:
+     Departure time : 1379
+     Airport station : 1
+     Connected trains : none
+  Flight 21:
+     Departure time : 475
+     Airport station : 2
+     Connected trains : none
+  Flight 22:
+     Departure time : 519
+     Airport station : 2
+     Connected trains : none
+  Flight 23:
+     Departure time : 573
+     Airport station : 2
+     Connected trains : 1
+  Flight 24:
+     Departure time : 616
+     Airport station : 2
+     Connected trains : 1
+  Flight 25:
+     Departure time : 654
+     Airport station : 2
+     Connected trains : none
+  Flight 26:
+     Departure time : 696
+     Airport station : 2
+     Connected trains : 7
+  Flight 27:
+     Departure time : 741
+     Airport station : 2
+     Connected trains : 7
+  Flight 28:
+     Departure time : 789
+     Airport station : 2
+     Connected trains : 5
+  Flight 29:
+     Departure time : 835
+     Airport station : 2
+     Connected trains : 5, 8, 9
+  Flight 30:
+     Departure time : 872
+     Airport station : 2
+     Connected trains : 8, 9
+  Flight 31:
+     Departure time : 917
+     Airport station : 2
+     Connected trains : none
+  Flight 32:
+     Departure time : 961
+     Airport station : 2
+     Connected trains : none
+  Flight 33:
+     Departure time : 1014
+     Airport station : 2
+     Connected trains : none
+  Flight 34:
+     Departure time : 1057
+     Airport station : 2
+     Connected trains : none
+  Flight 35:
+     Departure time : 1094
+     Airport station : 2
+     Connected trains : none
+  Flight 36:
+     Departure time : 1144
+     Airport station : 2
+     Connected trains : none
+  Flight 37:
+     Departure time : 1187
+     Airport station : 2
+     Connected trains : none
+  Flight 38:
+     Departure time : 1228
+     Airport station : 2
+     Connected trains : 19
+  Flight 39:
+     Departure time : 1275
+     Airport station : 2
+     Connected trains : 19
+  Flight 40:
+     Departure time : 1316
+     Airport station : 2
+     Connected trains : 20, 21
+  Flight 41:
+     Departure time : 449
+     Airport station : 3
+     Connected trains : none
+  Flight 42:
+     Departure time : 487
+     Airport station : 3
+     Connected trains : none
+  Flight 43:
+     Departure time : 528
+     Airport station : 3
+     Connected trains : none
+  Flight 44:
+     Departure time : 572
+     Airport station : 3
+     Connected trains : none
+  Flight 45:
+     Departure time : 604
+     Airport station : 3
+     Connected trains : none
+  Flight 46:
+     Departure time : 652
+     Airport station : 3
+     Connected trains : 3
+  Flight 47:
+     Departure time : 682
+     Airport station : 3
+     Connected trains : 3
+  Flight 48:
+     Departure time : 723
+     Airport station : 3
+     Connected trains : none
+  Flight 49:
+     Departure time : 766
+     Airport station : 3
+     Connected trains : none
+  Flight 50:
+     Departure time : 800
+     Airport station : 3
+     Connected trains : none
+  Flight 51:
+     Departure time : 845
+     Airport station : 3
+     Connected trains : 6
+  Flight 52:
+     Departure time : 886
+     Airport station : 3
+     Connected trains : 6
+  Flight 53:
+     Departure time : 928
+     Airport station : 3
+     Connected trains : none
+  Flight 54:
+     Departure time : 958
+     Airport station : 3
+     Connected trains : 13
+  Flight 55:
+     Departure time : 1000
+     Airport station : 3
+     Connected trains : 13
+  Flight 56:
+     Departure time : 1041
+     Airport station : 3
+     Connected trains : none
+  Flight 57:
+     Departure time : 1083
+     Airport station : 3
+     Connected trains : 14
+  Flight 58:
+     Departure time : 1117
+     Airport station : 3
+     Connected trains : 14
+  Flight 59:
+     Departure time : 1155
+     Airport station : 3
+     Connected trains : 15
+  Flight 60:
+     Departure time : 1198
+     Airport station : 3
+     Connected trains : 15
