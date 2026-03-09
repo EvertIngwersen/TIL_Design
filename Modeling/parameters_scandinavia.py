@@ -242,7 +242,7 @@ HA = {s: 3 for s in S}
 HS = {s: 3 for s in S}
 
 # ==========================================================
-# SMART DEPARTURE WINDOW HEURISTIC
+# IMPROVED DEPARTURE WINDOW HEURISTIC
 # ==========================================================
 
 # Flight time range
@@ -254,12 +254,16 @@ print(f"                   ({earliest_flight//60}:{earliest_flight%60:02d} to {l
 
 # Calculate optimal train departure spread
 num_trains = len(I)
-planning_start = max(0, earliest_flight - 300)  # Start 5 hours before first flight
-planning_end = min(1440, latest_flight - 200)   # End when trains can still catch last flights
+
+# IMPROVED: Start closer to first flights, not 5 hours before
+planning_start = max(0, earliest_flight - 200)  # 3.3 hours before first flight
+planning_end = min(1440, latest_flight - 150)   # Ensure trains can catch last flights
+
+# IMPROVED: Wider windows for more flexibility
+window_width = 180  # 3 hours instead of 2
 
 # HEURISTIC: Spread trains evenly across the planning horizon
 departure_spread = (planning_end - planning_start) / num_trains
-window_width = 120  # Each train has a 2-hour window to depart
 
 dw_lower = {}
 dw_upper = {}
@@ -267,7 +271,11 @@ aw_lower = {}
 aw_upper = {}
 
 print(f"\n{'='*70}")
-print("AUTOMATIC TRAIN DEPARTURE WINDOWS")
+print("IMPROVED TRAIN DEPARTURE WINDOWS")
+print(f"{'='*70}")
+print(f"Planning horizon: {planning_start:.0f}-{planning_end:.0f} min "
+      f"({planning_start//60:02d}:{int(planning_start)%60:02d}-{planning_end//60:02d}:{int(planning_end)%60:02d})")
+print(f"Window width: {window_width} minutes ({window_width/60:.1f} hours)")
 print(f"{'='*70}")
 
 for idx, i in enumerate(I):
@@ -279,7 +287,7 @@ for idx, i in enumerate(I):
     dw_upper[i] = min(1440, target_departure + window_width/2)
     
     # Arrival windows (based on max travel time + window width)
-    max_travel = max(r.values()) + 50  # Longest route + buffer
+    max_travel = max(r.values()) + 50
     aw_lower[i] = max(0, dw_lower[i] + max_travel - window_width)
     aw_upper[i] = min(1440, dw_upper[i] + max_travel + window_width)
     
@@ -287,6 +295,7 @@ for idx, i in enumerate(I):
           f"({int(dw_lower[i])//60:02d}:{int(dw_lower[i])%60:02d}-{int(dw_upper[i])//60:02d}:{int(dw_upper[i])%60:02d})")
 
 print(f"{'='*70}\n")
+
 
 # Original timetable (now serves as reference, not constraint)
 a_o, d_o = {}, {}
