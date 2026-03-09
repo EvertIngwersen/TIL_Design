@@ -8,3 +8,4 @@ Data/Other[[:space:]]Data/norway-260303.osm.pbf filter=lfs diff=lfs merge=lfs -t
 =======
 >>>>>>> 3304c38c5017c0f44714a83474bb367f43a5946f
 Data/Other[[:space:]]Data/norway-rail.osm filter=lfs diff=lfs merge=lfs -text
+*.parquet filter=lfs diff=lfs merge=lfs -text
