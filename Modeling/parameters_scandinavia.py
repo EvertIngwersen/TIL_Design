@@ -163,7 +163,7 @@ trains = {
 }
 
 # How many extra trains per route
-extra_per_route = 1
+extra_per_route = 2
 
 # Find the current max train ID to continue numbering
 max_id = max(trains.keys())
@@ -181,6 +181,18 @@ for train_id, info in trains.items():
 
 # Merge the new trains into the original dictionary
 trains.update(new_trains)
+
+# Make loop trains
+trains = {
+    1: {"route": [1, 2, 3], "origin": 1, "dest": 3},
+    2: {"route": [3, 2, 1], "origin": 3, "dest": 1},
+    3: {"route": [2, 3, 1], "origin": 2, "dest": 1},
+    4: {"route": [1, 3, 2], "origin": 1, "dest": 2},
+    5: {"route": [3, 1, 2], "origin": 3, "dest": 2},
+    6: {"route": [2, 1, 3], "origin": 2, "dest": 3},
+
+}
+
 
 I = list(trains.keys())
 S_i = {i: trains[i]["route"] for i in I}
