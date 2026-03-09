@@ -5,7 +5,7 @@ from pathlib import Path
 API_KEY = "a721752689a14e0b69d2f1f760fa4452"
 BASE_URL = "http://api.aviationstack.com/v1/flights"
 
-DATE = "2026-02-12"
+DATE = "2026-03-01"
 
 # Airports (IATA codes)
 AIRPORTS = {
@@ -101,3 +101,14 @@ for airport in AIRPORTS:
 
     print("Saved:", filename)
     print("Total flights:", len(df_all))
+    
+# Test response for ARN departures
+params_departures = {
+    "access_key": API_KEY,
+    "flight_date": DATE,
+    "dep_iata": "ARN"
+}
+
+response = requests.get(BASE_URL, params=params_departures)
+data = response.json()
+print(data)  # This will show errors, info, or flights
