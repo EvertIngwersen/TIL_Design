@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Visualization Module for Air-Rail Synchronization
+Visualization Module for Air-Rail Synchronization (FIXED VERSION)
 Provides comprehensive visualization tools including:
 - Interactive Gantt charts for train schedules
 - Synchronization quality metrics
 - Demand coverage analysis
 - Network flow visualization
+
+FIXED: numpy.bool_ type error in showlegend parameter
 """
 
 import plotly.graph_objects as go
@@ -176,6 +178,9 @@ class AirRailVisualizer:
         for resource in ['Train', 'Outgoing Flight', 'Incoming Flight']:
             df_resource = df[df['Resource'] == resource]
             
+            # Track if we've added legend for this resource
+            legend_added = False
+            
             for idx, row in df_resource.iterrows():
                 # Determine color based on coverage for flights
                 if resource in ['Outgoing Flight', 'Incoming Flight']:
@@ -200,6 +205,9 @@ class AirRailVisualizer:
                     f"Synchronizations: {row['Syncs']}"
                 )
                 
+                # FIXED: Convert to Python bool explicitly
+                show_in_legend = not legend_added
+                
                 fig.add_trace(go.Bar(
                     x=[row['Finish'] - row['Start']],
                     y=[row['Task']],
@@ -211,9 +219,12 @@ class AirRailVisualizer:
                     ),
                     name=resource,
                     legendgroup=resource,
-                    showlegend=idx == df_resource.index[0],  # Only show legend once per group
+                    showlegend=show_in_legend,  # Now using Python bool
                     hovertemplate=hover_text + '<extra></extra>'
                 ))
+                
+                if show_in_legend:
+                    legend_added = True
         
         # Update layout
         fig.update_layout(
@@ -724,19 +735,20 @@ class AirRailVisualizer:
         # ========================================
         transfer_times = metrics['transfer_times']
         
-        fig.add_trace(go.Histogram(
-            x=transfer_times,
-            nbinsx=20,
-            marker_color='#1f77b4',
-            name='Transfer Times',
-            hovertemplate='Transfer Time: %{x:.0f} min<br>Count: %{y}<extra></extra>'
-        ), row=2, col=1)
-        
-        # Add vertical lines for min/max acceptable transfer times
-        fig.add_vline(x=20, line_dash="dash", line_color="red", 
-                     annotation_text="Min", row=2, col=1)
-        fig.add_vline(x=70, line_dash="dash", line_color="red", 
-                     annotation_text="Max", row=2, col=1)
+        if len(transfer_times) > 0:
+            fig.add_trace(go.Histogram(
+                x=transfer_times,
+                nbinsx=20,
+                marker_color='#1f77b4',
+                name='Transfer Times',
+                hovertemplate='Transfer Time: %{x:.0f} min<br>Count: %{y}<extra></extra>'
+            ), row=2, col=1)
+            
+            # Add vertical lines for min/max acceptable transfer times
+            fig.add_vline(x=20, line_dash="dash", line_color="red", 
+                         annotation_text="Min", row=2, col=1)
+            fig.add_vline(x=70, line_dash="dash", line_color="red", 
+                         annotation_text="Max", row=2, col=1)
         
         # ========================================
         # Subplot 4: Penalty Distribution
@@ -787,12 +799,13 @@ class AirRailVisualizer:
                               key=lambda x: train_metrics[x]['synchronizations'], 
                               reverse=True)[:15]  # Top 15 trains
         
-        fig.add_trace(go.Bar(
-            x=[f'T{i}' for i in trains_sorted],
-            y=[train_metrics[i]['synchronizations'] for i in trains_sorted],
-            marker_color='#9467bd',
-            hovertemplate='Train %{x}<br>Syncs: %{y}<extra></extra>'
-        ), row=3, col=2)
+        if len(trains_sorted) > 0:
+            fig.add_trace(go.Bar(
+                x=[f'T{i}' for i in trains_sorted],
+                y=[train_metrics[i]['synchronizations'] for i in trains_sorted],
+                marker_color='#9467bd',
+                hovertemplate='Train %{x}<br>Syncs: %{y}<extra></extra>'
+            ), row=3, col=2)
         
         # Update axes
         fig.update_xaxes(title_text="Transfer Time (min)", row=2, col=1)
@@ -804,9 +817,6 @@ class AirRailVisualizer:
         fig.update_yaxes(title_text="Penalty Value", row=2, col=2)
         fig.update_yaxes(title_text="Count", row=3, col=1)
         fig.update_yaxes(title_text="Synchronizations", row=3, col=2)
-        
-        # Add secondary y-axis for station plot
-        fig.update_yaxes(title_text="Passengers", secondary_y=True, row=3, col=1)
         
         # Update layout
         fig.update_layout(
