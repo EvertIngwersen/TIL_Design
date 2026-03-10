@@ -116,9 +116,9 @@ def generate_incoming_flights_per_airport_random(airport_settings, max_variation
 
 # Example usage:
 airport_settings_incoming = {
-    1: {'num_flights': 10, 'start_time': 420, 'end_time': 1380},  # 7:00 - 23:00
-    2: {'num_flights': 10, 'start_time': 480, 'end_time': 1320},  # 8:00 - 22:00
-    3: {'num_flights': 10, 'start_time': 450, 'end_time': 1200},  # 7:30 - 20:00
+    1: {'num_flights': 7, 'start_time': 420, 'end_time': 1380},  # 7:00 - 23:00
+    2: {'num_flights': 7, 'start_time': 480, 'end_time': 1320},  # 8:00 - 22:00
+    3: {'num_flights': 7, 'start_time': 450, 'end_time': 1200},  # 7:30 - 20:00
 }
 
 incoming_flights = generate_incoming_flights_per_airport_random(airport_settings_incoming, max_variation=5)
@@ -163,7 +163,7 @@ trains = {
 }
 
 # How many extra trains per route
-extra_per_route = 0
+extra_per_route = 1
 
 # Find the current max train ID to continue numbering
 max_id = max(trains.keys())
@@ -345,7 +345,7 @@ station_coords = {s: info["coords"] for s, info in stations.items()}
 # ==========================================================
 
 # Demand modeling approach selector
-DEMAND_MODEL = "UNIFORM"  # Options: "UNIFORM", "TIME_BASED", "SIZE_BASED", "TIME_AND_SIZE", "REALISTIC"
+DEMAND_MODEL = "REALISTIC"  # Options: "UNIFORM", "TIME_BASED", "SIZE_BASED", "TIME_AND_SIZE", "REALISTIC"
 
 print(f"\n{'='*70}")
 print(f"DEMAND MODELING: {DEMAND_MODEL}")

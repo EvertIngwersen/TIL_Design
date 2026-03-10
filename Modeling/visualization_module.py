@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Visualization Module for Air-Rail Synchronization (FIXED VERSION)
+Visualization Module for Air-Rail Synchronization (FINAL FIXED VERSION)
 Provides comprehensive visualization tools including:
 - Interactive Gantt charts for train schedules
 - Synchronization quality metrics
 - Demand coverage analysis
 - Network flow visualization
 
-FIXED: numpy.bool_ type error in showlegend parameter
+FIXES:
+- numpy.bool_ type error in showlegend parameter
+- PlotlyKeyError with add_vline on Indicator subplots
 """
 
 import plotly.graph_objects as go
@@ -29,26 +31,8 @@ class AirRailVisualizer:
         Initialize visualizer with solution and parameter data.
         
         Parameters:
-            solution_data (dict): Dictionary containing:
-                - 'a': arrival time variables
-                - 'd': departure time variables
-                - 'P': outgoing flight synchronization variables
-                - 'Q': incoming flight synchronization variables
-                - 'C': outgoing flight coverage variables
-                - 'C_in': incoming flight coverage variables
-                - 'p': outgoing penalties
-                - 'p_in': incoming penalties
-            
-            parameters (dict): Dictionary containing:
-                - 'I', 'I_T': train sets
-                - 'K_out', 'K_in': flight sets
-                - 'S_i': train routes
-                - 'ori_i', 'des_i': train origins/destinations
-                - 'D_k', 'A_m': flight times
-                - 'demand_out', 'demand_in': passenger demands
-                - 'flight_station_out', 'flight_station_in': flight stations
-                - 'station_coords': station coordinates
-                - 'l_k', 'u_k', 'l_m', 'u_m': connection windows
+            solution_data (dict): Dictionary containing solution variables
+            parameters (dict): Dictionary containing problem parameters
         """
         self.sol = solution_data
         self.params = parameters
@@ -206,7 +190,7 @@ class AirRailVisualizer:
                 )
                 
                 # FIXED: Convert to Python bool explicitly
-                show_in_legend = not legend_added
+                show_in_legend = bool(not legend_added)
                 
                 fig.add_trace(go.Bar(
                     x=[row['Finish'] - row['Start']],
@@ -219,7 +203,7 @@ class AirRailVisualizer:
                     ),
                     name=resource,
                     legendgroup=resource,
-                    showlegend=show_in_legend,  # Now using Python bool
+                    showlegend=show_in_legend,
                     hovertemplate=hover_text + '<extra></extra>'
                 ))
                 
@@ -744,11 +728,31 @@ class AirRailVisualizer:
                 hovertemplate='Transfer Time: %{x:.0f} min<br>Count: %{y}<extra></extra>'
             ), row=2, col=1)
             
-            # Add vertical lines for min/max acceptable transfer times
-            fig.add_vline(x=20, line_dash="dash", line_color="red", 
-                         annotation_text="Min", row=2, col=1)
-            fig.add_vline(x=70, line_dash="dash", line_color="red", 
-                         annotation_text="Max", row=2, col=1)
+            # FIXED: Add reference lines as shapes directly on the subplot
+            # Instead of using add_vline which doesn't work with mixed subplot types
+            fig.add_shape(
+                type="line",
+                x0=20, x1=20, y0=0, y1=1,
+                xref='x3', yref='y3 domain',  # x3 and y3 refer to subplot (2,1)
+                line=dict(color="red", width=2, dash="dash")
+            )
+            fig.add_annotation(
+                x=20, y=1, xref='x3', yref='y3 domain',
+                text="Min", showarrow=False,
+                yshift=10, font=dict(color="red", size=10)
+            )
+            
+            fig.add_shape(
+                type="line",
+                x0=70, x1=70, y0=0, y1=1,
+                xref='x3', yref='y3 domain',
+                line=dict(color="red", width=2, dash="dash")
+            )
+            fig.add_annotation(
+                x=70, y=1, xref='x3', yref='y3 domain',
+                text="Max", showarrow=False,
+                yshift=10, font=dict(color="red", size=10)
+            )
         
         # ========================================
         # Subplot 4: Penalty Distribution
