@@ -4790,3 +4790,26 @@ Coefficient statistics:
   Bounds range     [1e+00, 1e+03]
   RHS range        [1e+00, 3e+03]
 
+MIP start from previous solve produced solution with objective 68.8 (0.01s)
+MIP start from previous solve produced solution with objective 68.8 (0.01s)
+Loaded MIP start from previous solve with objective 68.8
+
+Presolve removed 1227 rows and 2365 columns
+Presolve time: 0.02s
+Presolved: 39 rows, 17 columns, 92 nonzeros
+Variable types: 14 continuous, 3 integer (3 binary)
+
+Root relaxation: cutoff, 3 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0        68.80000   68.80000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 1: 68.8 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.880000000000e+01, best bound 6.880000000000e+01, gap 0.0000%
