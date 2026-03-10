@@ -8807,3 +8807,152 @@ DEPARTURE FLIGHT SCHEDULE
   Flight 33:
      Departure time : 1008
      Airport station : 2
+     Connected trains : none
+  Flight 34:
+     Departure time : 1059
+     Airport station : 2
+     Connected trains : none
+  Flight 35:
+     Departure time : 1093
+     Airport station : 2
+     Connected trains : none
+  Flight 36:
+     Departure time : 1144
+     Airport station : 2
+     Connected trains : none
+  Flight 37:
+     Departure time : 1189
+     Airport station : 2
+     Connected trains : none
+  Flight 38:
+     Departure time : 1236
+     Airport station : 2
+     Connected trains : 5
+  Flight 39:
+     Departure time : 1279
+     Airport station : 2
+     Connected trains : 5
+  Flight 40:
+     Departure time : 1322
+     Airport station : 2
+     Connected trains : none
+  Flight 41:
+     Departure time : 446
+     Airport station : 3
+     Connected trains : none
+  Flight 42:
+     Departure time : 486
+     Airport station : 3
+     Connected trains : none
+  Flight 43:
+     Departure time : 525
+     Airport station : 3
+     Connected trains : none
+  Flight 44:
+     Departure time : 571
+     Airport station : 3
+     Connected trains : none
+  Flight 45:
+     Departure time : 603
+     Airport station : 3
+     Connected trains : none
+  Flight 46:
+     Departure time : 646
+     Airport station : 3
+     Connected trains : none
+  Flight 47:
+     Departure time : 688
+     Airport station : 3
+     Connected trains : none
+  Flight 48:
+     Departure time : 725
+     Airport station : 3
+     Connected trains : none
+  Flight 49:
+     Departure time : 760
+     Airport station : 3
+     Connected trains : none
+  Flight 50:
+     Departure time : 805
+     Airport station : 3
+     Connected trains : none
+  Flight 51:
+     Departure time : 847
+     Airport station : 3
+     Connected trains : 3
+  Flight 52:
+     Departure time : 889
+     Airport station : 3
+     Connected trains : 3
+  Flight 53:
+     Departure time : 923
+     Airport station : 3
+     Connected trains : none
+  Flight 54:
+     Departure time : 966
+     Airport station : 3
+     Connected trains : none
+  Flight 55:
+     Departure time : 998
+     Airport station : 3
+     Connected trains : none
+  Flight 56:
+     Departure time : 1043
+     Airport station : 3
+     Connected trains : none
+  Flight 57:
+     Departure time : 1084
+     Airport station : 3
+     Connected trains : none
+  Flight 58:
+     Departure time : 1124
+     Airport station : 3
+     Connected trains : none
+  Flight 59:
+     Departure time : 1164
+     Airport station : 3
+     Connected trains : none
+  Flight 60:
+     Departure time : 1199
+     Airport station : 3
+     Connected trains : none
+
+======================================================================
+FINAL RESULTS (Demand-Weighted)
+======================================================================
+
+Objective Values:
+  Z3 (Total Penalty) = 134.40
+
+Passenger Coverage:
+  Total passengers served: 1300/9000
+  System coverage rate: 14.4%
+    - Outgoing: 900 passengers
+    - Incoming: 400 passengers
+
+======================================================================
+OUTGOING FLIGHT SYNCHRONIZATIONS (with Demand)
+======================================================================
+  Train 1 → Flight 22 at Station 2: demand=100 pax, train_arr=496.0, flight_dep=524, transfer=28.0min, penalty=20.40
+  Train 1 → Flight 23 at Station 2: demand=100 pax, train_arr=496.0, flight_dep=566, transfer=70.0min, penalty=10.00
+  Train 2 → Flight 5 at Station 1: demand=100 pax, train_arr=599.0, flight_dep=623, transfer=24.0min, penalty=25.20
+  Train 2 → Flight 6 at Station 1: demand=100 pax, train_arr=599.0, flight_dep=669, transfer=70.0min, penalty=10.00
+  Train 3 → Flight 51 at Station 3: demand=100 pax, train_arr=819.0, flight_dep=847, transfer=28.0min, penalty=20.40
+  Train 3 → Flight 52 at Station 3: demand=100 pax, train_arr=819.0, flight_dep=889, transfer=70.0min, penalty=10.00
+  Train 4 → Flight 12 at Station 1: demand=100 pax, train_arr=923.0, flight_dep=976, transfer=53.0min, penalty=3.20
+  Train 5 → Flight 38 at Station 2: demand=100 pax, train_arr=1209.0, flight_dep=1236, transfer=27.0min, penalty=21.60
+  Train 5 → Flight 39 at Station 2: demand=100 pax, train_arr=1209.0, flight_dep=1279, transfer=70.0min, penalty=10.00
+
+Total outgoing synchronizations: 9
+Total outgoing passengers served: 900
+
+======================================================================
+INCOMING FLIGHT SYNCHRONIZATIONS (with Demand)
+======================================================================
+  Flight 2 → Train 3 at Station 1: demand=100 pax, flight_arr=527, train_dep=563.0, transfer=36.0min, penalty=3.60
+  Flight 23 → Train 4 at Station 3: demand=100 pax, flight_arr=617, train_dep=662.0, transfer=45.0min, penalty=0.00
+  Flight 26 → Train 5 at Station 3: demand=100 pax, flight_arr=864, train_dep=909.0, transfer=45.0min, penalty=0.00
+  Flight 17 → Train 6 at Station 2: demand=100 pax, flight_arr=1045, train_dep=1090.0, transfer=45.0min, penalty=0.00
+
+Total incoming synchronizations: 4
+Total incoming passengers served: 400
