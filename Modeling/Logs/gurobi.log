@@ -2993,3 +2993,15 @@ Root relaxation: objective 0.000000e+00, 432 iterations, 0.01 seconds (0.00 work
      0     0  766.44848    0    3  768.46667  766.44848  0.26%     -    0s
      0     0     cutoff    0       768.46667  768.46667  0.00%     -    0s
 
+Cutting planes:
+  Implied bound: 3
+  MIR: 8
+  Relax-and-lift: 1
+
+Explored 1 nodes (1179 simplex iterations) in 0.08 seconds (0.06 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 768.467 768.467 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.684666666667e+02, best bound 7.684666666667e+02, gap 0.0000%

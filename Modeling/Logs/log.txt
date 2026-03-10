@@ -6586,3 +6586,65 @@ OUTGOING FLIGHT SYNCHRONIZATIONS (with Demand)
   Train 2 → Flight 2 at Station 1: demand=297 pax, train_arr=448.0, flight_dep=468, transfer=20.0min, penalty=30.00
   Train 2 → Flight 3 at Station 1: demand=275 pax, train_arr=448.0, flight_dep=518, transfer=70.0min, penalty=10.00
   Train 3 → Flight 43 at Station 3: demand=146 pax, train_arr=499.0, flight_dep=528, transfer=29.0min, penalty=19.20
+  Train 3 → Flight 44 at Station 3: demand=128 pax, train_arr=499.0, flight_dep=569, transfer=70.0min, penalty=10.00
+  Train 4 → Flight 5 at Station 1: demand=132 pax, train_arr=597.0, flight_dep=627, transfer=30.0min, penalty=18.00
+  Train 4 → Flight 6 at Station 1: demand=132 pax, train_arr=597.0, flight_dep=667, transfer=70.0min, penalty=10.00
+  Train 5 → Flight 29 at Station 2: demand=136 pax, train_arr=780.2, flight_dep=835, transfer=54.8min, penalty=3.93
+  Train 6 → Flight 51 at Station 3: demand=130 pax, train_arr=813.0, flight_dep=846, transfer=33.0min, penalty=14.40
+  Train 6 → Flight 52 at Station 3: demand=122 pax, train_arr=813.0, flight_dep=883, transfer=70.0min, penalty=10.00
+  Train 7 → Flight 26 at Station 2: demand=147 pax, train_arr=677.0, flight_dep=706, transfer=29.0min, penalty=19.20
+  Train 7 → Flight 27 at Station 2: demand=116 pax, train_arr=677.0, flight_dep=744, transfer=67.0min, penalty=8.80
+  Train 8 → Flight 26 at Station 2: demand=147 pax, train_arr=674.0, flight_dep=706, transfer=32.0min, penalty=15.60
+  Train 8 → Flight 27 at Station 2: demand=116 pax, train_arr=674.0, flight_dep=744, transfer=70.0min, penalty=10.00
+  Train 9 → Flight 27 at Station 2: demand=116 pax, train_arr=714.0, flight_dep=744, transfer=30.0min, penalty=18.00
+  Train 9 → Flight 28 at Station 2: demand=132 pax, train_arr=714.0, flight_dep=784, transfer=70.0min, penalty=10.00
+  Train 10 → Flight 8 at Station 1: demand=176 pax, train_arr=752.0, flight_dep=773, transfer=21.0min, penalty=28.80
+  Train 10 → Flight 9 at Station 1: demand=160 pax, train_arr=752.0, flight_dep=822, transfer=70.0min, penalty=10.00
+  Train 11 → Flight 9 at Station 1: demand=160 pax, train_arr=784.9, flight_dep=822, transfer=37.1min, penalty=9.50
+  Train 12 → Flight 13 at Station 1: demand=253 pax, train_arr=1002.0, flight_dep=1028, transfer=26.0min, penalty=22.80
+  Train 12 → Flight 14 at Station 1: demand=198 pax, train_arr=1002.0, flight_dep=1072, transfer=70.0min, penalty=10.00
+  Train 13 → Flight 56 at Station 3: demand=186 pax, train_arr=1016.0, flight_dep=1043, transfer=27.0min, penalty=21.60
+  Train 13 → Flight 57 at Station 3: demand=133 pax, train_arr=1016.0, flight_dep=1084, transfer=68.0min, penalty=9.20
+  Train 14 → Flight 56 at Station 3: demand=186 pax, train_arr=1019.0, flight_dep=1043, transfer=24.0min, penalty=25.20
+  Train 14 → Flight 57 at Station 3: demand=133 pax, train_arr=1019.0, flight_dep=1084, transfer=65.0min, penalty=8.00
+  Train 15 → Flight 56 at Station 3: demand=186 pax, train_arr=1022.0, flight_dep=1043, transfer=21.0min, penalty=28.80
+  Train 15 → Flight 57 at Station 3: demand=133 pax, train_arr=1022.0, flight_dep=1084, transfer=62.0min, penalty=6.80
+  Train 16 → Flight 15 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1130, transfer=27.0min, penalty=21.60
+  Train 16 → Flight 16 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1173, transfer=70.0min, penalty=10.00
+  Train 17 → Flight 15 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1130, transfer=27.0min, penalty=21.60
+  Train 17 → Flight 16 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1173, transfer=70.0min, penalty=10.00
+  Train 18 → Flight 15 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1130, transfer=27.0min, penalty=21.60
+  Train 18 → Flight 16 at Station 1: demand=195 pax, train_arr=1103.0, flight_dep=1173, transfer=70.0min, penalty=10.00
+  Train 19 → Flight 38 at Station 2: demand=70 pax, train_arr=1207.0, flight_dep=1236, transfer=29.0min, penalty=19.20
+  Train 19 → Flight 39 at Station 2: demand=90 pax, train_arr=1207.0, flight_dep=1277, transfer=70.0min, penalty=10.00
+  Train 20 → Flight 40 at Station 2: demand=81 pax, train_arr=1273.0, flight_dep=1316, transfer=43.0min, penalty=2.40
+  Train 21 → Flight 40 at Station 2: demand=81 pax, train_arr=1273.0, flight_dep=1316, transfer=43.0min, penalty=2.40
+
+Total outgoing synchronizations: 38
+Total outgoing passengers served: 6077
+
+======================================================================
+INCOMING FLIGHT SYNCHRONIZATIONS (with Demand)
+======================================================================
+  Flight 21 → Train 5 at Station 3: demand=206 pax, flight_arr=449, train_dep=477.2, transfer=28.2min, penalty=6.73
+  Flight 11 → Train 6 at Station 2: demand=239 pax, flight_arr=482, train_dep=515.0, transfer=33.0min, penalty=4.80
+  Flight 1 → Train 7 at Station 1: demand=240 pax, flight_arr=418, train_dep=443.0, transfer=25.0min, penalty=8.00
+  Flight 1 → Train 8 at Station 1: demand=240 pax, flight_arr=418, train_dep=440.0, transfer=22.0min, penalty=9.20
+  Flight 1 → Train 9 at Station 1: demand=240 pax, flight_arr=418, train_dep=475.0, transfer=57.0min, penalty=14.40
+  Flight 11 → Train 10 at Station 2: demand=239 pax, flight_arr=482, train_dep=518.0, transfer=36.0min, penalty=3.60
+  Flight 11 → Train 11 at Station 2: demand=239 pax, flight_arr=482, train_dep=550.9, transfer=68.9min, penalty=28.70
+  Flight 4 → Train 13 at Station 1: demand=145 pax, flight_arr=740, train_dep=760.0, transfer=20.0min, penalty=10.00
+  Flight 4 → Train 14 at Station 1: demand=145 pax, flight_arr=740, train_dep=763.0, transfer=23.0min, penalty=8.80
+  Flight 4 → Train 15 at Station 1: demand=145 pax, flight_arr=740, train_dep=766.0, transfer=26.0min, penalty=7.60
+  Flight 25 → Train 16 at Station 3: demand=101 pax, flight_arr=780, train_dep=842.0, transfer=62.0min, penalty=20.40
+  Flight 25 → Train 17 at Station 3: demand=101 pax, flight_arr=780, train_dep=842.0, transfer=62.0min, penalty=20.40
+  Flight 25 → Train 18 at Station 3: demand=101 pax, flight_arr=780, train_dep=847.0, transfer=67.0min, penalty=26.35
+  Flight 26 → Train 19 at Station 3: demand=102 pax, flight_arr=871, train_dep=909.0, transfer=38.0min, penalty=2.80
+  Flight 27 → Train 20 at Station 3: demand=120 pax, flight_arr=955, train_dep=975.0, transfer=20.0min, penalty=10.00
+  Flight 27 → Train 21 at Station 3: demand=120 pax, flight_arr=955, train_dep=975.0, transfer=20.0min, penalty=10.00
+  Flight 17 → Train 22 at Station 2: demand=212 pax, flight_arr=1038, train_dep=1083.0, transfer=45.0min, penalty=0.00
+  Flight 17 → Train 23 at Station 2: demand=212 pax, flight_arr=1038, train_dep=1080.0, transfer=42.0min, penalty=1.20
+  Flight 17 → Train 24 at Station 2: demand=212 pax, flight_arr=1038, train_dep=1100.7, transfer=62.7min, penalty=21.25
+
+Total incoming synchronizations: 19
+Total incoming passengers served: 3359
