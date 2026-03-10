@@ -1,0 +1,260 @@
+These are the parameters as given in the paper:
+
+3.2.1. Parameters: i,j train index k: outgoing flight index s: station index I: set of trains where I = I^T \union I^N I^T: set of trains that serve the transfer station
+I^N: set of trains that do not serve the transfer station
+K_out: Set of outgoing flights
+K_in: Set of incoming flights
+S: set of stations
+S_i: the ordered set of stations visitied by train i S_i \in S
+st: the transfer station
+\underline{b}, \overline{b}: The minimum transfer time and the maximum 
+transfer time between a train and a flight for a
+valid synchronization event,
+A_m: Arrival time of incoming flight m at transfer station
+l_k: Lower time bound of the connection time window of flgiht k at the transfer station where k \in K
+u_k: upper time bound of the connection time window of flight k at the transfer station where k \in K
+l_m = A_m + b_min: Lower bound of connection window for incoming flight m
+u_m = A_m + b_max: Upper bound of connection window for incoming flight m
+ori_i: starting station for train i where i \in I
+des_i: terminus station for train i where i \in I
+xs_{i,j}: the first station that both train i and train j visit where i,j \in I
+xe_{i,j}: the last station that both train i and train j visit where i,j \in I
+r_{i,s}: pure running time for train i on segment (s,s+1) where s \in S_i \{des_i}
+\beta_{i,s}: accaleration time for train i at station s, where i \in I , s \in S_i \{des_i}
+\gamma_{i,s}: decelaration time for train i at station s where i \in N, s \in S_i\{ori_i}
+y_{i,s}: time supplement for train i on segment (s,s+1) where i \in I s \in S_i \{des_i}
+x_i,s: =1 if train i stops at station s, 0 otherwise where i \in I, s \in S_i
+\underline{d_{i,s}}, \overline{d_{i,s}}: the minimum dwell time and the maximum dwell time for train i at station s where i \in I, s \in S_i\{ori_i,des_i}
+HA_s: the minimum headway between the arrival times of two consecutive trains at station s where s \in S_i\{ori_i}
+HS_s: the minimum headway between the departure times of two consecutive trains at station s where s \in S_i\{des_i}
+\underline{dw_i}}, \overline{dw_i}: lower and upper bound of the departure time window for train i a its starting station where i \in I
+\underline{aw_i}}, \overline{aw_i}: lower and upper bound of the arrival time window for train i a its terminus station where i \in I 
+wt_i: width of the time window for train i at its starting and terminus station where i \in I
+a_{i,s}^o: arrival time of train i at station s in the input time table where i \in I, s \in S_i\{ori_i}
+d_{i,s}^o: departure time of train i at station s in the input time table where i \in I, s \in S_i\{des_i}
+D_k: departure time outgoing flight k at the transfer station where k \in K
+v_1: the senstivity that models the penalty of business passangers during transfer
+v_2: the senstivity that models the penalty of leisure passangers during transfer
+w_2: the proportion of Leisure passangers among the total passangers where w_1 + w_2 = 1
+H: the upper bound of the planning horizon 
+
+Demand modelling is added:
+
+D^{out}_k =  Passenger demand for outgoing flight  (passengers wanting to take this flight)
+D^{in}_k = Passenger demand for incoming flight (passengers arriving on this flight)
+\alpha  = Demand sensitivity factor (0 = ignore demand, 1 = full demand weighting)
+
+
+Decision variables:
+
+a_{i,s}: arrival time of train i at station s where i \in I, s \in S_i\{ori_i}
+d_{i,s}: departure time of train i at station s where i \in I, s \in S_i\{des_i}
+O_{i,j}^s = 1 if train i departs from station s before train j, 0 otherwise, where i,j \in I, s \in S
+P_{i,k} = 1 if train i can syncronize with flight k at the transfer station, 0 otherwise, where i \in I^T, k\in K
+C_k = 1 if flight k can be synchronized with some train, 0 otherwise
+p_{i,k}: penalty variable reflecting the preference of the passanfgers from the train i to the flight k for the transfer time
+Q_{i,m}: Binary, = 1 if train i synchronizes with incoming flight m
+C_in_m: Binary, = 1 if incoming flight m is covered by at least one train
+p_in_{i,m}: Continuous, penalty for passengers from incoming flight m to train i
+
+Mathenatical formulation:
+
+We present a multi-objective mixed integer programming model of the timetabling problem for all trains I that make use of the target railroad line. There
+are two kinds of trains running on the line. Thee first kind of train I^T serves the transfer station. In other words, these trains
+stop at the transfer station. Thee second kind of trains I^N does not serve the transfer station. e transfer synchronization
+between trains and ights can be improved by adjusting the
+timetable of the first kind of trains. Meanwhile, due to the
+interaction between trains, the timetables of other trains might
+have to be adjusted, too, to guarantee safety constraints. The
+timetable is adjusted within a planning horizon, and we let H
+be the upper bound of the time horizon.
+
+Objective function:
+
+Maximizing the Number of Synchronizations. For train-
+ight connections, a synchronization in an AH integration
+service is valid if the diference between the arrival of a
+train i and the departure of a flight k is within a separation
+time window  [\underline{b}, \overline{b}] at the transfer station As we assume the flight timetable
+to be given, the departure time of any ight is fixed. Thuus, a
+synchronization between a train i and a flight k is valid if the
+arrival time of the train is within the connection time window
+of the flight k at the transfer node. The departure time D_{\underline{k}} of the outgoing flight k minus the transfer time \upperline{b} is the lower bound of the 
+conncection time window l_k and the departure time D_k minus the transfer time \underline{b} is the upper bound of the connection time window u_K:
+
+1): l_k = D_k - \upperline{b}
+2): u_k = D_k - \underline{b}
+
+Therefore, the firrst objective function
+– denoted by Z_1
+ – is put forward to maximize the number of
+synchronizations. Also in this objective function, the demand is also modelled:
+
+3): Max Z_1 = sum_{i in I_T, k in K_out} D^{out}_k \cdot P_{i,k} + sum_{i in I_T, m in K_in} D^{in}_m \cdot Q_{i,m}
+
+Maximizing coverage of synchronized flights: The second objective Z_2, aiming to maximize
+the coverage of the ights by the trains, is proposed. In this constraint, the demand is also modelled:
+
+    4): Max Z_2 = sum_{k in K_out} D^{out}_k \cdot C_k + sum_{m in K_in} D^{in}_m \cdot C_in_m
+
+Minimizing the Transfer Penalties of Passengers. The different preferences of passengers should also be considered. Even
+though a train i synchronizes with a flight k, passengers on the
+train i perceive transfer times differently. Here we introduce a continuous non negative penalty variable p_{i,k} reflecting the specific preferences of business and Leisure passangers from the trai i to the flight k for the transfer time. The third
+objective Z_3 (with much lower priority than the above two
+objectives) is to minimize these transfer penalties:
+
+5): Min Z_3 = sum_{i in I_T, k in K_out} p_{i,k} + sum_{i in I_T, m in K_in} p_in_{i,m}
+
+Constraints:
+
+6): a_{i,s+1} - d_{i,s} \geq r_{i,s} + \beta_{i,s}x_{i,s} + \gamma_{i,s+1}x_{i,s+1} \forall i \in I, s \in S_i\{des_i}
+
+7): a_{i,s+1} - d_{i,s} \leq r_{i,s} + \beta_{i,s}x_{i,s} + \gamma_{i,s+1}x_{i,s+1} + y_{i,s} \forall i \in I, s \in S_i\{des_i}
+
+8): d_{i,s}- a_{i,s} \geq \underline_{d_{i,s}} x_{i,s} \forall i \in I s \in S_i\{des_i,ori_i}
+
+9): d_{i,s}- a_{i,s} \geq \upperline_{d_{i,s}} x_{i,s} \forall i \in I s \in S_i\{des_i,ori_i}
+
+10): \underline{dw_i} \leq d_{i,ori_i} \leq \upperline{dw_i} \forall i \in I
+
+11): \underline{aw_i} \leq a_{i,des_i} \leq \upperline{aw_i} \forall i \in I
+
+12): \underline{dw_i} = d_{i,s}^o - 0.5* wt_i \forall i in I, s \in ori_i
+
+13): \upperline{dw_i} = d_{i,s}^o + 0.5* wt_i \forall i in I, s \in ori_i
+
+14): \underline{aw_i} = a_{i,s}^o - 0.5* wt_i \forall i in I, s \in des_i
+
+15): \upperline{aw_i} = a_{i,s}^o + 0.5* wt_i \forall i in I, s \in des_i
+
+
+3.3.3. Safety Headway Constraints. Limits on the headways for
+all trains i \in I should be satisfied to ensure operational safety.
+Constraints (16) and (17) ensure that the difference between
+the departures of any two trains at station s (visited by the both
+trains) satisfies a lower bound HD_s. Analogously, constraints
+(18) and (19) ensure that the difference between the arrivals
+of any two trains at station s satises a lower bound HA_s. M is
+a large number that is no smaller than H + max (HD_s,HA_s):
+
+16): d_{j,s} - d_{i,s} + M(1-O_{i,j}^s) \geq HD_s
+17): d_{i,s} - d_{j,s} + M*O_{i,j}^s \geq HD_s \forall i,j \in I, s = xs_{i,j} \cdots xe_{i,j}-1
+18): a_{j,s+1} - a_{i,s+1} + M(1-O_{i,j}^s) \geq HA_{s+1}
+19): a_{i,s+1} - a_{j,s+1} +  M*O_{i,j}^s \geq HA_{s+1} \forall i,j \in I, s = xs_{i,j} +1 \cdots xe_{i,j}
+
+3.3.4. Logic Constraints. Constraint (20) states the logical
+relationship (ordering) in each section between any two trains.
+
+20): O_{i,j}^s + O_{j,i}^s = 1 \forall i,j \in I, s \in S
+
+3.3.5. Synchronization Number Constraints. Constraint (21)
+is the synchronization number constraint between trains and
+ights at the transfer station.  the constraint states that if the
+arrival time of a train i is within the connection time window [l_k, u_k] generated by a flight k which means
+that the train can synchronize with the outgoing fligh k then the value of the variable P_{i,k}^s =1, 0 otherwise:
+
+21): P_{i,k} = 1 if l_k \leq a_{i,s} \leq u_{k}, 0 otherwise \forall i \in I^T, k \in K, s=st. 
+
+Constraint (21) can be linearized into constraints (22) and
+(23) using a large positive value M'. As can be observed in
+constraints (22) and (23), if a_{i,s} < l_k or a_{i,s} > u_k, the P_{i,k} = 0. 
+If l_k \leq a_{i,s} u_k the  in principle P_{i,k} could either be 0 or 1, but the maximization objective function will force it to have a value
+of one. M' is a large number and its value is greater than or equal to H
+
+22): a_{i,s} \geq l_k - M'(1-P_{i,k}) \forall i \in I^T, k \in K, s=st.
+23): a_{i,s} \leq u_k + M'(1-{_{i,k}) \forall i \in I^T, k \in K, s=st.
+
+3.3.6. Coverage Constraints. The coverage variable C_k
+represents whether the flight k is synchronized with at least
+one feeder train. Because of the maximization objective
+function Z_2, the variable P_{i,k} must only be set to one, if some
+of the corresponding variables P_{i,k} have already been set to
+one. Therefore,constraint 24 must be satisfied for any flight:
+
+24): C_k \leq \sum_{i \in I^T} P_{i,k} k \in K
+
+3.3.7. Passenger Preference Constraints. As mentioned above,
+intermodal passengers have different preferences for transfer
+times. We divide passengers into two types based on the purpose
+of trips: business and leisure passengers. Business passengers
+prefer shorter transfer times while leisure passengers prefer
+longer transit times to reduce the risk of missing the plane. For a valid synchronization P_{i,k} between a train i and a flight
+k, business passengers from the train i to the flight k are less
+sensitive to the short transfer time and could thus prefer arriving
+at the transfer station during [l_k, (l_k+u_k)/2]; when the transfer time exceeds (l_k+u_k)/they become sensative and the penalty should increase for example 
+from (l_k+u_k)/2 to u_k. In contrast, leisure
+passengers prefer slightly longer transfer times and they would
+like to arrive at the transfer station during [l_k, (l_k+u_k)/2]. They
+are more sensitive to short transfer times, and thus the penalty
+should increase there. Theerefore, we introduce a continuous non-negative penalty variable p_{i,k}
+representing the preferences of the passengers from the train
+i to the flight k for the transfer time, as shown in constraints (25)–(27). Due to the 
+objective function Z_3 the optimization model will push p_{i,k} to the smallest possible value. 
+M'' is a large positive number with a value no less than H × max (v1 × w1, v2 × w2):
+
+25): p_{i,k} \geq v_1 \times w_1 \times (a_{i,s} - \frac{l_k+u_k}{2}) - (1-P_{i,k})\times M'' \forall i \in I^t, k \in K, s=st.
+26): p_{i,k} \geq v_2 \times w_2 \times (\frac{l_k+u_k}{2} - a_{i,s}) - (1-P_{i,k})\times M'' \forall i \in I^t, k \in K, s=st.
+27): p_{i,k} \geq 0 \forall i \in I^T, k \in K
+
+NEW CONSTRAINT FOR INCOMING flights
+
+Incoming flight synchronization:
+
+For all i \in I^T, m \in K_in:
+if train i visits airport station and it is not the destination:
+    d_{i,st_m} \geq l_m - M'(1-Q_{i,m})
+    d_{i,st_m} \leq u_m + M'(1-Q_{i,m})
+Else
+    Q_{i,m} = 0
+
+Incoming Flight Coverage:
+C_in_m <= sum_{i in I_T} Q_{i,m}  for all m in K_in
+
+Incoming Flight Penalties
+p_in_{i,m} >= v_1 * w_1 * (d_{i,st_m} - mid_m) - (1 - Q_{i,m}) * M''
+p_in_{i,m} >= v_2 * w_2 * (mid_m - d_{i,st_m}) - (1 - Q_{i,m}) * M''
+p_in_{i,m} >= 0
+where mid_m = (l_m + u_m) / 2
+
+Priori Method. We choose to apply the a priori method to our multi-objective model. In our formulation, the
+first and second objectives have much higher priority than
+does the third objective. The first two objectives aim to determine the synchronization events. Subsequently, the third-level
+optimization is to further narrow the solutions by minimizing the transfer penalties of different passengers. We aim to
+provide more smooth transfers, and thus, the rst objective
+has a higher priority than does maximizing the coverage of
+synchronized ights. The multi-objective model is converted
+into three single-objective problems that can be solved exactly
+by any optimization solver
+
+First, we propose a single objective model for maximizing Z_1, denoted by M1
+
+Model M1:
+Objective function (3).
+Subject to constraints (6)–(20) and (22)–(23).
+Output: P (the maximum number of synchronizations).
+
+The maximum number of synchronizations is fixed and we
+impose an addition constraint (28).
+
+28): \sum_{i \in I^T} \sum_{k \in K} P_{i,k} = P 
+
+Then, the second single objective model for maximizing Z_2 denoted by M2 is proposed:
+
+Model M2:
+Objective function (4).
+Subject to constraints (6)–(20), (22)–(24) and (28).
+Output: C (the maximum number of synchronized ights
+while maximizing the number of synchronizations).
+
+The maximum coverage of synchronized ights is fixed, and
+we impose another constraint (29):
+
+29): \sum_{k \in K} C_k = C
+
+The last single-objective model M3 is then reformulated as
+follows to minimize the transfer penalties of passengers. We
+can obtain the adjusted timetable.
+Model M3:
+Objective function (5).
+Subject to constraints (6)–(20) and (22)–(29).
+Output: T (the adjusted timetable). 
