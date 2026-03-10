@@ -345,7 +345,7 @@ station_coords = {s: info["coords"] for s, info in stations.items()}
 # ==========================================================
 
 # Demand modeling approach selector
-DEMAND_MODEL = "TIME_AND_SIZE"  # Options: "UNIFORM", "TIME_BASED", "SIZE_BASED", "TIME_AND_SIZE", "REALISTIC"
+DEMAND_MODEL = "REALISTIC"  # Options: "UNIFORM", "TIME_BASED", "SIZE_BASED", "TIME_AND_SIZE", "REALISTIC"
 
 print(f"\n{'='*70}")
 print(f"DEMAND MODELING: {DEMAND_MODEL}")
