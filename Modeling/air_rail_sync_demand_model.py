@@ -993,6 +993,83 @@ fig.update_layout(
 
 fig.show()
 
+# ==========================================================
+#  QUICK START for the visuals
+# ==========================================================
+"""
+COPY-PASTE THIS ENTIRE SECTION TO THE END OF YOUR MODEL FILE
+(After the M3 optimization is complete)
+"""
+
+try:
+    # Import visualization modules
+    from visualization_module import visualize_solution
+    from advanced_demand_visualization import generate_demand_visualizations
+    
+    # Prepare parameters (using variables already in your code)
+    viz_params = {
+        'I': I,
+        'I_T': I_T,
+        'K_out': K_out,
+        'K_in': K_in,
+        'S_i': S_i,
+        'ori_i': ori_i,
+        'des_i': des_i,
+        'D_k': D_k,
+        'A_m': A_m,
+        'demand_out': demand_out,
+        'demand_in': demand_in,
+        'flight_station_out': flight_station_out,
+        'flight_station_in': flight_station_in,
+        'station_coords': station_coords,
+        'l_k': l_k,
+        'u_k': u_k,
+        'l_m': l_m,
+        'u_m': u_m
+    }
+    
+    print("\n" + "="*25)
+    print(" "*20 + "GENERATING VISUALIZATIONS")
+    print("="*25 + "\n")
+    
+    # Generate standard visualizations
+    print("📊 Generating standard visualizations...")
+    standard_figs = visualize_solution(
+        model=model,
+        parameters=viz_params,
+        save_html=True,
+        output_dir='visualizations'
+    )
+    
+    # Generate demand visualizations
+    print("\n Generating demand visualizations...")
+    demand_figs = generate_demand_visualizations(
+        model=model,
+        parameters=viz_params,
+        save_html=True,
+        output_dir='visualizations'
+    )
+    
+    # Display in browser
+    print("\n Opening visualizations in browser...")
+    for name, fig in standard_figs.items():
+        fig.show()
+    
+    for name, fig in demand_figs.items():
+        fig.show()
+    
+    print("\n All visualizations generated successfully!")
+    print(" HTML files saved to: ./visualizations/")
+    
+except ImportError as e:
+    print(f"\n Could not import visualization modules: {e}")
+    print("Make sure these files are in your directory:")
+    print("  • visualization_module.py")
+    print("  • advanced_demand_visualization.py")
+    
+except Exception as e:
+    print(f"\n Error generating visualizations: {e}")
+    print("The model results are still available for analysis.")
 
 
 
