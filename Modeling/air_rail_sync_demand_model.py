@@ -423,7 +423,7 @@ for i in I_T:
 # ==========================================================
 
 print("\n" + "="*70)
-print("MODEL M1: Maximizing Synchronizations (Outgoing + Incoming)")
+print("MODEL M1: Maximizing Demand-Weighted Synchronizations")
 print("="*70)
 
 model.setObjective(Z1, GRB.MAXIMIZE)
@@ -433,17 +433,27 @@ if model.Status != GRB.OPTIMAL:
     print("ERROR: Model M1 failed!")
     sys.exit()
 
-P_star = model.ObjVal
-print(f"Optimal P* = {P_star:.0f} (Outgoing: {sum(P[i,k].X for i in I_T for k in K_out):.0f}, Incoming: {sum(Q[i,m].X for i in I_T for m in K_in):.0f})")
+# Store BOTH the weighted value AND the count
+P_star_weighted = model.ObjVal  # Weighted passenger count
+P_star_count_out = sum(P[i,k].X for i in I_T for k in K_out)
+P_star_count_in = sum(Q[i,m].X for i in I_T for m in K_in)
+P_star_count = P_star_count_out + P_star_count_in
 
+print(f"\nM1 Results:")
+print(f"  Weighted passenger synchronizations: {P_star_weighted:.0f} passengers")
+print(f"  Actual synchronization count: {P_star_count:.0f} connections")
+print(f"    - Outgoing: {P_star_count_out:.0f} connections")
+print(f"    - Incoming: {P_star_count_in:.0f} connections")
+
+# FIX THE WEIGHTED OBJECTIVE (not the count!)
 model.addConstr(
-    gp.quicksum(P[i, k] for i in I_T for k in K_out) + 
-    gp.quicksum(Q[i, m] for i in I_T for m in K_in) == P_star,
-    name="fix_Z1"
+    gp.quicksum(demand_out[k] * P[i, k] for i in I_T for k in K_out) + 
+    gp.quicksum(demand_in[m] * Q[i, m] for i in I_T for m in K_in) == P_star_weighted,
+    name="fix_Z1_weighted"
 )
 
 print("\n" + "="*70)
-print("MODEL M2: Maximizing Coverage (Outgoing + Incoming)")
+print("MODEL M2: Maximizing Demand-Weighted Coverage")
 print("="*70)
 
 model.setObjective(Z2, GRB.MAXIMIZE)
@@ -453,17 +463,27 @@ if model.Status != GRB.OPTIMAL:
     print("ERROR: Model M2 failed!")
     sys.exit()
 
-C_star = model.ObjVal
-print(f"Optimal C* = {C_star:.0f} (Outgoing: {sum(C[k].X for k in K_out):.0f}, Incoming: {sum(C_in[m].X for m in K_in):.0f})")
+# Store BOTH the weighted value AND the count
+C_star_weighted = model.ObjVal
+C_star_count_out = sum(C[k].X for k in K_out)
+C_star_count_in = sum(C_in[m].X for m in K_in)
+C_star_count = C_star_count_out + C_star_count_in
 
+print(f"\nM2 Results:")
+print(f"  Weighted passenger coverage: {C_star_weighted:.0f} passengers")
+print(f"  Actual flight coverage count: {C_star_count:.0f} flights")
+print(f"    - Outgoing: {C_star_count_out:.0f} flights")
+print(f"    - Incoming: {C_star_count_in:.0f} flights")
+
+# FIX THE WEIGHTED COVERAGE (not the count!)
 model.addConstr(
-    gp.quicksum(C[k] for k in K_out) + 
-    gp.quicksum(C_in[m] for m in K_in) == C_star,
-    name="fix_Z2"
+    gp.quicksum(demand_out[k] * C[k] for k in K_out) + 
+    gp.quicksum(demand_in[m] * C_in[m] for m in K_in) == C_star_weighted,
+    name="fix_Z2_weighted"
 )
 
 print("\n" + "="*70)
-print("MODEL M3: Minimizing Penalties (Outgoing + Incoming)")
+print("MODEL M3: Minimizing Transfer Penalties")
 print("="*70)
 
 model.setObjective(Z3, GRB.MINIMIZE)
@@ -473,7 +493,9 @@ if model.Status != GRB.OPTIMAL:
     print("ERROR: Model M3 failed!")
     sys.exit()
 
-print(f"Optimal Penalty = {model.ObjVal:.2f}")
+print(f"\nM3 Results:")
+print(f"  Minimum total penalty: {model.ObjVal:.2f}")
+
 
 # ==========================================================
 # DISPLAY RESULTS
@@ -482,7 +504,10 @@ print(f"Optimal Penalty = {model.ObjVal:.2f}")
 print("\n" + "="*70)
 print("FINAL RESULTS")
 print("="*70)
-print(f"\nZ1 = {P_star:.0f}, Z2 = {C_star:.0f}, Z3 = {model.ObjVal:.2f}")
+print(f"\nZ1 (Weighted) = {P_star_weighted:.0f} passengers ({P_star_count:.0f} connections)")
+print(f"Z2 (Weighted) = {C_star_weighted:.0f} passengers ({C_star_count:.0f} flights)")
+print(f"Z3 (Penalties) = {model.ObjVal:.2f}")
+
 
 print("\n" + "="*70)
 print("OUTGOING FLIGHT SYNCHRONIZATIONS (Train → Flight)")
@@ -541,10 +566,10 @@ for i in I:
 print("\n" + "="*70)
 print("SUMMARY")
 print("="*70)
-print(f"Total synchronizations: {P_star:.0f}")
+# print(f"Total synchronizations: {P_star:.0f}")
 print(f"  - Outgoing (Train→Flight): {outgoing_count}")
 print(f"  - Incoming (Flight→Train): {incoming_count}")
-print(f"Total flight coverage: {C_star:.0f}")
+# print(f"Total flight coverage: {C_star:.0f}")
 print(f"  - Outgoing flights covered: {sum(C[k].X for k in K_out):.0f}/{len(K_out)}")
 print(f"  - Incoming flights covered: {sum(C_in[m].X for m in K_in):.0f}/{len(K_in)}")
 print(f"Total penalty: {model.ObjVal:.2f}")
@@ -629,8 +654,8 @@ total_pax_demand = sum(demand_out.values()) + sum(demand_in.values())
 coverage_rate = (total_pax_served / total_pax_demand) * 100
 
 print(f"\nObjective Values:")
-print(f"  Z1 (Weighted Synchronizations) = {P_star:.0f}")
-print(f"  Z2 (Weighted Coverage) = {C_star:.0f}")
+# print(f"  Z1 (Weighted Synchronizations) = {P_star:.0f}")
+# print(f"  Z2 (Weighted Coverage) = {C_star:.0f}")
 print(f"  Z3 (Total Penalty) = {model.ObjVal:.2f}")
 
 print(f"\nPassenger Coverage:")
@@ -672,12 +697,6 @@ for i in I_T:
 
 print(f"\nTotal incoming synchronizations: {incoming_count}")
 print(f"Total incoming passengers served: {total_pax_in:.0f}")
-
-print("\n" + "="*70)
-print("DEMAND COVERAGE ANALYSIS")
-print("="*70)
-
-
 
 # -----------------------------
 # DEFINE TIME STEPS FOR ANIMATION
