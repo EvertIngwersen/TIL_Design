@@ -6,6 +6,7 @@ Created on Mon Mar  9 13:25:40 2026
 """
 
 import random
+import numpy as np
 
 # ALL TIME VALUES ARE IN MINUTES
 
@@ -339,6 +340,268 @@ for i in I:
 # Convenience dict for station coordinates
 station_coords = {s: info["coords"] for s, info in stations.items()}
 
+# ==========================================================
+# PASSENGER DEMAND DATA
+# ==========================================================
+
+# Demand modeling approach selector
+DEMAND_MODEL = "TIME_AND_SIZE"  # Options: "UNIFORM", "TIME_BASED", "SIZE_BASED", "TIME_AND_SIZE", "REALISTIC"
+
+print(f"\n{'='*70}")
+print(f"DEMAND MODELING: {DEMAND_MODEL}")
+print(f"{'='*70}\n")
+
+# -----------------------------
+# DEMAND MODEL 1: UNIFORM (Baseline)
+# -----------------------------
+if DEMAND_MODEL == "UNIFORM":
+    # All flights have equal demand (no prioritization)
+    demand_out = {k: 100 for k in K_out}
+    demand_in = {m: 100 for m in K_in}
+    print("All flights treated equally (demand = 100)")
+
+# -----------------------------
+# DEMAND MODEL 2: TIME-BASED
+# -----------------------------
+elif DEMAND_MODEL == "TIME_BASED":
+    # Demand varies by time of day
+    # Peak hours: 7-9 AM, 5-7 PM (business travel)
+    # Off-peak: other times
+    
+    demand_out = {}
+    for k in K_out:
+        dep_time = D_k[k]
+        dep_hour = dep_time / 60
+        
+        # Morning peak (6-9 AM): High demand
+        if 6 <= dep_hour < 9:
+            demand_out[k] = 200
+        # Evening peak (5-8 PM): High demand
+        elif 17 <= dep_hour < 20:
+            demand_out[k] = 180
+        # Midday (9 AM - 5 PM): Medium demand
+        elif 9 <= dep_hour < 17:
+            demand_out[k] = 120
+        # Early morning / late night: Low demand
+        else:
+            demand_out[k] = 50
+    
+    demand_in = {}
+    for m in K_in:
+        arr_time = A_m[m]
+        arr_hour = arr_time / 60
+        
+        # Similar logic for arrivals
+        if 6 <= arr_hour < 9:
+            demand_in[m] = 200
+        elif 17 <= arr_hour < 20:
+            demand_in[m] = 180
+        elif 9 <= arr_hour < 17:
+            demand_in[m] = 120
+        else:
+            demand_in[m] = 50
+    
+    print("Demand based on time of day:")
+    print("  Peak hours (6-9 AM, 5-8 PM): 180-200 passengers")
+    print("  Midday (9 AM-5 PM): 120 passengers")
+    print("  Off-peak: 50 passengers")
+
+# -----------------------------
+# DEMAND MODEL 3: AIRPORT SIZE-BASED
+# -----------------------------
+elif DEMAND_MODEL == "SIZE_BASED":
+    # Demand based on airport importance
+    # Arlanda (Stockholm) > Kastrup (Copenhagen) > Gardermoen (Oslo)
+    
+    airport_multipliers = {
+        1: 1.5,   # Arlanda (largest)
+        2: 1.2,   # Kastrup
+        3: 1.0    # Gardermoen
+    }
+    
+    base_demand = 100
+    
+    demand_out = {k: int(base_demand * airport_multipliers[flight_station_out[k]]) 
+                  for k in K_out}
+    demand_in = {m: int(base_demand * airport_multipliers[flight_station_in[m]]) 
+                 for m in K_in}
+    
+    print("Demand based on airport size:")
+    for airport, mult in airport_multipliers.items():
+        print(f"  Airport {airport}: {mult}× base demand")
+
+# -----------------------------
+# DEMAND MODEL 4: TIME + SIZE COMBINED
+# -----------------------------
+elif DEMAND_MODEL == "TIME_AND_SIZE":
+    # Combines time-of-day and airport size effects
+    
+    airport_multipliers = {
+        1: 1.4,   # Arlanda
+        2: 1.2,   # Kastrup  
+        3: 1.0    # Gardermoen
+    }
+    
+    demand_out = {}
+    for k in K_out:
+        dep_time = D_k[k]
+        dep_hour = dep_time / 60
+        airport = flight_station_out[k]
+        
+        # Base demand by time
+        if 6 <= dep_hour < 9 or 17 <= dep_hour < 20:
+            base = 150  # Peak
+        elif 9 <= dep_hour < 17:
+            base = 100  # Midday
+        else:
+            base = 40   # Off-peak
+        
+        # Apply airport multiplier
+        demand_out[k] = int(base * airport_multipliers[airport])
+    
+    demand_in = {}
+    for m in K_in:
+        arr_time = A_m[m]
+        arr_hour = arr_time / 60
+        airport = flight_station_in[m]
+        
+        if 6 <= arr_hour < 9 or 17 <= arr_hour < 20:
+            base = 150
+        elif 9 <= arr_hour < 17:
+            base = 100
+        else:
+            base = 40
+        
+        demand_in[m] = int(base * airport_multipliers[airport])
+    
+    print("Demand based on time + airport size:")
+    print("  Peak × Large Airport: ~210 passengers")
+    print("  Peak × Medium Airport: ~180 passengers")
+    print("  Midday × Large Airport: ~140 passengers")
+    print("  Off-peak: 40-60 passengers")
+
+# -----------------------------
+# DEMAND MODEL 5: REALISTIC (with randomness)
+# -----------------------------
+elif DEMAND_MODEL == "REALISTIC":
+    # Most realistic: combines multiple factors + random variation
+    
+    airport_multipliers = {
+        1: 1.4,   # Arlanda (largest)
+        2: 1.2,   # Kastrup
+        3: 1.0    # Gardermoen
+    }
+    
+    # Day-of-week effect (if you extend to weekly planning)
+    # weekday_multiplier = 1.2  # More business travel
+    # weekend_multiplier = 0.9  # More leisure travel
+    
+    np.random.seed(42)  # For reproducibility
+    
+    demand_out = {}
+    for k in K_out:
+        dep_time = D_k[k]
+        dep_hour = dep_time / 60
+        airport = flight_station_out[k]
+        
+        # Base demand by time
+        if 6 <= dep_hour < 9:
+            base = 180  # Morning peak (business)
+        elif 17 <= dep_hour < 20:
+            base = 160  # Evening peak
+        elif 9 <= dep_hour < 17:
+            base = 110  # Midday
+        elif 20 <= dep_hour < 23:
+            base = 70   # Evening
+        else:
+            base = 30   # Very early/late
+        
+        # Apply airport multiplier
+        base *= airport_multipliers[airport]
+        
+        # Add random variation (±20%)
+        variation = np.random.uniform(0.8, 1.2)
+        demand_out[k] = int(base * variation)
+    
+    demand_in = {}
+    for m in K_in:
+        arr_time = A_m[m]
+        arr_hour = arr_time / 60
+        airport = flight_station_in[m]
+        
+        if 6 <= arr_hour < 9:
+            base = 180
+        elif 17 <= arr_hour < 20:
+            base = 160
+        elif 9 <= arr_hour < 17:
+            base = 110
+        elif 20 <= arr_hour < 23:
+            base = 70
+        else:
+            base = 30
+        
+        base *= airport_multipliers[airport]
+        variation = np.random.uniform(0.8, 1.2)
+        demand_in[m] = int(base * variation)
+    
+    print("Realistic demand with random variation:")
+    print("  Morning peak: 140-250 passengers")
+    print("  Evening peak: 120-220 passengers")
+    print("  Midday: 80-150 passengers")
+    print("  Off-peak: 20-80 passengers")
+
+else:
+    raise ValueError(f"Unknown DEMAND_MODEL: {DEMAND_MODEL}")
+
+# -----------------------------
+# Demand Statistics
+# -----------------------------
+print(f"\n{'='*70}")
+print("DEMAND STATISTICS")
+print(f"{'='*70}")
+print(f"Outgoing flights:")
+print(f"  Total demand: {sum(demand_out.values())} passengers")
+print(f"  Average: {sum(demand_out.values())/len(demand_out):.1f} per flight")
+print(f"  Range: {min(demand_out.values())}-{max(demand_out.values())}")
+
+print(f"\nIncoming flights:")
+print(f"  Total demand: {sum(demand_in.values())} passengers")
+print(f"  Average: {sum(demand_in.values())/len(demand_in):.1f} per flight")
+print(f"  Range: {min(demand_in.values())}-{max(demand_in.values())}")
+
+print(f"\nTotal system demand: {sum(demand_out.values()) + sum(demand_in.values())} passengers")
+print(f"{'='*70}\n")
+
+# -----------------------------
+# Identify High-Demand Flights (for optional service level constraints)
+# -----------------------------
+# Define "high demand" as top 30% of flights
+demand_threshold_out = np.percentile(list(demand_out.values()), 70)
+demand_threshold_in = np.percentile(list(demand_in.values()), 70)
+
+high_demand_flights_out = [k for k in K_out if demand_out[k] >= demand_threshold_out]
+high_demand_flights_in = [m for m in K_in if demand_in[m] >= demand_threshold_in]
+
+print(f"High-demand flights (top 30%):")
+print(f"  Outgoing: {len(high_demand_flights_out)} flights (demand ≥ {demand_threshold_out:.0f})")
+print(f"  Incoming: {len(high_demand_flights_in)} flights (demand ≥ {demand_threshold_in:.0f})")
+print(f"{'='*70}\n")
+
+# -----------------------------
+# Optional: Demand Sensitivity Parameter
+# -----------------------------
+# Controls how much demand affects prioritization
+# alpha = 0: ignore demand (all flights equal)
+# alpha = 1: full demand weighting
+# alpha > 1: amplify demand differences
+DEMAND_SENSITIVITY = 1.0
+
+# Normalize demands if sensitivity != 1
+if DEMAND_SENSITIVITY != 1.0:
+    demand_out = {k: d ** DEMAND_SENSITIVITY for k, d in demand_out.items()}
+    demand_in = {m: d ** DEMAND_SENSITIVITY for m, d in demand_in.items()}
+    print(f"Demand sensitivity: {DEMAND_SENSITIVITY}")
+    print(f"(Higher values amplify demand differences)\n")
 
 
 
