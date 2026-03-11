@@ -19,26 +19,6 @@ stations = {
     3: {"coords": (2,1), "airport": True}   #Gardermoen Airport
     }
 
-stations = {
-    1: {"coords": (0, 0)},
-    2: {"coords": (1, 0.5)},
-    3: {"coords": (2, 1), "airport": True},
-    4: {"coords": (3, 0.5)},
-    5: {"coords": (4, 1), "airport": True},
-    6: {"coords": (4, 0.5), "airport": True},
-    7: {"coords": (1,1.5)},
-    8: {"coords": (0.5, 2)},
-    9: {"coords": (4.5, 0), "airport": True},
-    10:{"coords": (5.5, 0.5), "airport": True},
-    11:{"coords": (2, 2.5)},
-    12:{"coords": (2, 0)},
-    13:{"coords": (3, -0.5)},
-    14:{"coords": (3, 2.5)},
-    15:{"coords": (4, 2.5)},
-    16:{"coords": (5, 2.5)},
-}
-
-
 S = list(stations.keys())
 transfer_stations = [s for s, info in stations.items() if info.get("airport")]
 
