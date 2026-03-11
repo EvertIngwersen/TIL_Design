@@ -4935,3 +4935,102 @@ Solution count 1: 68.8
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 6.880000000000e+01, best bound 6.880000000000e+01, gap 0.0000%
+
+Gurobi 13.0.1 (win64) logging started Wed Mar 11 11:13:18 2026
+
+Set parameter LogFile to value "c:\users\evert\documents\tu-delft\til master\til5050-20 til design project\til_design_repo\til_design\modeling\Logs\gurobi.log"
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 1264 rows, 2382 columns and 2884 nonzeros (Max)
+Model fingerprint: 0x954f1869
+Model has 264 linear objective coefficients
+Variable types: 334 continuous, 2048 integer (2048 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [5e+01, 2e+02]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+Presolve removed 1218 rows and 2360 columns
+Presolve time: 0.03s
+Presolved: 46 rows, 22 columns, 115 nonzeros
+Variable types: 14 continuous, 8 integer (8 binary)
+Found heuristic solution: objective 1530.0000000
+Found heuristic solution: objective 1580.0000000
+Found heuristic solution: objective 1630.0000000
+Found heuristic solution: objective 1680.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 4: 1680 1630 1580 1530 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.680000000000e+03, best bound 1.680000000000e+03, gap 0.0000%
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 1265 rows, 2382 columns and 3148 nonzeros (Max)
+Model fingerprint: 0x3483375b
+Model has 24 linear objective coefficients
+Variable types: 334 continuous, 2048 integer (2048 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [5e+01, 2e+02]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
+MIP start from previous solve produced solution with objective -0 (0.01s)
+Loaded MIP start from previous solve with objective -0
+
+Presolve removed 1156 rows and 2317 columns
+Presolve time: 0.01s
+Presolved: 109 rows, 65 columns, 303 nonzeros
+Found heuristic solution: objective 810.0000000
+Variable types: 34 continuous, 31 integer (31 binary)
+Found heuristic solution: objective 1220.0000000
+
+Root relaxation: objective 1.638184e+03, 47 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1638.18429    0    8 1220.00000 1638.18429  34.3%     -    0s
+H    0     0                    1340.0000000 1638.18429  22.3%     -    0s
+
+Cutting planes:
+  Learned: 3
+  Cover: 3
+  Implied bound: 6
+  Clique: 1
+  MIR: 1
+  Flow cover: 1
+  RLT: 5
+
+Explored 1 nodes (47 simplex iterations) in 0.03 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 4: 1340 1220 810 -0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.340000000000e+03, best bound 1.340000000000e+03, gap 0.0000%
+Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
+
+Optimize a model with 1266 rows, 2382 columns and 3172 nonzeros (Min)
+Model fingerprint: 0x46eedc61
+Model has 264 linear objective coefficients
+Variable types: 334 continuous, 2048 integer (2048 binary)
+Coefficient statistics:
+  Matrix range     [4e-01, 2e+03]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+03]
+  RHS range        [1e+00, 3e+03]
+
