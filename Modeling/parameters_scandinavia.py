@@ -123,38 +123,6 @@ airport_settings_incoming = {
 
 incoming_flights = generate_incoming_flights_per_airport_random(airport_settings_incoming, max_variation=5)
 
-# Outgoing flights (passengers arrive by train, depart by flight)
-outgoing_flights = {
-    1: {"station": 3, "departure": 560},
-    2: {"station": 3, "departure": 630},
-    3: {"station": 5, "departure": 710},
-    4: {"station": 6, "departure": 740},
-    5: {"station": 6, "departure": 710},
-    6: {"station": 3, "departure": 720},
-    7: {"station": 9, "departure": 590},
-    8: {"station": 10, "departure": 600},
-    9: {"station": 10, "departure": 1000},
-    10: {"station": 10, "departure": 1200},
-    11: {"station": 3, "departure": 255},
-    12: {"station": 5, "departure": 1250}
-}
-
-# Incoming flights (passengers arrive by flight, depart by train)
-incoming_flights = {
-    1: {"station": 3, "arrival": 480},
-    2: {"station": 5, "arrival": 520},
-    3: {"station": 6, "arrival": 550},
-    4: {"station": 9, "arrival": 500},
-    5: {"station": 10, "arrival": 530},
-    6: {"station": 3, "arrival": 650},
-    7: {"station": 5, "arrival": 700},
-    8: {"station": 3, "arrival": 600},
-    9: {"station": 3, "arrival": 515},
-    10: {"station": 10, "arrival": 650},
-    11: {"station": 10, "arrival": 700},
-    12: {"station": 5, "arrival": 950},
-}
-
 # Sets
 K_out = list(outgoing_flights.keys())
 K_in = list(incoming_flights.keys())
@@ -194,22 +162,6 @@ trains = {
     6: {"route": [2, 3], "origin": 2, "dest": 3}
 }
 
-trains = {
-    1: {"route": [1, 2, 3, 4], "origin": 1, "dest": 4},
-    2: {"route": [1, 3, 4], "origin": 1, "dest": 4},
-    3: {"route": [2, 3, 4, 9, 10], "origin": 2, "dest": 10},
-    4: {"route": [1, 3, 5, 6], "origin": 1, "dest": 6},
-    5: {"route": [2, 3, 6], "origin": 2, "dest": 6},
-    6: {"route": [6, 5, 3], "origin": 6, "dest": 3},
-    7: {"route": [1, 8, 7, 2, 3], "origin": 1, "dest": 3},
-    8: {"route": [4, 9, 5, 6], "origin": 4, "dest": 6},
-    9: {"route": [2, 3, 5, 10], "origin": 2, "dest": 10},
-    10: {"route": [16, 15, 14, 11, 3, 12, 13, 9, 10], "origin": 16, "dest": 10},
-    11: {"route": [9,10], "origin": 9, "dest": 10}
-}
-
-
-
 # How many extra trains per route
 extra_per_route = 0
 
@@ -230,16 +182,6 @@ for train_id, info in trains.items():
 # Merge the new trains into the original dictionary
 trains.update(new_trains)
 
-# Make multi-station trains
-# trains = {
-#     1: {"route": [1, 2, 3], "origin": 1, "dest": 3},
-#     2: {"route": [3, 2, 1], "origin": 3, "dest": 1},
-#     3: {"route": [2, 3, 1], "origin": 2, "dest": 1},
-#     4: {"route": [1, 3, 2], "origin": 1, "dest": 2},
-#     5: {"route": [3, 1, 2], "origin": 3, "dest": 2},
-#     6: {"route": [2, 1, 3], "origin": 2, "dest": 3}
-# }
-
 
 I = list(trains.keys())
 S_i = {i: trains[i]["route"] for i in I}
@@ -259,28 +201,6 @@ travel_times = {
     (2, 1): 229, (2,3): 293,
     (3,1): 251, (3,2): 293
     }
-
-
-travel_times = {
-    # Original forward directions
-    (1,2): 20, (2,3): 25, (3,4): 30,
-    (1,3): 35, (2,4): 40, (4,5): 18, (5,6): 22,
-    (3,5): 28, (3,6): 40, (8,7): 10,
-    (6,5): 22, (11,3): 40, (3,12): 15,
-    (5,3): 28, (12,13): 25, (13,9): 10, (9,10): 20,
-    (16,15):40, (15,14): 30, (14,11): 30}
-
-travel_times.update({
-    (1,8): 15, (8,2): 15,
-    (4,9): 12, (9,5): 12,
-    (5,10): 20, (3,10): 25,
-    
-    # reverse directions
-    (8,1): 15, (2,8): 15,
-    (9,4): 12, (5,9): 12,
-    (10,5): 20, (10,3): 25,
-})
-
 
 # Running times, acceleration, deceleration, dwell times
 r, beta, gamma, y, x = {}, {}, {}, {}, {}
