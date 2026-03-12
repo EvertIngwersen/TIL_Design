@@ -5890,3 +5890,23 @@ H    0     0                     397.6000000  300.41943  24.4%     -    0s
      0     0  360.29632    0   32  397.60000  360.29632  9.38%     -    0s
      0     0  366.04546    0   22  397.60000  366.04546  7.94%     -    0s
      0     0  377.73475    0    4  397.60000  377.73475  5.00%     -    0s
+     0     0  397.24356    0    4  397.60000  397.24356  0.09%     -    0s
+
+Cutting planes:
+  Learned: 31
+  Gomory: 1
+  Cover: 13
+  Implied bound: 4
+  Clique: 15
+  MIR: 11
+  Mod-K: 1
+  RLT: 1
+  Relax-and-lift: 19
+
+Explored 1 nodes (536 simplex iterations) in 0.06 seconds (0.02 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 2: 397.6 409.6 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.976000000000e+02, best bound 3.976000000000e+02, gap 0.0000%
