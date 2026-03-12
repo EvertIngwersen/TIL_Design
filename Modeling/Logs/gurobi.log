@@ -6418,3 +6418,11 @@ Root relaxation: objective 1.113558e+02, 106 iterations, 0.00 seconds (0.00 work
      0     0  128.30168    0   10  142.15556  128.30168  9.75%     -    0s
      0     0  130.58797    0    9  142.15556  130.58797  8.14%     -    0s
      0     0  140.95556    0    1  142.15556  140.95556  0.84%     -    0s
+
+Explored 1 nodes (123 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 1: 142.156 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.421555555556e+02, best bound 1.421555555556e+02, gap 0.0000%
