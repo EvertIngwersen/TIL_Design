@@ -22,6 +22,21 @@ from pathlib import Path
 from shapely.geometry import LineString
 
 # -----------------------------
+# Command-line arguments for C# GUI
+# -----------------------------
+if len(sys.argv) >= 3:
+    origin_input = sys.argv[1]
+    destination_input = sys.argv[2]
+    via_inputs = sys.argv[3].split(",") if len(sys.argv) > 3 and sys.argv[3] else []
+else:
+    # fallback to interactive input if called from terminal without args
+    print("Please enter cities manually (interactive mode)")
+    origin_input = input("Origin city: ")
+    destination_input = input("Destination city: ")
+    via_inputs = input("Via cities (comma-separated): ").split(",") if input("Via cities (comma-separated): ") else []
+
+
+# -----------------------------
 # Input parameters
 # -----------------------------
 
@@ -273,19 +288,26 @@ for city in cities.keys():
     normalized_lookup[normalized_name] = city 
 
 
-def get_city_node(prompt):
-    while True:
-        user_input = input(prompt).strip().lower()
-        normalized_input = normalize_city_name(user_input)
-        if normalized_input in normalized_lookup:
-            city_name = normalized_lookup[normalized_input]
-            if city_name != user_input:
-                print(f"Interpreted '{user_input}' as '{city_name.title()}'")
-            lon, lat = cities[city_name]
-            node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
-            return city_name, node
-        else:
-            print("City not found. Try again.")
+def get_node_from_name(city):
+    normalized_input = normalize_city_name(city.lower())
+    if normalized_input in normalized_lookup:
+        city_name = normalized_lookup[normalized_input]
+        lon, lat = cities[city_name]
+        node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
+        return city_name, node
+    else:
+        raise ValueError(f"City not found: {city}")
+
+city_name_origin, origin = get_node_from_name(origin_input)
+city_name_dest, destination = get_node_from_name(destination_input)
+
+via_nodes = []
+via_names = []
+for via in via_inputs:
+    if via.strip():  # skip empty
+        city_name, node = get_node_from_name(via)
+        via_nodes.append(node)
+        via_names.append(city_name)
 
 print("Available cities:", ", ".join(list(cities.keys())))
 print("")
