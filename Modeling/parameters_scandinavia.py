@@ -163,7 +163,7 @@ trains = {
 }
 
 # How many extra trains per route
-extra_per_route = 1
+extra_per_route = 2
 
 # Find the current max train ID to continue numbering
 max_id = max(trains.keys())
