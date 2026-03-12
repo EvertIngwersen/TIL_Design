@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ozJeup7ECsM=",
+  "dgSpecHash": "DzgtRfATN1o=",
   "success": true,
   "projectFilePath": "C:\\Users\\evert\\Documents\\TU-Delft\\TIL Master\\TIL5050-20 TIL Design Project\\TIL_Design_Repo\\TIL_Design\\GUI\\RailRouteGUI\\RailRouteGUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\evert\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\evert\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\evert\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\evert\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

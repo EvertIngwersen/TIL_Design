@@ -1,0 +1,5 @@
+C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\obj\Debug\net8.0-windows\RailRouteGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\obj\Debug\net8.0-windows\RailRouteGUI.AssemblyInfoInputs.cache
+C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\obj\Debug\net8.0-windows\RailRouteGUI.AssemblyInfo.cs
+C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\obj\Debug\net8.0-windows\RailRouteGUI.csproj.CoreCompileInputs.cache
+C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\obj\Debug\net8.0-windows\RailRouteGUI.sourcelink.json
