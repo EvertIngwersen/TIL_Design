@@ -9,6 +9,7 @@ Scandinavia rail network
 - 
 """
 
+import sys
 import json
 import unicodedata
 import osmnx as ox
@@ -290,33 +291,35 @@ print("Available cities:", ", ".join(list(cities.keys())))
 print("")
 print("Available airports: arlanda airport, kastrup airport, gardermoen airport")
 
-city_name_origin, origin = get_city_node("Enter origin city: ")
+origin_input = sys.argv[1]
+destination_input = sys.argv[2]
 
-# ---- VIA STOPS ----
-via_nodes = []
-via_names = []
+via_inputs = []
+if len(sys.argv) > 3 and sys.argv[3] != "":
+    via_inputs = sys.argv[3].split(",")
 
-while True:
-    via_input = input("Via (press ENTER to finish): ").strip()
-    
-    if via_input == "":
-        break
+def get_node_from_name(city):
 
-    normalized_input = normalize_city_name(via_input.lower())
+    normalized_input = normalize_city_name(city.lower())
 
     if normalized_input in normalized_lookup:
         city_name = normalized_lookup[normalized_input]
         lon, lat = cities[city_name]
         node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
-
-        via_nodes.append(node)
-        via_names.append(city_name)
-
-        print(f"Added via stop: {city_name.title()}")
+        return city_name, node
     else:
-        print("City not found. Try again.")
+        raise ValueError(f"City not found: {city}")
 
-city_name_dest, destination = get_city_node("Enter destination city: ")
+city_name_origin, origin = get_node_from_name(origin_input)
+city_name_dest, destination = get_node_from_name(destination_input)
+
+via_nodes = []
+via_names = []
+
+for via in via_inputs:
+    city_name, node = get_node_from_name(via)
+    via_nodes.append(node)
+    via_names.append(city_name)
 
 print("")
 print("Calculating shortest route...")
