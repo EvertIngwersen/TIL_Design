@@ -852,17 +852,48 @@ VISUALIZATION SUMMARY
 Open the HTML files in your browser for interactive exploration.
 Tip: Use the browser's zoom and pan tools for detailed analysis.
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Flight time range: 422 to 1375 minutes
-                   (7:02 to 22:55)
+[4;33mReloaded modules[24m: parameters_scandinavia, visualization_module, advanced_demand_visualization[0m
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
-======================================================================
-IMPROVED TRAIN DEPARTURE WINDOWS
-======================================================================
-Planning horizon: 222-1225 min (03:42-20:25)
-Window width: 180 minutes (3.0 hours)
-======================================================================
-Train  1: Depart  132- 312 min (02:12-05:12)
-Train  2: Depart  187- 367 min (03:07-06:07)
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
+
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Please enter cities manually (interactive mode)
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
+
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+n (03:07-06:07)
 Train  3: Depart  243- 423 min (04:03-07:03)
 Train  4: Depart  299- 479 min (04:59-07:59)
 Train  5: Depart  354- 534 min (05:54-08:54)
@@ -1706,130 +1737,48 @@ VISUALIZATION SUMMARY
 Open the HTML files in your browser for interactive exploration.
 Tip: Use the browser's zoom and pan tools for detailed analysis.
 
-====================================================
-Train  1: Depart  132- 312 min (02:12-05:12)
-Train  2: Depart  187- 367 min (03:07-06:07)
-Train  3: Depart  243- 423 min (04:03-07:03)
-Train  4: Depart  299- 479 min (04:59-07:59)
-Train  5: Depart  354- 534 min (05:54-08:54)
-Train  6: Depart  410- 590 min (06:50-09:50)
-Train  7: Depart  466- 646 min (07:46-10:46)
-Train  8: Depart  522- 702 min (08:42-11:42)
-Train  9: Depart  577- 757 min (09:37-12:37)
-Train 10: Depart  633- 813 min (10:33-13:33)
-Train 11: Depart  689- 869 min (11:29-14:29)
-Train 12: Depart  744- 924 min (12:24-15:24)
-Train 13: Depart  800- 980 min (13:20-16:20)
-Train 14: Depart  856-1036 min (14:16-17:16)
-Train 15: Depart  912-1092 min (15:12-18:12)
-Train 16: Depart  967-1147 min (16:07-19:07)
-Train 17: Depart 1023-1203 min (17:03-20:03)
-Train 18: Depart 1079-1259 min (17:59-20:59)
-======================================================================
+[4;33mReloaded modules[24m: parameters_scandinavia, visualization_module, advanced_demand_visualization[0m
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
-======================================================================
-DEMAND MODELING: REALISTIC
-======================================================================
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Please enter cities manually (interactive mode)
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
-Realistic demand with random variation:
-  Morning peak: 140-250 passengers
-  Evening peak: 120-220 passengers
-  Midday: 80-150 passengers
-  Off-peak: 20-80 passengers
-
-======================================================================
-DEMAND STATISTICS
-======================================================================
-Outgoing flights:
-  Total demand: 2195 passengers
-  Average: 146.3 per flight
-  Range: 61-239
-
-Incoming flights:
-  Total demand: 2120 passengers
-  Average: 141.3 per flight
-  Range: 57-225
-
-Total system demand: 4315 passengers
-======================================================================
-
-High-demand flights (top 30%):
-  Outgoing: 5 flights (demand ≥ 178)
-  Incoming: 5 flights (demand ≥ 176)
-======================================================================
-
-Set parameter LogFile to value "c:\users\evert\documents\tu-delft\til master\til5050-20 til design project\til_design_repo\til_design\modeling\Logs\gurobi.log"
-Model successfully created with bidirectional transfers.
-Creating demand-weighted objective functions...
-Demand-weighted objectives defined:
-  Z1: Maximizes passenger coverage (weighted synchronizations)
-  Z2: Maximizes weighted flight coverage
-  Z3: Minimizes transfer penalties
-
-======================================================================
-MODEL M1: Maximizing Demand-Weighted Synchronizations
-======================================================================
-Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
-
-CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
-Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
-
-Optimize a model with 1848 rows, 2064 columns and 3846 nonzeros (Max)
-Model fingerprint: 0x96269477
-Model has 540 linear objective coefficients
-Variable types: 576 continuous, 1488 integer (1488 binary)
-Coefficient statistics:
-  Matrix range     [4e-01, 2e+03]
-  Objective range  [6e+01, 2e+02]
-  Bounds range     [1e+00, 1e+03]
-  RHS range        [1e+00, 3e+03]
-
-Found heuristic solution: objective 1166.0000000
-Presolve removed 1834 rows and 2055 columns
-Presolve time: 0.00s
-Presolved: 14 rows, 9 columns, 40 nonzeros
-Found heuristic solution: objective 3530.0000000
-Variable types: 4 continuous, 5 integer (5 binary)
-
-Root relaxation: objective 3.728774e+03, 8 iterations, 0.00 seconds (0.00 work units)
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-     0     0 3728.77448    0    2 3530.00000 3728.77448  5.63%     -    0s
-H    0     0                    3612.0000000 3728.77448  3.23%     -    0s
-H    0     0                    3681.0000000 3728.77448  1.30%     -    0s
-     0     0 3728.77448    0    2 3681.00000 3728.77448  1.30%     -    0s
-
-Explored 1 nodes (8 simplex iterations) in 0.02 seconds (0.00 work units)
-Thread count was 20 (of 20 available processors)
-
-Solution count 4: 3681 3612 3530 1166 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.681000000000e+03, best bound 3.681000000000e+03, gap 0.0000%
-
-M1 Results:
-  Weighted passenger synchronizations: 3681 passengers
-  Actual synchronization count: 23 connections
-    - Outgoing: 11 connections
-    - Incoming: 12 connections
-
-======================================================================
-MODEL M2: Maximizing Demand-Weighted Coverage
-======================================================================
-Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
-
-CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
-Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
-
-Optimize a model with 1849 rows, 2064 columns and 4386 nonzeros (Max)
-Model fingerprint: 0x5f8e0519
-Model has 30 linear objective coefficients
-Variable types: 576 continuous, 1488 integer (1488 binary)
-Coefficient statistics:
-  Matrix range     [4e-01, 2e+03]
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+atrix range     [4e-01, 2e+03]
   Objective range  [6e+01, 2e+02]
   Bounds range     [1e+00, 1e+03]
   RHS range        [1e+00, 4e+03]
@@ -2552,131 +2501,48 @@ VISUALIZATION SUMMARY
 Open the HTML files in your browser for interactive exploration.
 Tip: Use the browser's zoom and pan tools for detailed analysis.
 
-in (06:50-09:50)
-Train  7: Depart  466- 646 min (07:46-10:46)
-Train  8: Depart  522- 702 min (08:42-11:42)
-Train  9: Depart  577- 757 min (09:37-12:37)
-Train 10: Depart  633- 813 min (10:33-13:33)
-Train 11: Depart  689- 869 min (11:29-14:29)
-Train 12: Depart  744- 924 min (12:24-15:24)
-Train 13: Depart  800- 980 min (13:20-16:20)
-Train 14: Depart  856-1036 min (14:16-17:16)
-Train 15: Depart  912-1092 min (15:12-18:12)
-Train 16: Depart  967-1147 min (16:07-19:07)
-Train 17: Depart 1023-1203 min (17:03-20:03)
-Train 18: Depart 1079-1259 min (17:59-20:59)
-======================================================================
+[4;33mReloaded modules[24m: parameters_scandinavia, visualization_module, advanced_demand_visualization[0m
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
-======================================================================
-DEMAND MODELING: REALISTIC
-======================================================================
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Please enter cities manually (interactive mode)
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
 
-Realistic demand with random variation:
-  Morning peak: 140-250 passengers
-  Evening peak: 120-220 passengers
-  Midday: 80-150 passengers
-  Off-peak: 20-80 passengers
-
-======================================================================
-DEMAND STATISTICS
-======================================================================
-Outgoing flights:
-  Total demand: 2195 passengers
-  Average: 146.3 per flight
-  Range: 61-239
-
-Incoming flights:
-  Total demand: 2120 passengers
-  Average: 141.3 per flight
-  Range: 57-225
-
-Total system demand: 4315 passengers
-======================================================================
-
-High-demand flights (top 30%):
-  Outgoing: 5 flights (demand ≥ 178)
-  Incoming: 5 flights (demand ≥ 176)
-======================================================================
-
-Set parameter LogFile to value "c:\users\evert\documents\tu-delft\til master\til5050-20 til design project\til_design_repo\til_design\modeling\Logs\gurobi.log"
-Model successfully created with bidirectional transfers.
-Creating demand-weighted objective functions...
-Demand-weighted objectives defined:
-  Z1: Maximizes passenger coverage (weighted synchronizations)
-  Z2: Maximizes weighted flight coverage
-  Z3: Minimizes transfer penalties
-
-======================================================================
-MODEL M1: Maximizing Demand-Weighted Synchronizations
-======================================================================
-Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
-
-CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
-Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
-
-Optimize a model with 1848 rows, 2064 columns and 3846 nonzeros (Max)
-Model fingerprint: 0x96269477
-Model has 540 linear objective coefficients
-Variable types: 576 continuous, 1488 integer (1488 binary)
-Coefficient statistics:
-  Matrix range     [4e-01, 2e+03]
-  Objective range  [6e+01, 2e+02]
-  Bounds range     [1e+00, 1e+03]
-  RHS range        [1e+00, 3e+03]
-
-Found heuristic solution: objective 1166.0000000
-Presolve removed 1834 rows and 2055 columns
-Presolve time: 0.00s
-Presolved: 14 rows, 9 columns, 40 nonzeros
-Found heuristic solution: objective 3530.0000000
-Variable types: 4 continuous, 5 integer (5 binary)
-
-Root relaxation: objective 3.728774e+03, 8 iterations, 0.00 seconds (0.00 work units)
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-     0     0 3728.77448    0    2 3530.00000 3728.77448  5.63%     -    0s
-H    0     0                    3612.0000000 3728.77448  3.23%     -    0s
-H    0     0                    3681.0000000 3728.77448  1.30%     -    0s
-     0     0 3728.77448    0    2 3681.00000 3728.77448  1.30%     -    0s
-
-Explored 1 nodes (8 simplex iterations) in 0.02 seconds (0.00 work units)
-Thread count was 20 (of 20 available processors)
-
-Solution count 4: 3681 3612 3530 1166 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.681000000000e+03, best bound 3.681000000000e+03, gap 0.0000%
-
-M1 Results:
-  Weighted passenger synchronizations: 3681 passengers
-  Actual synchronization count: 23 connections
-    - Outgoing: 11 connections
-    - Incoming: 12 connections
-
-======================================================================
-MODEL M2: Maximizing Demand-Weighted Coverage
-======================================================================
-Gurobi Optimizer version 13.0.1 build v13.0.1rc0 (win64 - Windows 11+.0 (26200.2))
-
-CPU model: 13th Gen Intel(R) Core(TM) i7-13700H, instruction set [SSE2|AVX|AVX2]
-Thread count: 14 physical cores, 20 logical processors, using up to 20 threads
-
-Optimize a model with 1849 rows, 2064 columns and 4386 nonzeros (Max)
-Model fingerprint: 0x5f8e0519
-Model has 30 linear objective coefficients
-Variable types: 576 continuous, 1488 integer (1488 binary)
-Coefficient statistics:
-  Matrix range     [4e-01, 2e+03]
-  Objective range  [6e+01, 2e+02]
-  Bounds range     [1e+00, 1e+03]
-  RHS range        [1e+00, 4e+03]
-
-MIP start from previous solve produced solution with objective -0 (0.00s)
-MIP start from previous solve produced solution with objective -0 (0.00s)
-Loaded MIP start from previous solve with objective -0
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+revious solve with objective -0
 
 Presolve removed 1788 rows and 2003 columns
 Presolve time: 0.02s
@@ -3392,3 +3258,44 @@ VISUALIZATION SUMMARY
 Open the HTML files in your browser for interactive exploration.
 Tip: Use the browser's zoom and pan tools for detailed analysis.
 
+[4;33mReloaded modules[24m: parameters_scandinavia, visualization_module, advanced_demand_visualization[0m
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
+
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
+
+Available airports: arlanda airport, kastrup airport, gardermoen airport
+Please enter cities manually (interactive mode)
+Dwell time per stop is set at: 180 seconds
+Dwell time is set uniform for every stop
+Loading data...
+Øresund bridge added.
+Skottesjon - Ed added.
+Glasbruk - Charlottenberg added.
+Tevelden - Storlien added.
+Hell - Stjordal added.
+Kolsan - Nes added.
+Riksgranan - Vassejavri added.
+Available cities: aalborg, aarhus, esbjerg, horsens, københavn, kolding, odense, randers, roskilde, vejle, ådals-lidens distrikt, alnö distrikt, anundsjö distrikt, arnäs distrikt, attmars distrikt, bodums distrikt, borås, borgsjö distrikt, boteå distrikt, dals distrikt, eskilstuna, falun, fjällsjö distrikt, gävle, gideå distrikt, göteborg, gudmundrå distrikt, halmstad, härnösands domkyrkodistrikt, hässjö distrikt, haverö distrikt, helsingborg, hemsö distrikt, högsjö distrikt, indals-lidens kommundel, jönköping, kalmar, karlskrona, karlstad, linköping, luleå, lund, malmö, mo distrikt, nätra distrikt, norrköping, nyköping, örebro, östersund, överlännäs distrikt, ramsele distrikt, sånga distrikt, sättna distrikt, skogs distrikt, skönsmons distrikt, södertälje, stigsjö distrikt, stockholm, sundsvall, sundsvalls gustav adolfs distrikt, tåsjö distrikt, torps distrikt, torsåkers distrikt, tuna distrikt, tynderö distrikt, umeå, uppsala, västerås, växjö, vibyggerå distrikt, visby, ytterlännäs distrikt, ålesund, arendal, bergen, bodø, drammen, fredrikstad, hamar, haugesund, kristiansand, moss, oslo, porsgrunn, sandefjord, sandnes, sarpsborg, skien, stavanger, tønsberg, tromsø, trondheim, arlanda airport, kastrup airport, gardermoen airport, narvik
+
+Available airports: arlanda airport, kastrup airport, gardermoen airport
