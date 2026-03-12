@@ -1,2 +1,20 @@
+# -----------------------------
+# Flight data
+# -----------------------------
 # Ignore all flight parquet files
 Data/Flight Data/Eurocontrol Test Data/data/flight_list/*.parquet
+
+# -----------------------------
+# C# / .NET build outputs
+# -----------------------------
+# Ignore build directories
+bin/
+obj/
+
+# Ignore compiled executables
+*.exe
+*.dll
+*.pdb
+*.user
+*.vs
+*.suo

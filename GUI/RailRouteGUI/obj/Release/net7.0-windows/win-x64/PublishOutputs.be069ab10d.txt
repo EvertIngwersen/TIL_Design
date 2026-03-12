@@ -1,2 +1,0 @@
-C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\bin\Release\net7.0-windows\win-x64\publish\RailRouteGUI.pdb
-C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\GUI\RailRouteGUI\bin\Release\net7.0-windows\win-x64\publish\RailRouteGUI.exe
