@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RailRouteGUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1a7b1958eb17c6c73941b6ecad97509cb970ed8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa9c56023d999d49902e0c338274c4c06c9536ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("RailRouteGUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RailRouteGUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
