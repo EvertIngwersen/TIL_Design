@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Scandinavia rail network 
-- plots edges colored by maxspeed
-- finds fastest route between any DK, SE and NO city
-- Scandinavian letter input is not needed - automaticly converts in input
-- intermediate stops possible
-- border connections manually added
-- 
+Scandinavia rail network (GUI-ready)
+- Computes fastest route between DK, SE, NO cities
+- Intermediate stops possible
+- Opens Plotly map in browser
+- Prints only route summary for GUI consumption
 """
 
 import sys
@@ -17,47 +15,34 @@ import numpy as np
 import networkx as nx
 import plotly.graph_objects as go
 import plotly.io as pio
-
 from pathlib import Path
 from shapely.geometry import LineString
 
 # -----------------------------
-# Command-line arguments for C# GUI
+# GUI / CLI arguments
 # -----------------------------
 if len(sys.argv) >= 3:
     origin_input = sys.argv[1]
     destination_input = sys.argv[2]
     via_inputs = sys.argv[3].split(",") if len(sys.argv) > 3 and sys.argv[3] else []
 else:
-    # fallback to interactive input if called from terminal without args
-    print("Please enter cities manually (interactive mode)")
-    origin_input = input("Origin city: ")
-    destination_input = input("Destination city: ")
-    via_inputs = input("Via cities (comma-separated): ").split(",") if input("Via cities (comma-separated): ") else []
-
+    raise ValueError("Please provide at least origin and destination as command-line arguments.")
 
 # -----------------------------
-# Input parameters
+# Parameters
 # -----------------------------
+STOP_TIME = 3 * 60  # dwell time per stop in seconds
 
-# dwell time per stop (seconds)
-STOP_TIME = 3 * 60
-
-# Manual edges to be added to graph
-# Consistis of "name", "coordinates (start and end)", "track speed"
 manual_edges = [
-    ("Øresund bridge", 55.5990688, 12.7514874, 55.5655404, 12.9042758, 200),           # Border connection
-    ("Skottesjon - Ed", 58.9188632, 11.7195089, 58.9128502, 11.9275408, 120),          # Border connection
-    ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160), # Border connection
-    ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),       # Border connection
-    ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),           # Border connection
-    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80),               # Border connection
+    ("Øresund bridge", 55.5990688, 12.7514874, 55.5655404, 12.9042758, 200),
+    ("Skottesjon - Ed", 58.9188632, 11.7195089, 58.9128502, 11.9275408, 120),
+    ("Glasbruk - Charlottenberg", 59.9135771, 12.2852937, 59.887603, 12.2936895, 160),
+    ("Tevelden - Storlien", 63.3264157, 12.0628143, 63.3172724, 12.0947319, 80),
+    ("Hell - Stjordal", 63.4462156, 10.9000683, 63.4460545, 10.9063916, 60),
+    ("Kolsan - Nes", 63.6527907, 11.0889117, 63.6538856, 11.0923136, 80),
     ("Riksgranan - Vassejavri", 68.4266175, 18.1207193, 68.4302478, 18.2516029, 80)
 ]
 
-print("Dwell time per stop is set at:", STOP_TIME, "seconds")
-print("Dwell time is set uniform for every stop")
-print("Loading data...")    
 pio.renderers.default = "browser"
 
 # -----------------------------
@@ -74,224 +59,82 @@ G_dk = ox.load_graphml(dk_path)
 G_se = ox.load_graphml(se_path)
 G_no = ox.load_graphml(no_path)
 
-# Offset Sweden node IDs to avoid collision
-max_dk_node = max(G_dk.nodes)
-G_se = nx.relabel_nodes(G_se, lambda x: x + max_dk_node + 1)
-
-# Merge graphs
+# Offset node IDs to avoid collisions
+G_se = nx.relabel_nodes(G_se, lambda x: x + max(G_dk.nodes) + 1)
 G = nx.compose(G_dk, G_se)
-
-# -----------------------------
-# Convert to GeoDataFrames
-# -----------------------------
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-# -----------------------------
-# Clean maxspeed
-# -----------------------------
-if "maxspeed" in edges.columns:
-    edges["maxspeed"] = (
-        edges["maxspeed"]
-        .astype(str)
-        .str.extract(r"(\d+)")
-        .astype(float)
-    )
-else:
-    edges["maxspeed"] = np.nan
-
-# -----------------------------
-# Compute travel time
-# -----------------------------
-edges["travel_time"] = edges["length"] / (edges["maxspeed"] * (1000/3600))
-edges["travel_time"] = edges["travel_time"].replace([np.inf, -np.inf], np.nan)
-edges["travel_time"] = edges["travel_time"].fillna(
-    edges["length"] / (100 * (1000/3600))
-)
-
-G = ox.graph_from_gdfs(nodes, edges)
-
-# Find the current maximum node ID after DK+SE merge
-max_node = max(G.nodes)
-
-# Offset Norway node IDs to avoid collision
-G_no = nx.relabel_nodes(G_no, lambda x: x + max_node + 1)
-
-# Merge Norway into the main graph
+G_no = nx.relabel_nodes(G_no, lambda x: x + max(G.nodes) + 1)
 G = nx.compose(G, G_no)
 
-# Re-create GeoDataFrames
+# Convert to GeoDataFrames
 nodes, edges = ox.graph_to_gdfs(G)
 edges = edges.to_crs(epsg=4326)
 
-# Clean maxspeed again if needed
+# Clean maxspeed
 if "maxspeed" in edges.columns:
-    edges["maxspeed"] = (
-        edges["maxspeed"]
-        .astype(str)
-        .str.extract(r"(\d+)")
-        .astype(float)
-    )
+    edges["maxspeed"] = edges["maxspeed"].astype(str).str.extract(r"(\d+)").astype(float)
 else:
     edges["maxspeed"] = np.nan
 
-# Compute travel time
+# Compute travel time (seconds)
 edges["travel_time"] = edges["length"] / (edges["maxspeed"] * (1000/3600))
 edges["travel_time"] = edges["travel_time"].replace([np.inf, -np.inf], np.nan)
-edges["travel_time"] = edges["travel_time"].fillna(
-    edges["length"] / (100 * (1000/3600))  # fallback 100 km/h
-)
-
-# Rebuild graph with updated edges
+edges["travel_time"] = edges["travel_time"].fillna(edges["length"] / (100 * (1000/3600)))
 G = ox.graph_from_gdfs(nodes, edges)
 
-# ---------------------------------------------------
-# FUNCTION: Add manual rail connection
-# ---------------------------------------------------
-
-def add_manual_connection(G, lat1, lon1, lat2, lon2, speed_kmh, name="Connection"):
-    """
-    Adds a bidirectional rail edge between two coordinates.
-
-    Parameters
-    ----------
-    G : networkx graph
-    lat1, lon1 : float
-        Start coordinate
-    lat2, lon2 : float
-        End coordinate
-    speed_kmh : float
-        Track speed in km/h
-    name : str
-        Name printed in console
-    """
-
-    # Find nearest graph nodes
+# -----------------------------
+# Function to add manual edges
+# -----------------------------
+def add_manual_connection(G, lat1, lon1, lat2, lon2, speed_kmh):
     node_a = ox.distance.nearest_nodes(G, X=lon1, Y=lat1)
     node_b = ox.distance.nearest_nodes(G, X=lon2, Y=lat2)
-
-    # Compute edge length (meters)
-    edge_length = ox.distance.great_circle(
-        lat1, lon1,
-        lat2, lon2
-    )
-
-    # Compute travel time (seconds)
-    travel_time = edge_length / (speed_kmh * (1000 / 3600))
-
-    # Geometry
-    geom = LineString([
-        (lon1, lat1),
-        (lon2, lat2)
-    ])
-
-    # Add bidirectional edges
-    G.add_edge(
-        node_a, node_b,
-        length=edge_length,
-        maxspeed=speed_kmh,
-        travel_time=travel_time,
-        geometry=geom
-    )
-
-    G.add_edge(
-        node_b, node_a,
-        length=edge_length,
-        maxspeed=speed_kmh,
-        travel_time=travel_time,
-        geometry=geom
-    )
-
+    length = ox.distance.great_circle(lat1, lon1, lat2, lon2)
+    travel_time = length / (speed_kmh * (1000/3600))
+    geom = LineString([(lon1, lat1), (lon2, lat2)])
+    G.add_edge(node_a, node_b, length=length, maxspeed=speed_kmh, travel_time=travel_time, geometry=geom)
+    G.add_edge(node_b, node_a, length=length, maxspeed=speed_kmh, travel_time=travel_time, geometry=geom)
 
 for name, lat1, lon1, lat2, lon2, speed in manual_edges:
-    print(f"{name} added.")
-    add_manual_connection(G, lat1, lon1, lat2, lon2, speed, name)
-
-# After adding all manual edges
-nodes, edges = ox.graph_to_gdfs(G)
-edges = edges.to_crs(epsg=4326)
-
-# Re-clean maxspeed if needed
-if "maxspeed" in edges.columns:
-    edges["maxspeed"] = (
-        edges["maxspeed"]
-        .astype(str)
-        .str.extract(r"(\d+)")
-        .astype(float)
-    )
-else:
-    edges["maxspeed"] = np.nan
+    add_manual_connection(G, lat1, lon1, lat2, lon2, speed)
 
 # -----------------------------
-# Load city databases
+# Load cities
 # -----------------------------
 cities = {}
 
-# Denmark
-dk_city_file = PROJECT_ROOT / "Data" / "Other Data" / "dk_city_data" / "dk" / "place_city.ndjson"
-with open(dk_city_file, "r", encoding="utf-8") as f:
-    for line in f:
-        data = json.loads(line)
-        cities[data["name"].lower()] = data["location"]
+def load_city_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        for line in f:
+            data = json.loads(line)
+            cities[data["name"].lower()] = data["location"]
 
-# Sweden
-se_city_file = PROJECT_ROOT / "Data" / "Other Data" / "se_city_data" / "se" / "place_city.ndjson"
-with open(se_city_file, "r", encoding="utf-8") as f:
-    for line in f:
-        data = json.loads(line)
-        cities[data["name"].lower()] = data["location"]
+load_city_file(PROJECT_ROOT / "Data" / "Other Data" / "dk_city_data" / "dk" / "place_city.ndjson")
+load_city_file(PROJECT_ROOT / "Data" / "Other Data" / "se_city_data" / "se" / "place_city.ndjson")
+load_city_file(PROJECT_ROOT / "Data" / "Other Data" / "no_city_data" / "no" / "place_city.ndjson")
 
-# Norway
-no_city_file = PROJECT_ROOT / "Data" / "Other Data" / "no_city_data" / "no" / "place_city.ndjson"
-with open(no_city_file, "r", encoding="utf-8") as f:
-    for line in f:
-        data = json.loads(line)
-        cities[data["name"].lower()] = data["location"]
+# Custom locations
+cities.update({
+    "arlanda airport": (17.9331197, 59.6523122),
+    "kastrup airport": (12.6494168, 55.6296397),
+    "gardermoen airport": (11.0967803, 60.1929196),
+    "narvik": (17.4432093, 68.4417246)
+})
 
 # -----------------------------
-# Add custom locations (airports, points of interest)
+# Normalize names
 # -----------------------------
-cities["arlanda airport"] = (17.9331197, 59.6523122)  # (lon, lat)
-cities["kastrup airport"] = (12.6494168, 55.6296397)
-cities["gardermoen airport"] = (11.0967803, 60.1929196)
-cities["narvik"] = (17.4432093, 68.4417246)
-
-# ----------------------------------------
-# Ask user input
-# -------------------------------------------
-
 def normalize_city_name(name):
-    """
-    Convert Scandinavian letters like å, ä, ö, ø to simpler ASCII equivalents.
-    """
     name = name.lower()
-
-    # manual replacements for characters that don't decompose
-    replacements = {
-        "ø": "o",
-        "æ": "ae"
-    }
-
+    replacements = {"ø": "o", "æ": "ae"}
     for k, v in replacements.items():
         name = name.replace(k, v)
+    return ''.join(c for c in unicodedata.normalize('NFD', name) if unicodedata.category(c) != 'Mn')
 
-    name_norm = unicodedata.normalize('NFD', name)
-    name_ascii = ''.join(c for c in name_norm if unicodedata.category(c) != 'Mn')
-
-    return name_ascii
-
-
-# Create a lookup dictionary from normalized names to original names
-normalized_lookup = {}
-for city in cities.keys():
-    normalized_name = normalize_city_name(city)
-    normalized_lookup[normalized_name] = city 
-
+normalized_lookup = {normalize_city_name(c): c for c in cities.keys()}
 
 def get_node_from_name(city):
-    normalized_input = normalize_city_name(city.lower())
-    if normalized_input in normalized_lookup:
-        city_name = normalized_lookup[normalized_input]
+    norm = normalize_city_name(city)
+    if norm in normalized_lookup:
+        city_name = normalized_lookup[norm]
         lon, lat = cities[city_name]
         node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
         return city_name, node
@@ -304,214 +147,102 @@ city_name_dest, destination = get_node_from_name(destination_input)
 via_nodes = []
 via_names = []
 for via in via_inputs:
-    if via.strip():  # skip empty
-        city_name, node = get_node_from_name(via)
+    if via.strip():
+        n, node = get_node_from_name(via)
+        via_names.append(n)
         via_nodes.append(node)
-        via_names.append(city_name)
 
-print("Available cities:", ", ".join(list(cities.keys())))
-print("")
-print("Available airports: arlanda airport, kastrup airport, gardermoen airport")
-
-origin_input = sys.argv[1]
-destination_input = sys.argv[2]
-
-via_inputs = []
-if len(sys.argv) > 3 and sys.argv[3] != "":
-    via_inputs = sys.argv[3].split(",")
-
-def get_node_from_name(city):
-
-    normalized_input = normalize_city_name(city.lower())
-
-    if normalized_input in normalized_lookup:
-        city_name = normalized_lookup[normalized_input]
-        lon, lat = cities[city_name]
-        node = ox.distance.nearest_nodes(G, X=lon, Y=lat)
-        return city_name, node
-    else:
-        raise ValueError(f"City not found: {city}")
-
-city_name_origin, origin = get_node_from_name(origin_input)
-city_name_dest, destination = get_node_from_name(destination_input)
-
-via_nodes = []
-via_names = []
-
-for via in via_inputs:
-    city_name, node = get_node_from_name(via)
-    via_nodes.append(node)
-    via_names.append(city_name)
-
-print("")
-print("Calculating shortest route...")
-
-# -------------------------------------------
-# Compute route with intermediate stops
-# -------------------------------------------
-
+# -----------------------------
+# Compute route
+# -----------------------------
 route_nodes = [origin] + via_nodes + [destination]
-
 route = []
 
-for i in range(len(route_nodes) - 1):
-
-    segment = nx.shortest_path(
-        G,
-        route_nodes[i],
-        route_nodes[i+1],
-        weight="travel_time"
-    )
-
-    # avoid duplicating nodes
+for i in range(len(route_nodes)-1):
+    segment = nx.shortest_path(G, route_nodes[i], route_nodes[i+1], weight="travel_time")
     if i > 0:
         segment = segment[1:]
-
     route.extend(segment)
 
 # -----------------------------
-# Calculate cumulative distance & travel time
+# Calculate totals
 # -----------------------------
-total_distance = 0      # meters
-total_time = 0          # seconds
-
-route_lons = []
-route_lats = []
-hover_texts = []
+total_distance = 0
+total_time = 0
+route_lons, route_lats, hover_texts = [], [], []
 
 for u, v in zip(route[:-1], route[1:]):
-    edge_data = G.get_edge_data(u, v)
-    first_key = list(edge_data.keys())[0]
-    data = edge_data[first_key]
-
-    length = data.get("length", 0)           # meters
-    travel_time = data.get("travel_time", 0) # seconds
-
+    data = G.get_edge_data(u, v)[list(G.get_edge_data(u, v).keys())[0]]
+    length = data.get("length", 0)
+    travel_time = data.get("travel_time", 0)
     geom = data.get("geometry")
     if geom:
         x, y = geom.xy
         for xi, yi in zip(x, y):
             route_lons.append(xi)
             route_lats.append(yi)
-            # Append cumulative info at each point
-            hover_texts.append(
-                f"Cumulative distance: {total_distance/1000:.2f} km\n"
-                f"Cumulative time: {total_time/3600:.2f} h"
-            )
-        # After each edge, add its distance/time to totals
-        total_distance += length
-        total_time += travel_time
-        # Add a None separator for Plotly
+            hover_texts.append(None)
         route_lons.append(None)
         route_lats.append(None)
-        hover_texts.append(None)
+    total_distance += length
+    total_time += travel_time
 
-# Convert totals
-# origin + each via stop (not destination)
 num_stops = 1 + len(via_nodes)
-
 total_time += num_stops * STOP_TIME
-
-# Convert totals
 total_distance_km = total_distance / 1000
 total_time_hours = total_time / 3600
 
-# Print route summary
-print("Shortes route calculated!")
-print("")
+# -----------------------------
+# Print summary (GUI output)
+# -----------------------------
+summary_lines = [
+    f"Origin: {city_name_origin.title()}",
+    f"Via: {' → '.join([v.title() for v in via_names]) if via_names else 'None'}",
+    f"Destination: {city_name_dest.title()}",
+    f"Distance: {total_distance_km:.2f} km",
+    f"Travel time: {total_time_hours:.2f} hours",
+    f"Includes dwell time: {num_stops*3} minutes"
+]
+
 print("\n----- ROUTE SUMMARY -----")
-print(f"Origin: {city_name_origin.title()}")
-if via_names:
-    print("Via:", " → ".join([v.title() for v in via_names]))
-print(f"Destination: {city_name_dest.title()}")
-print(f"Distance: {total_distance_km:.2f} km")
-print(f"Travel time: {total_time_hours:.2f} hours")
-print(f"Includes dwell time: {num_stops*3} minutes")
+print("\n".join(summary_lines))
 print("--------------------------\n")
-print("")
-print("Creating map...")
 
 # -----------------------------
-# Total route info for hover
-# -----------------------------
-if via_names:
-    via_text = " → ".join([v.title() for v in via_names])
-else:
-    via_text = "None"
-
-route_hover_text = (
-    f"Origin: {city_name_origin.title()}\n"
-    f"Via: {via_text}\n"
-    f"Destination: {city_name_dest.title()}\n"
-    f"Distance: {total_distance_km:.2f} km\n"
-    f"Travel time: {total_time_hours:.2f} hours"
-)
-
-# -----------------------------
-# Plot
+# Plot map
 # -----------------------------
 fig = go.Figure()
 
-# Plot rail lines by speed
-speed_classes = edges["maxspeed"].dropna().unique()
-
-for speed in sorted(speed_classes):
+# Rail lines by speed
+for speed in sorted(edges["maxspeed"].dropna().unique()):
     subset = edges[edges["maxspeed"] == speed]
     lons, lats = [], []
-
     for geom in subset.geometry:
-        if geom is not None:
+        if geom:
             x, y = geom.xy
             lons.extend(x)
             lats.extend(y)
             lons.append(None)
             lats.append(None)
+    fig.add_trace(go.Scattermap(lon=lons, lat=lats, mode="lines", line=dict(width=1), name=f"{int(speed)} km/h"))
 
-    fig.add_trace(go.Scattermap(
-        lon=lons,
-        lat=lats,
-        mode="lines",
-        line=dict(width=1),
-        name=f"{int(speed)} km/h"
-    ))
-
-# Route in red
+# Fastest route in red
 fig.add_trace(go.Scattermap(
-    lon=route_lons,
-    lat=route_lats,
-    mode="lines",
-    line=dict(width=4, color="red"),
-    name="Fastest route",
-    hoverinfo="text",
-    text=[route_hover_text]  
+    lon=route_lons, lat=route_lats, mode="lines", line=dict(width=4, color="red"),
+    name="Fastest route", hoverinfo="text", text=[f"{total_distance_km:.1f} km, {total_time_hours:.1f} h"]
 ))
 
-# -----------------------------
-# Add cities
-# -----------------------------
-city_lons = []
-city_lats = []
-city_names = []
-
-for name, (lon, lat) in cities.items():
-    city_lons.append(lon)
-    city_lats.append(lat)
-    city_names.append(name.title())
-
+# Cities
 fig.add_trace(go.Scattermap(
-    lon=city_lons,
-    lat=city_lats,
+    lon=[c[0] for c in cities.values()],
+    lat=[c[1] for c in cities.values()],
     mode="markers+text",
     marker=dict(size=6, color="blue"),
-    text=city_names,
+    text=[n.title() for n in cities.keys()],
     textposition="top right",
-    name="Cities",
-    hoverinfo="text"
+    name="Cities"
 ))
 
-# -----------------------------
-# Final layout
-# -----------------------------
 fig.update_layout(
     map_style="carto-positron",
     map_zoom=6,
@@ -521,6 +252,3 @@ fig.update_layout(
 )
 
 fig.show()
-print("Map created (will open in browser)")
-
-
