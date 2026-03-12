@@ -25,7 +25,7 @@ namespace RailRouteGUI
             }
 
             string pythonExe = @"C:\Path\To\Python\python.exe"; // <-- update with your python.exe path
-            string scriptPath = @"C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\Modeling\Rail_map_Scandinavia.py";
+            string scriptPath = @"C:\Users\evert\Documents\TU-Delft\TIL Master\TIL5050-20 TIL Design Project\TIL_Design_Repo\TIL_Design\Modeling\Rail_map_Scandinavia_GUI_edit.py";
 
             // Combine arguments: origin, via, destination
             string args = $"\"{scriptPath}\" \"{origin}\" \"{via}\" \"{destination}\"";
