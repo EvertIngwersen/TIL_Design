@@ -14,9 +14,19 @@ import numpy as np
 # 0. STATIONS
 # ==========================================================
 stations = {
-    1: {"coords": (5, 1.5), "airport": True, "name": "Arlanda Airport"},
-    2: {"coords": (3, -0.5), "airport": True, "name": "Kastrup Airport"},
-    3: {"coords": (2, 1), "airport": True, "name": "Gardermoen Airport"}
+    1: {"coords": (8.5, 7), "airport": True, "name": "ESSA"},
+    2: {"coords": (1.5, 0.5), "airport": True, "name": "EKCH"},
+    3: {"coords": (2, 7), "airport": True, "name": "ENGM"},
+    4: {"coords": (0.5, 0.5), "airport": False, "name": "Copenhagen"},
+    5: {"coords": (2.5, 1), "airport": False, "name": "Malmö"},
+    6: {"coords": (4, 1.5), "airport": False, "name": "Lund"},
+    7: {"coords": (2, 3.5), "airport": False, "name": "Göteborg"},
+    8: {"coords": (1.5, 6), "airport": False, "name": "Oslo"},
+    9: {"coords": (6, 3.5), "airport": False, "name": "Linköping"},
+    10: {"coords": (7, 4), "airport": False, "name": "Norrköping"},
+    11: {"coords": (6, 5.5), "airport": False, "name": "Örebro"},
+    12: {"coords": (9, 6), "airport": False, "name": "Stockholm"},
+    
 }
 
 
@@ -164,7 +174,7 @@ trains = {
 }
 
 # How many extra trains per route
-extra_per_route = 2
+extra_per_route = 0
 
 # Find the current max train ID to continue numbering
 max_id = max(trains.keys())

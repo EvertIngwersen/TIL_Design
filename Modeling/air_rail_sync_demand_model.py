@@ -872,8 +872,8 @@ for m in K_in:
 fig = go.Figure(data=base_data + dynamic_data)
 
 fig.update_layout(
-    xaxis=dict(range=[-1, 7], autorange=False),
-    yaxis=dict(range=[-1, 3], autorange=False)
+    xaxis=dict(range=[0, 10], autorange=False),
+    yaxis=dict(range=[0, 7.5], autorange=False)
 )
 
 station_annotations = [
