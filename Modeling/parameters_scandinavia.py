@@ -15,16 +15,16 @@ import numpy as np
 # ==========================================================
 stations = {
     1: {"coords": (8.5, 7), "airport": True, "name": "ESSA"},
-    2: {"coords": (1.5, 0.5), "airport": True, "name": "EKCH"},
+    2: {"coords": (1.5, 1), "airport": True, "name": "EKCH"},
     3: {"coords": (2, 7), "airport": True, "name": "ENGM"},
-    4: {"coords": (0.5, 0.5), "airport": False, "name": "Copenhagen"},
+    4: {"coords": (0.5, 1), "airport": False, "name": "Copenhagen"},
     5: {"coords": (2.5, 1), "airport": False, "name": "Malmö"},
-    6: {"coords": (4, 1.5), "airport": False, "name": "Lund"},
+    6: {"coords": (4, 2.15), "airport": False, "name": "Lund"},
     7: {"coords": (2, 3.5), "airport": False, "name": "Göteborg"},
     8: {"coords": (1.5, 6), "airport": False, "name": "Oslo"},
-    9: {"coords": (6, 3.5), "airport": False, "name": "Linköping"},
-    10: {"coords": (7, 4), "airport": False, "name": "Norrköping"},
-    11: {"coords": (6, 5.5), "airport": False, "name": "Örebro"},
+    9: {"coords": (6, 3.692), "airport": False, "name": "Linköping"},
+    10: {"coords": (7, 4.462), "airport": False, "name": "Norrköping"},
+    11: {"coords": (6, 6), "airport": False, "name": "Örebro"},
     12: {"coords": (9, 6), "airport": False, "name": "Stockholm"}
 }
 S = list(stations.keys())
@@ -164,7 +164,10 @@ u_m = {m: A_m[m] + b_max for m in K_in}
 trains = {
     1: {"route": [4, 2, 5, 6, 9, 10, 12, 1], "origin": 4, "dest": 1},
     2: {"route": [4, 2, 5, 7, 8, 3], "origin": 4, "dest": 3},
-    3: {"route": [3, 8, 11, 12, 1], "origin": 3, "dest": 1}
+    3: {"route": [3, 8, 11, 12, 1], "origin": 3, "dest": 1},
+    4: {"route": [1, 12, 10, 9, 6, 5, 2, 4], "origin": 1, "dest": 4},
+    5: {"route": [3, 8, 7, 5, 2, 4], "origin": 3, "dest": 4},
+    6: {"route": [1, 12, 11, 8, 3], "origin": 1, "dest": 3}
     }
 
 # How many extra trains per route
