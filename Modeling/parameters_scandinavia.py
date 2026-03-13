@@ -25,11 +25,8 @@ stations = {
     9: {"coords": (6, 3.5), "airport": False, "name": "Linköping"},
     10: {"coords": (7, 4), "airport": False, "name": "Norrköping"},
     11: {"coords": (6, 5.5), "airport": False, "name": "Örebro"},
-    12: {"coords": (9, 6), "airport": False, "name": "Stockholm"},
-    
+    12: {"coords": (9, 6), "airport": False, "name": "Stockholm"}
 }
-
-
 S = list(stations.keys())
 transfer_stations = [s for s, info in stations.items() if info.get("airport")]
 
@@ -165,13 +162,10 @@ u_m = {m: A_m[m] + b_max for m in K_in}
 # ==========================================================
 # Original train dictionary
 trains = {
-    1: {"route": [1, 2], "origin": 1, "dest": 2},
-    2: {"route": [2, 1], "origin": 2, "dest": 1},
-    3: {"route": [1, 3], "origin": 1, "dest": 3},
-    4: {"route": [3, 1], "origin": 3, "dest": 1},
-    5: {"route": [3, 2], "origin": 3, "dest": 2},
-    6: {"route": [2, 3], "origin": 2, "dest": 3}
-}
+    1: {"route": [4, 2, 5, 6, 9, 10, 12, 1], "origin": 4, "dest": 1},
+    2: {"route": [4, 2, 5, 7, 8, 3], "origin": 4, "dest": 3},
+    3: {"route": [3, 8, 11, 12, 1], "origin": 1, "dest": 3}
+    }
 
 # How many extra trains per route
 extra_per_route = 0
@@ -210,7 +204,7 @@ I_N = [i for i in I if i not in I_T]
 travel_times = {
     (1,2): 229, (1,3): 251,
     (2, 1): 229, (2,3): 293,
-    (3,1): 251, (3,2): 293
+    (3,1): 251, (3,2): 293,
     }
 
 # Running times, acceleration, deceleration, dwell times
