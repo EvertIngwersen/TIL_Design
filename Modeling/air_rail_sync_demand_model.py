@@ -14,9 +14,12 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import networkx as nx
 import plotly.express as px
+
 from pathlib import Path
 from collections import defaultdict
 from gurobipy import GRB
+from visualization_module import visualize_solution
+from advanced_demand_visualization import generate_demand_visualizations
 
 # Create Logs folder relative to script
 log_dir = Path(__file__).parent / "Logs"
@@ -993,14 +996,10 @@ fig.update_layout(
 
 fig.show()
 
-# -*- coding: utf-8 -*-
+
 """
 COMPLETE VISUALIZATION EXAMPLE
-Add this code at the end of your model file to generate all visualizations.
 """
-
-from visualization_module import visualize_solution
-from advanced_demand_visualization import generate_demand_visualizations
 
 # ==========================================================
 # AFTER YOUR MODEL HAS BEEN SOLVED VISUALS

@@ -14,10 +14,11 @@ import numpy as np
 # 0. STATIONS
 # ==========================================================
 stations = {
-    1: {"coords": (5, 1.5), "airport": True},   #Arlanda Airport
-    2: {"coords": (3, -0.5), "airport": True},  #Kastrup Airport
-    3: {"coords": (2,1), "airport": True}   #Gardermoen Airport
-    }
+    1: {"coords": (5, 1.5), "airport": True, "name": "Arlanda Airport"},
+    2: {"coords": (3, -0.5), "airport": True, "name": "Kastrup Airport"},
+    3: {"coords": (2, 1), "airport": True, "name": "Gardermoen Airport"}
+}
+
 
 S = list(stations.keys())
 transfer_stations = [s for s, info in stations.items() if info.get("airport")]
