@@ -6547,3 +6547,23 @@ Root relaxation: objective 1.018996e+02, 111 iterations, 0.00 seconds (0.00 work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
      0     0  101.89959    0   12  134.44444  101.89959  24.2%     -    0s
+     0     0     cutoff    0       134.44444  134.44444  0.00%     -    0s
+
+Cutting planes:
+  Learned: 7
+  Gomory: 2
+  Cover: 1
+  Implied bound: 6
+  MIR: 4
+  StrongCG: 2
+  Flow cover: 2
+  Zero half: 1
+  RLT: 4
+
+Explored 1 nodes (126 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 20 (of 20 available processors)
+
+Solution count 1: 134.444 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.344444444444e+02, best bound 1.344444444444e+02, gap 0.0000%
