@@ -16083,3 +16083,360 @@ Train 2:
   Station 8: Arr = 749.0, Dep = 752.0
   Station 3: Arr = 782.0, Dep = -
   → Connects to Flight 6 at Transfer Station: Flight Dep = 475
+  → Connects to Flight 13 at Transfer Station: Flight Dep = 827
+  → Connects to Flight 6 at Transfer Station: Flight Dep = 475
+  → Connects to Flight 13 at Transfer Station: Flight Dep = 827
+
+Train 3:
+  Station 3: Arr = -, Dep = 498.0
+  Station 8: Arr = 528.0, Dep = 534.0
+  Station 11: Arr = 723.0, Dep = 729.0
+  Station 12: Arr = 813.0, Dep = 819.0
+  Station 1: Arr = 847.0, Dep = -
+  → Connects to Flight 3 at Transfer Station: Flight Dep = 898
+  → Connects to Flight 3 at Transfer Station: Flight Dep = 898
+
+Train 4:
+  Station 1: Arr = -, Dep = 702.0
+  Station 12: Arr = 730.0, Dep = 736.0
+  Station 10: Arr = 810.0, Dep = 816.0
+  Station 9: Arr = 847.0, Dep = 853.0
+  Station 6: Arr = 985.0, Dep = 991.0
+  Station 5: Arr = 1010.0, Dep = 1016.0
+  Station 2: Arr = 1040.0, Dep = 1042.0
+  Station 4: Arr = 1064.0, Dep = -
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 1110
+  → Connects to Flight 9 at Transfer Station: Flight Dep = 1110
+
+Train 5:
+  Station 3: Arr = -, Dep = 885.0
+  Station 8: Arr = 915.0, Dep = 921.0
+  Station 7: Arr = 1103.0, Dep = 1109.0
+  Station 5: Arr = 1221.0, Dep = 1227.0
+  Station 2: Arr = 1251.0, Dep = 1253.0
+  Station 4: Arr = 1275.0, Dep = -
+  → Connects to Flight 10 at Transfer Station: Flight Dep = 1321
+  → Connects to Flight 10 at Transfer Station: Flight Dep = 1321
+
+Train 6:
+  Station 1: Arr = -, Dep = 976.5
+  Station 12: Arr = 999.5, Dep = 1001.5
+  Station 11: Arr = 1084.5, Dep = 1086.5
+  Station 8: Arr = 1270.5, Dep = 1276.5
+  Station 3: Arr = 1301.5, Dep = -
+
+======================================================================
+ARRIVAL FLIGHT SCHEDULE
+======================================================================
+  Flight 1:
+     Arrival time : 425
+     Airport station : 1
+     Connected trains : none
+  Flight 2:
+     Arrival time : 657
+     Airport station : 1
+     Connected trains : 4
+  Flight 3:
+     Arrival time : 897
+     Airport station : 1
+     Connected trains : none
+  Flight 4:
+     Arrival time : 1143
+     Airport station : 1
+     Connected trains : none
+  Flight 5:
+     Arrival time : 1385
+     Airport station : 1
+     Connected trains : none
+  Flight 6:
+     Arrival time : 478
+     Airport station : 2
+     Connected trains : none
+  Flight 7:
+     Arrival time : 685
+     Airport station : 2
+     Connected trains : none
+  Flight 8:
+     Arrival time : 901
+     Airport station : 2
+     Connected trains : none
+  Flight 9:
+     Arrival time : 1107
+     Airport station : 2
+     Connected trains : none
+  Flight 10:
+     Arrival time : 1321
+     Airport station : 2
+     Connected trains : none
+  Flight 11:
+     Arrival time : 453
+     Airport station : 3
+     Connected trains : 3
+  Flight 12:
+     Arrival time : 641
+     Airport station : 3
+     Connected trains : none
+  Flight 13:
+     Arrival time : 827
+     Airport station : 3
+     Connected trains : 5
+  Flight 14:
+     Arrival time : 1013
+     Airport station : 3
+     Connected trains : none
+  Flight 15:
+     Arrival time : 1196
+     Airport station : 3
+     Connected trains : none
+
+======================================================================
+DEPARTURE FLIGHT SCHEDULE
+======================================================================
+  Flight 1:
+     Departure time : 424
+     Airport station : 1
+     Connected trains : none
+  Flight 2:
+     Departure time : 656
+     Airport station : 1
+     Connected trains : 1
+  Flight 3:
+     Departure time : 898
+     Airport station : 1
+     Connected trains : 3
+  Flight 4:
+     Departure time : 1140
+     Airport station : 1
+     Connected trains : none
+  Flight 5:
+     Departure time : 1375
+     Airport station : 1
+     Connected trains : none
+  Flight 6:
+     Departure time : 475
+     Airport station : 2
+     Connected trains : 2
+  Flight 7:
+     Departure time : 689
+     Airport station : 2
+     Connected trains : none
+  Flight 8:
+     Departure time : 902
+     Airport station : 2
+     Connected trains : none
+  Flight 9:
+     Departure time : 1110
+     Airport station : 2
+     Connected trains : 4
+  Flight 10:
+     Departure time : 1321
+     Airport station : 2
+     Connected trains : 5
+  Flight 11:
+     Departure time : 450
+     Airport station : 3
+     Connected trains : none
+  Flight 12:
+     Departure time : 640
+     Airport station : 3
+     Connected trains : none
+  Flight 13:
+     Departure time : 827
+     Airport station : 3
+     Connected trains : 2
+  Flight 14:
+     Departure time : 1017
+     Airport station : 3
+     Connected trains : none
+  Flight 15:
+     Departure time : 1199
+     Airport station : 3
+     Connected trains : none
+
+======================================================================
+FINAL RESULTS (Demand-Weighted)
+======================================================================
+
+Objective Values:
+  Z3 (Total Penalty) = 38.00
+
+Passenger Coverage:
+  Total passengers served: 1399/4415
+  System coverage rate: 31.7%
+    - Outgoing: 948 passengers
+    - Incoming: 451 passengers
+
+======================================================================
+OUTGOING FLIGHT SYNCHRONIZATIONS (with Demand)
+======================================================================
+  Train 1 → Flight 2 at Station 1: demand=181 pax, train_arr=611.0, flight_dep=656, transfer=45.0min, penalty=0.00
+  Train 2 → Flight 6 at Station 2: demand=186 pax, train_arr=430.0, flight_dep=475, transfer=45.0min, penalty=0.00
+  Train 2 → Flight 13 at Station 3: demand=124 pax, train_arr=782.0, flight_dep=827, transfer=45.0min, penalty=0.00
+  Train 3 → Flight 3 at Station 1: demand=168 pax, train_arr=847.0, flight_dep=898, transfer=51.0min, penalty=2.40
+  Train 4 → Flight 9 at Station 2: demand=199 pax, train_arr=1040.0, flight_dep=1110, transfer=70.0min, penalty=10.00
+  Train 5 → Flight 10 at Station 2: demand=90 pax, train_arr=1251.0, flight_dep=1321, transfer=70.0min, penalty=10.00
+
+Total outgoing synchronizations: 6
+Total outgoing passengers served: 948
+
+======================================================================
+INCOMING FLIGHT SYNCHRONIZATIONS (with Demand)
+======================================================================
+  Flight 11 → Train 3 at Station 3: demand=200 pax, flight_arr=453, train_dep=498.0, transfer=45.0min, penalty=0.00
+  Flight 2 → Train 4 at Station 1: demand=141 pax, flight_arr=657, train_dep=702.0, transfer=45.0min, penalty=0.00
+  Flight 13 → Train 5 at Station 3: demand=110 pax, flight_arr=827, train_dep=885.0, transfer=58.0min, penalty=15.60
+
+Total incoming synchronizations: 3
+Total incoming passengers served: 451
+
+================================================================================
+                    GENERATING ALL VISUALIZATIONS
+================================================================================
+
+================================================================================
+PART 1: GENERATING STANDARD VISUALIZATIONS
+================================================================================
+
+======================================================================
+GENERATING ALL VISUALIZATIONS
+======================================================================
+
+1. Gantt Chart...
+
+======================================================================
+CREATING GANTT CHART
+======================================================================
+Gantt chart created with 36 items
+   Saved to visualizations/gantt_chart.html
+
+2. Synchronization Network...
+
+======================================================================
+CREATING SYNCHRONIZATION NETWORK
+======================================================================
+Network visualization created for 3 stations
+   Saved to visualizations/synchronization_network.html
+
+3. Demand Coverage Analysis...
+
+======================================================================
+CREATING DEMAND COVERAGE ANALYSIS
+======================================================================
+Total demand: 4415 passengers
+Total served: 1399 passengers
+Coverage rate: 31.7%
+   Saved to visualizations/demand_coverage.html
+
+4. Quality Metrics Dashboard...
+
+======================================================================
+CREATING QUALITY METRICS DASHBOARD
+======================================================================
+Quality metrics dashboard created
+   Saved to visualizations/quality_metrics.html
+
+5. Time-Space Diagram...
+
+======================================================================
+CREATING TIME-SPACE DIAGRAM
+======================================================================
+Time-space diagram created with 6 trains
+   Saved to visualizations/time_space_diagram.html
+
+======================================================================
+ALL VISUALIZATIONS GENERATED SUCCESSFULLY
+======================================================================
+
+Displaying standard visualizations...
+
+================================================================================
+PART 2: GENERATING ADVANCED DEMAND VISUALIZATIONS
+================================================================================
+
+======================================================================
+GENERATING DEMAND-SPECIFIC VISUALIZATIONS
+======================================================================
+
+1. Demand Heatmap...
+
+======================================================================
+CREATING DEMAND HEATMAP
+======================================================================
+Heatmap created for 3 stations and 24 hours
+   Saved to visualizations/demand_heatmap.html
+
+2. Flight Ranking Chart...
+
+======================================================================
+CREATING FLIGHT RANKING CHART
+======================================================================
+Flight ranking chart created with top 30 flights
+   Saved to visualizations/flight_ranking.html
+
+3. Train Productivity Chart...
+
+======================================================================
+CREATING TRAIN PRODUCTIVITY CHART
+======================================================================
+Total passengers served: 1399
+Average per train: 233.2
+Productive trains: 5/6
+   Saved to visualizations/train_productivity.html
+
+4. Connection Quality Scatter...
+
+======================================================================
+CREATING CONNECTION QUALITY SCATTER PLOT
+======================================================================
+Scatter plot created with 9 connections
+   Saved to visualizations/connection_quality.html
+
+======================================================================
+ALL DEMAND VISUALIZATIONS GENERATED
+======================================================================
+
+Displaying demand visualizations...
+
+================================================================================
+VISUALIZATION SUMMARY
+================================================================================
+
+ STANDARD VISUALIZATIONS (5 charts):
+  1. ✓ Gantt Chart              - Train schedules over time
+  2. ✓ Synchronization Network  - Train-flight connections by station
+  3. ✓ Demand Coverage Analysis - 4-panel demand dashboard
+  4. ✓ Quality Metrics          - 6-panel performance dashboard
+  5. ✓ Time-Space Diagram       - Train trajectories
+
+ DEMAND VISUALIZATIONS (4 charts):
+  6. ✓ Demand Heatmap          - Coverage by station and time
+  7. ✓ Flight Ranking          - Flights ranked by demand
+  8. ✓ Train Productivity      - Passengers served per train
+  9. ✓ Connection Quality      - Transfer time vs penalty
+
+ FILES SAVED TO: './visualizations/'
+  • gantt_chart.html
+  • synchronization_network.html
+  • demand_coverage.html
+  • quality_metrics.html
+  • time_space_diagram.html
+  • demand_heatmap.html
+  • flight_ranking.html
+  • train_productivity.html
+  • connection_quality.html
+
+ KEY INSIGHTS:
+  • Passenger Coverage: 31.7% (1,399/4,415 passengers)
+  • Flight Coverage: 9/30 flights (30.0%)
+  • Total Synchronizations: 9
+  • Average connections per covered flight: 1.0
+  • Best performing station: Station 3 (33.8% coverage)
+  • Most productive train: Train 3 (368 passengers)
+
+================================================================================
+ ALL VISUALIZATIONS GENERATED SUCCESSFULLY!
+================================================================================
+
+Open the HTML files in your browser for interactive exploration.
+Tip: Use the browser's zoom and pan tools for detailed analysis.
+
