@@ -17053,3 +17053,127 @@ CREATING SYNCHRONIZATION NETWORK
 ======================================================================
 Network visualization created for 3 stations
    Saved to visualizations/synchronization_network.html
+
+3. Demand Coverage Analysis...
+
+======================================================================
+CREATING DEMAND COVERAGE ANALYSIS
+======================================================================
+Total demand: 4415 passengers
+Total served: 1554 passengers
+Coverage rate: 35.2%
+   Saved to visualizations/demand_coverage.html
+
+4. Quality Metrics Dashboard...
+
+======================================================================
+CREATING QUALITY METRICS DASHBOARD
+======================================================================
+Quality metrics dashboard created
+   Saved to visualizations/quality_metrics.html
+
+5. Time-Space Diagram...
+
+======================================================================
+CREATING TIME-SPACE DIAGRAM
+======================================================================
+Time-space diagram created with 6 trains
+   Saved to visualizations/time_space_diagram.html
+
+======================================================================
+ALL VISUALIZATIONS GENERATED SUCCESSFULLY
+======================================================================
+
+Displaying standard visualizations...
+
+================================================================================
+PART 2: GENERATING ADVANCED DEMAND VISUALIZATIONS
+================================================================================
+
+======================================================================
+GENERATING DEMAND-SPECIFIC VISUALIZATIONS
+======================================================================
+
+1. Demand Heatmap...
+
+======================================================================
+CREATING DEMAND HEATMAP
+======================================================================
+Heatmap created for 3 stations and 24 hours
+   Saved to visualizations/demand_heatmap.html
+
+2. Flight Ranking Chart...
+
+======================================================================
+CREATING FLIGHT RANKING CHART
+======================================================================
+Flight ranking chart created with top 30 flights
+   Saved to visualizations/flight_ranking.html
+
+3. Train Productivity Chart...
+
+======================================================================
+CREATING TRAIN PRODUCTIVITY CHART
+======================================================================
+Total passengers served: 1554
+Average per train: 259.0
+Productive trains: 6/6
+   Saved to visualizations/train_productivity.html
+
+4. Connection Quality Scatter...
+
+======================================================================
+CREATING CONNECTION QUALITY SCATTER PLOT
+======================================================================
+Scatter plot created with 10 connections
+   Saved to visualizations/connection_quality.html
+
+======================================================================
+ALL DEMAND VISUALIZATIONS GENERATED
+======================================================================
+
+Displaying demand visualizations...
+
+================================================================================
+VISUALIZATION SUMMARY
+================================================================================
+
+ STANDARD VISUALIZATIONS (5 charts):
+  1. ✓ Gantt Chart              - Train schedules over time
+  2. ✓ Synchronization Network  - Train-flight connections by station
+  3. ✓ Demand Coverage Analysis - 4-panel demand dashboard
+  4. ✓ Quality Metrics          - 6-panel performance dashboard
+  5. ✓ Time-Space Diagram       - Train trajectories
+
+ DEMAND VISUALIZATIONS (4 charts):
+  6. ✓ Demand Heatmap          - Coverage by station and time
+  7. ✓ Flight Ranking          - Flights ranked by demand
+  8. ✓ Train Productivity      - Passengers served per train
+  9. ✓ Connection Quality      - Transfer time vs penalty
+
+ FILES SAVED TO: './visualizations/'
+  • gantt_chart.html
+  • synchronization_network.html
+  • demand_coverage.html
+  • quality_metrics.html
+  • time_space_diagram.html
+  • demand_heatmap.html
+  • flight_ranking.html
+  • train_productivity.html
+  • connection_quality.html
+
+ KEY INSIGHTS:
+  • Passenger Coverage: 35.2% (1,554/4,415 passengers)
+  • Flight Coverage: 10/30 flights (33.3%)
+  • Total Synchronizations: 10
+  • Average connections per covered flight: 1.0
+  • Best performing station: Station 1 (38.5% coverage)
+  • Most productive train: Train 3 (368 passengers)
+
+================================================================================
+ ALL VISUALIZATIONS GENERATED SUCCESSFULLY!
+================================================================================
+
+Open the HTML files in your browser for interactive exploration.
+Tip: Use the browser's zoom and pan tools for detailed analysis.
+
