@@ -330,6 +330,7 @@ for i in I:
 
 # Convenience dict for station coordinates
 station_coords = {s: info["coords"] for s, info in stations.items()}
+station_names = {s: info["name"] for s, info in stations.items()}
 
 # ==========================================================
 # PASSENGER DEMAND DATA
